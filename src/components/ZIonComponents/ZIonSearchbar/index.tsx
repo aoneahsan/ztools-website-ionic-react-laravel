@@ -7,6 +7,9 @@ import { ZIonColorType, ZIonModeType } from '@/types/zaionsAppSettings.type';
 
 // Type
 import { IonSearchbarCustomEvent } from '@ionic/core/dist/types/components';
+import { zCreateElementTestingSelector } from '@/utils/helpers';
+import { zCreateElementTestingSelectorKeyEnum } from '@/utils/enums';
+import { PRODUCT_NAME } from '@/utils/constants';
 
 type ZIonInputAutoCompleteType =
   | 'name'
@@ -105,6 +108,8 @@ type ZIonSearchbarType = {
   style?: {
     [key: string]: unknown;
   };
+  testingselector?: string;
+  testinglistselector?: string;
   onIonChange?: (
     event: IonSearchbarCustomEvent<SearchbarChangeEventDetail>
   ) => void;
@@ -112,7 +117,29 @@ type ZIonSearchbarType = {
 };
 
 const ZIonSearchbar = (props: ZIonSearchbarType) => {
-  return <IonSearchbar {...props} />;
+  const _testinglistselector = props.testinglistselector
+    ? {
+        ...zCreateElementTestingSelector({
+          _value: props.testinglistselector || PRODUCT_NAME,
+          _key: zCreateElementTestingSelectorKeyEnum.listSelector
+        })
+      }
+    : {};
+
+  const _testingSelector = props.testingselector
+    ? {
+        ...zCreateElementTestingSelector({
+          _value: props.testingselector || PRODUCT_NAME
+        })
+      }
+    : {};
+  return (
+    <IonSearchbar
+      {...props}
+      {..._testingSelector}
+      {..._testinglistselector}
+    />
+  );
 };
 
 export default ZIonSearchbar;

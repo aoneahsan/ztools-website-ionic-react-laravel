@@ -1,2 +1,0 @@
-# AB testing component
-- 

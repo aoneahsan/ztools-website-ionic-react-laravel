@@ -1,9 +1,0 @@
-.workspace-user-avatar-button::part(native) {
-	--padding-top: 0px;
-	--padding-bottom: 0px;
-	--padding-start: 0px;
-	--padding-end: 0px;
-	border-radius: 50%;
-	/* height: 50px;
-	width: 50px; */
-}

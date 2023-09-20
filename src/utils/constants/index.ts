@@ -1,23 +1,6 @@
 // import { zConsoleError } from '@/utils/helpers';
 // Custom Imports
-import {
-	adrollSvgLogo,
-	adwordsSvgLogo,
-	bingSvgLogo,
-	facebookSvgLogo,
-	googleAnalyticsSvgLogo,
-	googleTagManagerSvgLogo,
-	linkedinSvgLogo,
-	nexusSvgLogo,
-	pinterestSvgLogo,
-	ProductLogo,
-	productSmLogo,
-	quoraSvgLogo,
-	snapchatSvgLogo,
-	tiktokSvgLogo,
-	twitterSvgLogo,
-	vkSvgLogo,
-} from '@/assets/images';
+import { ProductLogo } from '@/assets/images';
 import { IonLoaderEnum } from '@/types/AdminPanel/linksType';
 import { ENVS } from '@/utils/envKeys';
 
@@ -208,7 +191,7 @@ const ZaionsRHelmetDefaults = {
 	twitterTitle: 'Zaions',
 	twitterDescription: ' The Group of Projects',
 	twitterImage: ProductLogo,
-	shortcutIcon: productSmLogo,
+	shortcutIcon: ProductLogo,
 	contentSecurityPolicy:
 		"default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';",
 	XUACompatible: 'ie=edge',
@@ -239,24 +222,6 @@ const DEFAULT_VALUES = {
 export const LOCALSTORAGE_KEYS = {
 	USERDATA: 'udhsaf38h_3g-23g-c',
 	AUTHTOKEN: 'cewiuh4ggb284ghg',
-};
-
-export const Platforms = {
-	facebook: facebookSvgLogo,
-	linkedin: linkedinSvgLogo,
-	twitter: twitterSvgLogo,
-	google_analytics: googleAnalyticsSvgLogo,
-	google_analytics_4: googleAnalyticsSvgLogo,
-	google_ads: adwordsSvgLogo,
-	google_tag_manager: googleTagManagerSvgLogo,
-	quora: quoraSvgLogo,
-	snapchat: snapchatSvgLogo,
-	pinterest: pinterestSvgLogo,
-	bing: bingSvgLogo,
-	adroll: adrollSvgLogo,
-	nexus: nexusSvgLogo,
-	tiktok: tiktokSvgLogo,
-	vk: vkSvgLogo,
 };
 
 export const brandColors = {
@@ -473,6 +438,8 @@ const LINK_In_BIO = {
 	},
 };
 
+const testingSelectorsPrefix = 'ztes__';
+
 const CONSTANTS = {
 	PIXEL_ACCOUNTS,
 	ION_LOADER_DEFAULTS,
@@ -489,6 +456,7 @@ const CONSTANTS = {
 	MENU_IDS,
 	ExternalURL,
 	ZTooltipIds,
+	testingSelectorsPrefix,
 };
 
 export default CONSTANTS;

@@ -17,6 +17,7 @@ import {
 	extractInnerDataOptionsEnum,
 	VALIDATION_RULE,
 	ZCalculateType,
+	zCreateElementTestingSelectorKeyEnum,
 } from '@/utils/enums';
 import { ENVS } from '@/utils/envKeys';
 import MESSAGES from '@/utils/messages';
@@ -1250,5 +1251,39 @@ export const zPercentageCalculateHandler = ({
 		}
 	} catch (error) {
 		reportCustomError(error);
+	}
+};
+
+/**
+ * The zCreateElementTestingSelector function is designed to generate testing attributes for HTML and Ionic elements.
+ * @param param0 It takes an object as input with two properties: _value and _key.
+ * @returns an array destruct the array in to HTML or ionic element.
+ */
+export const zCreateElementTestingSelector = ({
+	_value,
+	_key = zCreateElementTestingSelectorKeyEnum.selector,
+}: {
+	_value: string;
+	_key?: zCreateElementTestingSelectorKeyEnum;
+}): { [key: string]: string } => {
+	const __prefix = CONSTANTS.testingSelectorsPrefix;
+
+	const __attributeValue = `${__prefix}${_value}`;
+
+	switch (_key) {
+		case zCreateElementTestingSelectorKeyEnum.selector:
+			return {
+				'cy-es': __attributeValue,
+			};
+
+		case zCreateElementTestingSelectorKeyEnum.listSelector:
+			return {
+				'cy-els': __attributeValue,
+			};
+
+		default:
+			return {
+				'cy-es': __attributeValue,
+			};
 	}
 };

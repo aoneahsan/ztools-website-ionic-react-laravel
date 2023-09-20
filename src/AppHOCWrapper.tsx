@@ -30,7 +30,6 @@ import 'react-tooltip/dist/react-tooltip.css';
 
 // Custom Imports
 import ZaionsApp from './ZaionsApp';
-import AuthenticateHOC from './HOCs/AuthenticateHOC';
 
 // Global Constants
 
@@ -43,9 +42,7 @@ const AppHOCWrapper: React.FC = () => {
 	return (
 		<QueryClientProvider client={queryClientObj}>
 			<RecoilRoot>
-				<AuthenticateHOC>
-					<ZaionsApp />
-				</AuthenticateHOC>
+				<ZaionsApp />
 			</RecoilRoot>
 			<ReactQueryDevtools initialIsOpen={false} />
 		</QueryClientProvider>

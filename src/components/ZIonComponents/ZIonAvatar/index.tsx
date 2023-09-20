@@ -4,6 +4,8 @@ import React, { ReactNode } from 'react';
 // Packages Imports
 import { IonAvatar } from '@ionic/react';
 import { ZIonColorType, ZIonModeType } from '@/types/zaionsAppSettings.type';
+import { zCreateElementTestingSelector } from '@/utils/helpers';
+import { PRODUCT_NAME } from '@/utils/constants';
 
 // Type
 type ZIonAvatarType = {
@@ -21,10 +23,22 @@ type ZIonAvatarType = {
 	onClick?: React.MouseEventHandler<HTMLIonAvatarElement>;
 	onMouseEnter?: React.MouseEventHandler<HTMLIonAvatarElement>;
 	onMouseLeave?: React.MouseEventHandler<HTMLIonAvatarElement>;
+
+	//
+	testingselector?: string;
 };
 
 const ZIonAvatar = (props: ZIonAvatarType) => {
-	return <IonAvatar {...props}>{props.children}</IonAvatar>;
+	return (
+		<IonAvatar
+			{...props}
+			{...zCreateElementTestingSelector({
+				_value: props.testingselector || PRODUCT_NAME,
+			})}
+		>
+			{props.children}
+		</IonAvatar>
+	);
 };
 
 export default ZIonAvatar;

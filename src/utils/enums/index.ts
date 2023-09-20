@@ -92,3 +92,8 @@ export enum ZCalculateType {
 	WhatPercentOf = 'WhatPercentOf',
 	PercentChange = 'PercentChange',
 }
+
+export enum zCreateElementTestingSelectorKeyEnum {
+	selector = 'selector',
+	listSelector = 'listSelector',
+}

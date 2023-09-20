@@ -1,3 +1,0 @@
-- 17/11/2022 10:15 starting commit
-- 18/11/2022 11:16 starting commit
-- 19/11/2022 11:14 starting commit

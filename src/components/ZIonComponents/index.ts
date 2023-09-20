@@ -17,6 +17,8 @@ export { default as ZIonRouterLink } from './ZIonRouterLink';
 export { default as ZIonItem } from './ZIonItem';
 export { default as ZIonInput } from './ZIonInput';
 export { default as ZIonTextarea } from './ZIonTextarea';
+export { ZIonTextareaShort } from './ZIonTextarea';
+export { ZIonTextareaLong } from './ZIonTextarea';
 export { default as ZIonList } from './ZIonList';
 export { default as ZIonBadge } from './ZIonBadge';
 export { default as ZIonCheckbox } from './ZIonCheckbox';
@@ -54,6 +56,9 @@ export { default as ZIonAvatar } from './ZIonAvatar';
 export { default as ZIonRadio } from './ZIonRadio';
 export { default as ZIonRadioGroup } from './ZIonRadioGroup';
 export { default as ZIonToolbar } from './ZIonToolbar';
+export { default as ZIonSkeletonText } from './ZIonSkeletonText';
+export { default as ZIonRefresher } from './ZIonRefresher';
+export { default as ZIonRefresherContent } from './ZIonRefresherContent';
 
 //
 // import {

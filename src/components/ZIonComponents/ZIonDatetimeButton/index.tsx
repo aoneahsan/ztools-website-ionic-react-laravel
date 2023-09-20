@@ -9,6 +9,9 @@ import ZIonModal from '../ZIonModal';
 //
 import { ZIonColorType, ZIonModeType } from '@/types/zaionsAppSettings.type';
 import { IonDatetimeCustomEvent } from '@ionic/core/dist/types/components';
+import { zCreateElementTestingSelector } from '@/utils/helpers';
+import { PRODUCT_NAME } from '@/utils/constants';
+import { zCreateElementTestingSelectorKeyEnum } from '@/utils/enums';
 
 // Type
 type ZIonDatetimeButtonType = {
@@ -30,9 +33,27 @@ type ZIonDatetimeButtonType = {
     event: IonDatetimeCustomEvent<DatetimeChangeEventDetail>
   ) => void;
   preferWheel?: boolean;
+  testingselector?: string;
+  testinglistselector?: string;
 };
 
 const ZIonDatetimeButton = (props: ZIonDatetimeButtonType) => {
+  const _testinglistselector = props.testinglistselector
+    ? {
+        ...zCreateElementTestingSelector({
+          _value: props.testinglistselector || PRODUCT_NAME,
+          _key: zCreateElementTestingSelectorKeyEnum.listSelector
+        })
+      }
+    : {};
+
+  const _testingSelector = props.testingselector
+    ? {
+        ...zCreateElementTestingSelector({
+          _value: props.testingselector || PRODUCT_NAME
+        })
+      }
+    : {};
   return (
     <>
       <IonDatetimeButton
@@ -40,6 +61,8 @@ const ZIonDatetimeButton = (props: ZIonDatetimeButtonType) => {
         date-target={props.dateTarget}
         time-target={props.timeTarget}
         datetime={`datetime-${props.id}`}
+        {..._testingSelector}
+        {..._testinglistselector}
       />
       <ZIonModal keepContentsMounted={true}>
         <ZIonDatetime
