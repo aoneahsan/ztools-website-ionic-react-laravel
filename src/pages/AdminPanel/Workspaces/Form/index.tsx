@@ -147,16 +147,6 @@ const ZWorkspaceForm: React.FC = () => {
 			}
 		} catch (error) {
 			if (error instanceof AxiosError) {
-				zNavigatePushRoute(
-					replaceRouteParams(
-						ZaionsRoutes.AdminPanel.ShortLinks.Main,
-						[
-							CONSTANTS.RouteParams.workspace.workspaceId,
-							CONSTANTS.RouteParams.folderIdToGetShortLinks,
-						],
-						[editWorkspaceId, 'all']
-					)
-				);
 				showErrorNotification(error.message);
 			} else {
 				reportCustomError(error);

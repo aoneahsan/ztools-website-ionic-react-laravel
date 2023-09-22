@@ -161,49 +161,6 @@ const AdminPanelMainSidebarMenu: React.FC<{
 									</ZIonRouterLink>
 								</ZIonCol>
 
-								{/* Short Links */}
-								<ZIonCol size='12' className='my-3'>
-									<ZIonButton
-										fill='clear'
-										color='light'
-										expand='block'
-										className={classNames({
-											'ion-no-padding ion-no-margin text-transform-initial':
-												true,
-											zaions__primary_set:
-												activePage ===
-												AdminPanelMainSidebarMenuPageEnum.shortLink,
-										})}
-										routerLink={replaceRouteParams(
-											ZaionsRoutes.AdminPanel.ShortLinks.Main,
-											[
-												CONSTANTS.RouteParams.workspace.workspaceId,
-												CONSTANTS.RouteParams.folderIdToGetShortLinks,
-											],
-											[workspaceId, 'all']
-										)}
-									>
-										<ZIonText
-											className={classNames({
-												'flex ion-align-items-center': true,
-												'ps-3 me-auto': isExpand,
-											})}
-										>
-											<ZIonIcon icon={linkOutline} size='large' />
-
-											<ZIonText
-												className={classNames({
-													'ps-2 zaions-transition': true,
-													'inline-block': isExpand,
-													hidden: !isExpand,
-												})}
-											>
-												Short Links
-											</ZIonText>
-										</ZIonText>
-									</ZIonButton>
-								</ZIonCol>
-
 								{/* Link-in-bio */}
 								<ZIonCol size='12' className='my-3'>
 									<ZIonButton
@@ -439,26 +396,6 @@ const AdminPanelMainSidebarMenu: React.FC<{
 						// color='secondary'
 						className='zaions_pretty_scrollbar'
 					>
-						{/* Short Links */}
-						<ZIonSegmentButton
-							value={AdminPanelMainSidebarMenuPageEnum.shortLink}
-							className='text-transform-initial'
-							onClick={() => {
-								zNavigatePushRoute(
-									replaceRouteParams(
-										ZaionsRoutes.AdminPanel.ShortLinks.Main,
-										[
-											CONSTANTS.RouteParams.workspace.workspaceId,
-											CONSTANTS.RouteParams.folderIdToGetShortLinks,
-										],
-										[workspaceId, 'all']
-									)
-								);
-							}}
-						>
-							Short links
-						</ZIonSegmentButton>
-
 						{/* Link-in-bio */}
 						<ZIonSegmentButton
 							value={AdminPanelMainSidebarMenuPageEnum.linkInBio}
@@ -474,15 +411,6 @@ const AdminPanelMainSidebarMenu: React.FC<{
 						<ZIonSegmentButton
 							value='extension'
 							className='text-transform-initial'
-							onClick={() => {
-								zNavigatePushRoute(
-									replaceParams(
-										ZaionsRoutes.AdminPanel.ShortLinks.Main,
-										CONSTANTS.RouteParams.folderIdToGetShortLinks,
-										'all'
-									)
-								);
-							}}
 						>
 							Extension
 						</ZIonSegmentButton>
@@ -491,15 +419,6 @@ const AdminPanelMainSidebarMenu: React.FC<{
 						<ZIonSegmentButton
 							value='integrations'
 							className='text-transform-initial'
-							onClick={() => {
-								zNavigatePushRoute(
-									replaceParams(
-										ZaionsRoutes.AdminPanel.ShortLinks.Main,
-										CONSTANTS.RouteParams.folderIdToGetShortLinks,
-										'all'
-									)
-								);
-							}}
 						>
 							Integrations
 						</ZIonSegmentButton>
@@ -525,15 +444,6 @@ const AdminPanelMainSidebarMenu: React.FC<{
 						<ZIonSegmentButton
 							value='help-center'
 							className='text-transform-initial'
-							onClick={() => {
-								zNavigatePushRoute(
-									replaceParams(
-										ZaionsRoutes.AdminPanel.ShortLinks.Main,
-										CONSTANTS.RouteParams.folderIdToGetShortLinks,
-										'all'
-									)
-								);
-							}}
 						>
 							Help center
 						</ZIonSegmentButton>
@@ -542,15 +452,6 @@ const AdminPanelMainSidebarMenu: React.FC<{
 						<ZIonSegmentButton
 							value='settings'
 							className='text-transform-initial'
-							onClick={() => {
-								zNavigatePushRoute(
-									replaceParams(
-										ZaionsRoutes.AdminPanel.ShortLinks.Main,
-										CONSTANTS.RouteParams.folderIdToGetShortLinks,
-										'all'
-									)
-								);
-							}}
 						>
 							Settings
 						</ZIonSegmentButton>

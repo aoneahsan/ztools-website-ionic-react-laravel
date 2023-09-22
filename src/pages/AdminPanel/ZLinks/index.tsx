@@ -36,9 +36,6 @@ import classNames from 'classnames';
  * ? Like import of custom components is a custom import
  * */
 import ZaionsIonPage from '@/components/ZaionsIonPage';
-import ZLinkIonPanelSidebar from '@/components/UserDashboard/ZLinkdashboard/ZLDashboardSidePanel/index';
-import ZLinkDashboardTopBar from '@/components/UserDashboard/ZLinkdashboard/ZLDashboardTopbar';
-
 import {
 	ZIonCol,
 	ZIonText,
@@ -174,16 +171,10 @@ const ZLinks: React.FC = () => {
 						when='lg'
 						contentId={CONSTANTS.DEFAULT_VALUES.ZAIONS_DASHBOARD_SPLIT_PANEL}
 					>
-						{/* Side Bar */}
-						<ZLinkIonPanelSidebar
-							activeLink={ZLinkIonPanelSidebarActiveLinkType.links}
-						/>
-
 						<div
 							className='ion-page zaionsPaneContent'
 							id={CONSTANTS.DEFAULT_VALUES.ZAIONS_DASHBOARD_SPLIT_PANEL}
 						>
-							<ZLinkDashboardTopBar />
 							<ZIonContent className='ion-padding-top '>
 								<ZIonGrid className='mb-1 ion-padding-start'>
 									<ZIonRow>

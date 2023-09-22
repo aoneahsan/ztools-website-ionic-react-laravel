@@ -10,27 +10,15 @@ import { Route } from 'react-router-dom';
 import Home from '@/pages/Home';
 import ZaionsReactArea from '@/Testing/ReactArea';
 import Login from '@/pages/Login';
-import ZShortLinksListPage from '@/pages/AdminPanel/links';
 import TestingReactTable from '@/Testing/ReactTable';
 
 // Routes
 import ZaionsRoutes from './utils/constants/RoutesConstants';
-import ZDashboard from '@/pages/AdminPanel/ZDashboard';
-import ZLinkInBio from '@/pages/AdminPanel/ZLinkInBio';
-import ZLinkCampaigns from '@/pages/AdminPanel/ZLCampaigns';
-import ZCustomLinks from '@/pages/AdminPanel/ZLCustomLinks';
 import ZLinks from '@/pages/AdminPanel/ZLinks';
 import ChartsExamples from '@/Testing/Charts';
 import ZProfile from '@/pages/AdminPanel/ZProfile';
-import ZCustomDomain from '@/pages/AdminPanel/ZCustomDomin';
-import ZGroups from '@/pages/AdminPanel/ZGroups';
-import ZCSVBulkShortening from '@/pages/AdminPanel/ZCSVBulk';
-import ZAccountDetails from '@/pages/AdminPanel/ZAccountDetails';
-import ZIntegration from '@/pages/AdminPanel/ZIntegration';
 import SignUp from '@/pages/SignUp';
 import ZaionsPasswordResetConfirm from '@/pages/ResetPassword/PasswordResetConfirmForm';
-import ZaionsAdminPanelSettings from '@/pages/AdminPanel/settings';
-import ZLinkInBioLinksSection from '@/pages/AdminPanel/ZLinkInBio/parts/links';
 import GoogleMapsCapacitorPackageTest from '@/Testing/GoogleMaps';
 import TestingTabs from '@/Testing/TestingTabs';
 import { ENVS } from '@/utils/envKeys';
@@ -51,46 +39,9 @@ const ProductionAppRoutes: React.FC = () => {
 					component={ZaionsPasswordResetConfirm}
 				/>
 
-				<Route
-					path={ZaionsRoutes.AdminPanel.ZaionsDashboard.DashboardInactive}
-					component={ZDashboard}
-				/>
-				<Route
-					path={ZaionsRoutes.AdminPanel.ZaionsDashboard.LinkInBioInactive}
-					component={ZLinkInBioLinksSection}
-				/>
-
 				{/* Admin Panel Pages */}
-
-				<Route
-					exact
-					path={ZaionsRoutes.AdminPanel.ShortLinks.Main}
-					component={ZShortLinksListPage}
-				/>
-
-				<Route
-					path={ZaionsRoutes.AdminPanel.Setting.Main}
-					component={ZaionsAdminPanelSettings}
-				/>
-
 				{ENVS.isProduction && (
 					<>
-						<Route
-							path={
-								ZaionsRoutes.AdminPanel.ZaionsDashboard.LinkCampaignsInactive
-							}
-							component={ZLinkCampaigns}
-						/>
-
-						<Route
-							path={ZaionsRoutes.AdminPanel.ZaionsDashboard.LinkInBioInactive}
-							component={ZLinkInBio}
-						/>
-
-						<Route
-							path={ZaionsRoutes.AdminPanel.ZaionsDashboard.CustomlinksInactive}
-							component={ZCustomLinks}
-						/>
 
 						<Route
 							path={ZaionsRoutes.AdminPanel.ZaionsDashboard.ZLinks}
@@ -100,31 +51,6 @@ const ProductionAppRoutes: React.FC = () => {
 						<Route
 							path={ZaionsRoutes.AdminPanel.ZaionsDashboard.ZProfile}
 							component={ZProfile}
-						/>
-
-						<Route
-							path={ZaionsRoutes.AdminPanel.ZaionsDashboard.ZCustomDomain}
-							component={ZCustomDomain}
-						/>
-
-						<Route
-							path={ZaionsRoutes.AdminPanel.ZaionsDashboard.ZGroup}
-							component={ZGroups}
-						/>
-
-						<Route
-							path={ZaionsRoutes.AdminPanel.ZaionsDashboard.ZCSVBulk}
-							component={ZCSVBulkShortening}
-						/>
-
-						<Route
-							path={ZaionsRoutes.AdminPanel.ZaionsDashboard.ZAccountDetails}
-							component={ZAccountDetails}
-						/>
-
-						<Route
-							path={ZaionsRoutes.AdminPanel.ZaionsDashboard.ZIntegration}
-							component={ZIntegration}
 						/>
 
 						<Route

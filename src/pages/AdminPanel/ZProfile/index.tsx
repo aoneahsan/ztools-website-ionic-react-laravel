@@ -18,8 +18,6 @@ import classNames from 'classnames';
  * ? Like import of custom components is a custom import
  * */
 import ZaionsIonPage from '@/components/ZaionsIonPage';
-import ZLinkIonPanelSidebar from '@/components/UserDashboard/ZLinkdashboard/ZLDashboardSidePanel/index';
-import ZLinkDashboardTopBar from '@/components/UserDashboard/ZLinkdashboard/ZLDashboardTopbar';
 import AddEmailModal from '@/components/InPageComponents/ZaionsModals/EmailModal';
 import DeleteUserAccountModal from '@/components/InPageComponents/ZaionsModals/DeleteUserAccountModal';
 import {
@@ -30,7 +28,6 @@ import {
 	ZTableTBody,
 	ZTableRowCol,
 } from '@/components/InPageComponents/ZaionsTable/table-styled-components.sc';
-import ZaionsLinkSettingPanel from '@/components/UserDashboard/ZLinkdashboard/ZLinksSettingPanel';
 import {
 	ZIonCol,
 	ZIonText,
@@ -170,16 +167,10 @@ const ZProfile: React.FC = () => {
 					when='lg'
 					contentId={CONSTANTS.DEFAULT_VALUES.ZAIONS_DASHBOARD_SPLIT_PANEL}
 				>
-					{/* Side Bar */}
-					<ZLinkIonPanelSidebar
-						activeLink={ZLinkIonPanelSidebarActiveLinkType.settings}
-					/>
-
 					<div
 						className='ion-page zaionsPaneContent'
 						id={CONSTANTS.DEFAULT_VALUES.ZAIONS_DASHBOARD_SPLIT_PANEL}
 					>
-						<ZLinkDashboardTopBar />
 						<ZIonContent
 							className={classNames({
 								'mx-3': true,
@@ -189,14 +180,6 @@ const ZProfile: React.FC = () => {
 						>
 							<ZIonGrid>
 								<ZIonRow>
-									{/* If it is in md then the setting side panel will be visible */}
-									{isMdScale && (
-										<ZaionsLinkSettingPanel
-											activeLink={
-												ZLinkIonPanelSettingsSidebarActiveLinkType.profile
-											}
-										/>
-									)}
 									<ZIonCol>
 										<ZIonRow
 											className={classNames({

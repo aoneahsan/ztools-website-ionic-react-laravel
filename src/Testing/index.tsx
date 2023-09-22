@@ -30,25 +30,12 @@ const TestingPackagesAndLogic: React.FC = () => {
 						CH
 					</IonFabButton>
 					<IonFabButton
-						routerLink={ZaionsRoutes.AdminPanel.Setting.Main}
-						color='success'
-					>
-						ST
-					</IonFabButton>
-					<IonFabButton
 						routerLink={ZaionsRoutes.Testing.ReactTable.Main}
 						color='success'
 					>
 						RT
 					</IonFabButton>
-					<IonFabButton
-						routerLink={
-							ZaionsRoutes.AdminPanel.ZaionsDashboard.DashboardInactive
-						}
-						color='success'
-					>
-						ZD
-					</IonFabButton>
+
 					<IonFabButton
 						routerLink={ZaionsRoutes.Testing.GOOGLE_MAP.Main}
 						color='success'

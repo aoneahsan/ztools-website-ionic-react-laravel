@@ -86,12 +86,7 @@ const ZaionsDashboardResponsiveMenu: React.FC<ZDashboardResponsiveMenu> = ({
 			<ZIonContent className=''>
 				<ZIonList lines='none'>
 					{/* Dashboard */}
-					<ZIonRouterLink
-						routerLink={
-							ZaionsRoutes.AdminPanel.ZaionsDashboard.DashboardInactive
-						}
-						className='ion-text-end'
-					>
+					<ZIonRouterLink className='ion-text-end'>
 						<ZIonItem
 							className={classNames({
 								'ion-text-center rounded': true,
@@ -121,12 +116,7 @@ const ZaionsDashboardResponsiveMenu: React.FC<ZDashboardResponsiveMenu> = ({
 					</ZIonRouterLink>
 
 					{/* Link-in-bio */}
-					<ZIonRouterLink
-						routerLink={
-							ZaionsRoutes.AdminPanel.ZaionsDashboard.LinkInBioInactive
-						}
-						className='ion-text-center'
-					>
+					<ZIonRouterLink className='ion-text-center'>
 						<ZIonItem
 							className={classNames({
 								'ion-text-center rounded mt-3': true,
@@ -144,12 +134,7 @@ const ZaionsDashboardResponsiveMenu: React.FC<ZDashboardResponsiveMenu> = ({
 					</ZIonRouterLink>
 
 					{/* Campaigns */}
-					<ZIonRouterLink
-						routerLink={
-							ZaionsRoutes.AdminPanel.ZaionsDashboard.LinkCampaignsInactive
-						}
-						className='ion-text-center'
-					>
+					<ZIonRouterLink className='ion-text-center'>
 						<ZIonItem
 							className={classNames({
 								'ion-text-center rounded mt-3': true,
@@ -164,12 +149,7 @@ const ZaionsDashboardResponsiveMenu: React.FC<ZDashboardResponsiveMenu> = ({
 					</ZIonRouterLink>
 
 					{/* Custom Links */}
-					<ZIonRouterLink
-						routerLink={
-							ZaionsRoutes.AdminPanel.ZaionsDashboard.CustomlinksInactive
-						}
-						className='ion-text-center'
-					>
+					<ZIonRouterLink className='ion-text-center'>
 						<ZIonItem
 							className={classNames({
 								'ion-text-center rounded mt-3 border-bottom pb-2': true,
@@ -216,9 +196,6 @@ const ZaionsDashboardResponsiveMenu: React.FC<ZDashboardResponsiveMenu> = ({
 							{/* Integrations */}
 							<ZIonRouterLink
 								className='mb-1 ion-no-padding ion-no-margin'
-								routerLink={
-									ZaionsRoutes.AdminPanel.ZaionsDashboard.ZIntegration
-								}
 								color='dark'
 							>
 								<ZIonText className='block mb-3 text-base font-bold ps-2'>
@@ -251,46 +228,26 @@ const ZaionsDashboardResponsiveMenu: React.FC<ZDashboardResponsiveMenu> = ({
 										className='ms-2 ion-no-padding'
 									>
 										{/* Account details */}
-										<ZIonItem
-											className='mb-1 ion-no-padding ion-no-margin '
-											routerLink={
-												ZaionsRoutes.AdminPanel.ZaionsDashboard.ZAccountDetails
-											}
-										>
+										<ZIonItem className='mb-1 ion-no-padding ion-no-margin '>
 											<ZIonText className='font-bold ps-2'>
 												Account details
 											</ZIonText>
 										</ZIonItem>
 
 										{/* Custom domains */}
-										<ZIonItem
-											className='mb-1 ion-no-padding ion-no-margin'
-											routerLink={
-												ZaionsRoutes.AdminPanel.ZaionsDashboard.ZCustomDomain
-											}
-										>
+										<ZIonItem className='mb-1 ion-no-padding ion-no-margin'>
 											<ZIonText className='font-bold ps-2'>
 												Custom domains
 											</ZIonText>
 										</ZIonItem>
 
 										{/* Group */}
-										<ZIonItem
-											className='mb-1 ion-no-padding ion-no-margin'
-											routerLink={
-												ZaionsRoutes.AdminPanel.ZaionsDashboard.ZGroup
-											}
-										>
+										<ZIonItem className='mb-1 ion-no-padding ion-no-margin'>
 											<ZIonText className='font-bold ps-2'>Groups</ZIonText>
 										</ZIonItem>
 
 										{/* CVS Bulk Shortening */}
-										<ZIonItem
-											className='mb-1 ion-no-padding ion-no-margin'
-											routerLink={
-												ZaionsRoutes.AdminPanel.ZaionsDashboard.ZCSVBulk
-											}
-										>
+										<ZIonItem className='mb-1 ion-no-padding ion-no-margin'>
 											<ZIonText className='font-bold ps-2'>
 												CSV bulk shortening
 											</ZIonText>

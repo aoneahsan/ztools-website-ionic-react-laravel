@@ -9,30 +9,18 @@ import { Route } from 'react-router-dom';
 // Commented Routes
 import ZaionsReactArea from '@/Testing/ReactArea';
 import TestingReactTable from '@/Testing/ReactTable';
-import ZLinkInBio from '@/pages/AdminPanel/ZLinkInBio';
-import ZLinkCampaigns from '@/pages/AdminPanel/ZLCampaigns';
-import ZCustomLinks from '@/pages/AdminPanel/ZLCustomLinks';
 import ZLinks from '@/pages/AdminPanel/ZLinks';
 import ChartsExamples from '@/Testing/Charts';
 import ZProfile from '@/pages/AdminPanel/ZProfile';
-import ZCustomDomain from '@/pages/AdminPanel/ZCustomDomin';
-import ZGroups from '@/pages/AdminPanel/ZGroups';
-import ZCSVBulkShortening from '@/pages/AdminPanel/ZCSVBulk';
-import ZAccountDetails from '@/pages/AdminPanel/ZAccountDetails';
-import ZIntegration from '@/pages/AdminPanel/ZIntegration';
 import GoogleMapsCapacitorPackageTest from '@/Testing/GoogleMaps';
 import TestingTabs from '@/Testing/TestingTabs';
 
 // Routes
 import Home from '@/pages/Home';
 import Login from '@/pages/Login';
-import ZShortLinksListPage from '@/pages/AdminPanel/links';
 import ZaionsRoutes from './utils/constants/RoutesConstants';
-import ZDashboard from '@/pages/AdminPanel/ZDashboard';
 import SignUp from '@/pages/SignUp';
 import ZaionsPasswordResetConfirm from '@/pages/ResetPassword/PasswordResetConfirmForm';
-import ZaionsAdminPanelSettings from '@/pages/AdminPanel/settings';
-import ZLinkInBioLinksSection from '@/pages/AdminPanel/ZLinkInBio/parts/links';
 import TestingIonComponents from './Testing/TestingIonComponents';
 import PublicRoute from './components/PublicRoute';
 import PrivateRoute from './components/PrivateRoute';
@@ -79,29 +67,6 @@ const AppRoutes: React.FC = () => {
 
 				<PrivateRoute
 					exact
-					path={ZaionsRoutes.AdminPanel.ZaionsDashboard.DashboardInactive}
-					Component={ZDashboard}
-				/>
-
-				<PrivateRoute
-					path={ZaionsRoutes.AdminPanel.ZaionsDashboard.LinkInBioInactive}
-					Component={ZLinkInBioLinksSection}
-				/>
-
-				<PrivateRoute
-					exact
-					path={ZaionsRoutes.AdminPanel.ShortLinks.Main}
-					Component={ZShortLinksListPage}
-				/>
-
-				<PrivateRoute
-					exact
-					path={ZaionsRoutes.AdminPanel.Setting.Main}
-					Component={ZaionsAdminPanelSettings}
-				/>
-
-				<PrivateRoute
-					exact
 					path={ZaionsRoutes.AdminPanel.Workspaces.Main}
 					Component={ZWorkspaceListPage}
 				/>
@@ -124,21 +89,6 @@ const AppRoutes: React.FC = () => {
 				/>
 
 				<PrivateRoute
-					path={ZaionsRoutes.AdminPanel.ZaionsDashboard.LinkCampaignsInactive}
-					Component={ZLinkCampaigns}
-				/>
-
-				<PrivateRoute
-					path={ZaionsRoutes.AdminPanel.ZaionsDashboard.LinkInBioInactive}
-					Component={ZLinkInBio}
-				/>
-
-				<PrivateRoute
-					path={ZaionsRoutes.AdminPanel.ZaionsDashboard.CustomlinksInactive}
-					Component={ZCustomLinks}
-				/>
-
-				<PrivateRoute
 					path={ZaionsRoutes.AdminPanel.ZaionsDashboard.ZLinks}
 					Component={ZLinks}
 				/>
@@ -146,31 +96,6 @@ const AppRoutes: React.FC = () => {
 				<PrivateRoute
 					path={ZaionsRoutes.AdminPanel.ZaionsDashboard.ZProfile}
 					Component={ZProfile}
-				/>
-
-				<PrivateRoute
-					path={ZaionsRoutes.AdminPanel.ZaionsDashboard.ZCustomDomain}
-					Component={ZCustomDomain}
-				/>
-
-				<PrivateRoute
-					path={ZaionsRoutes.AdminPanel.ZaionsDashboard.ZGroup}
-					Component={ZGroups}
-				/>
-
-				<PrivateRoute
-					path={ZaionsRoutes.AdminPanel.ZaionsDashboard.ZCSVBulk}
-					Component={ZCSVBulkShortening}
-				/>
-
-				<PrivateRoute
-					path={ZaionsRoutes.AdminPanel.ZaionsDashboard.ZAccountDetails}
-					Component={ZAccountDetails}
-				/>
-
-				<PrivateRoute
-					path={ZaionsRoutes.AdminPanel.ZaionsDashboard.ZIntegration}
-					Component={ZIntegration}
 				/>
 
 				<Route

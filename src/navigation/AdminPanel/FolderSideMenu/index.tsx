@@ -139,18 +139,7 @@ const AdminPanelFoldersSidebarMenu: React.FC<
 							</ZIonText>
 						</ZIonItem>
 
-						<ZIonItem
-							className='zaions__cursor_pointer ms-2'
-							onClick={() => {
-								zNavigatePushRoute(
-									replaceParams(
-										ZaionsRoutes.AdminPanel.ShortLinks.Main,
-										CONSTANTS.RouteParams.folderIdToGetShortLinks,
-										'all'
-									)
-								);
-							}}
-						>
+						<ZIonItem className='zaions__cursor_pointer ms-2'>
 							<ZIonLabel>Default</ZIonLabel>
 							<ZIonReorder slot='start' className='me-3'>
 								<ZIonIcon icon={appsOutline} />
@@ -170,19 +159,7 @@ const AdminPanelFoldersSidebarMenu: React.FC<
 										key={el.id}
 										data-folder-id={el.id}
 									>
-										<ZIonLabel
-											onClick={() => {
-												zNavigatePushRoute(
-													replaceParams(
-														ZaionsRoutes.AdminPanel.ShortLinks.Main,
-														CONSTANTS.RouteParams.folderIdToGetShortLinks,
-														el.id as string
-													)
-												);
-											}}
-										>
-											{el.title}
-										</ZIonLabel>
+										<ZIonLabel>{el.title}</ZIonLabel>
 										<ZIonButton
 											fill='clear'
 											color='dark'

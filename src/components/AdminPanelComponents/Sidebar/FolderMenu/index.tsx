@@ -124,32 +124,7 @@ const ZDashboardFolderMenu: React.FC<ZDashboardFolderMenuInterface> = ({
 									📂 Folders
 								</ZIonText>
 							</ZIonItem>
-							<ZIonItem
-								className='zaions__cursor_pointer ms-2'
-								onClick={() => {
-									switch (type) {
-										case AdminPanelMainSidebarMenuPageEnum.shortLink:
-											zNavigatePushRoute(
-												replaceParams(
-													ZaionsRoutes.AdminPanel.ShortLinks.Main,
-													CONSTANTS.RouteParams.folderIdToGetShortLinks,
-													'all'
-												)
-											);
-											break;
-
-										case AdminPanelMainSidebarMenuPageEnum.linkInBio:
-											zNavigatePushRoute(
-												replaceParams(
-													ZaionsRoutes.AdminPanel.LinkInBio.Main,
-													CONSTANTS.RouteParams.folderIdToGetShortLinks,
-													'all'
-												)
-											);
-											break;
-									}
-								}}
-							>
+							<ZIonItem className='zaions__cursor_pointer ms-2'>
 								<ZIonLabel>Default</ZIonLabel>
 								<ZIonReorder slot='start' className='me-3'>
 									<ZIonIcon icon={appsOutline} />
@@ -172,33 +147,7 @@ const ZDashboardFolderMenu: React.FC<ZDashboardFolderMenuInterface> = ({
 											key={el.id}
 											data-folder-id={el.id}
 										>
-											<ZIonLabel
-												onClick={() => {
-													switch (type) {
-														case AdminPanelMainSidebarMenuPageEnum.shortLink:
-															zNavigatePushRoute(
-																replaceParams(
-																	ZaionsRoutes.AdminPanel.ShortLinks.Main,
-																	CONSTANTS.RouteParams.folderIdToGetShortLinks,
-																	el.id as string
-																)
-															);
-															break;
-
-														case AdminPanelMainSidebarMenuPageEnum.linkInBio:
-															zNavigatePushRoute(
-																replaceParams(
-																	ZaionsRoutes.AdminPanel.LinkInBio.Main,
-																	CONSTANTS.RouteParams.folderIdToGetShortLinks,
-																	el.id as string
-																)
-															);
-															break;
-													}
-												}}
-											>
-												{el.title}
-											</ZIonLabel>
+											<ZIonLabel>{el.title}</ZIonLabel>
 											<ZIonButton
 												fill='clear'
 												color='dark'

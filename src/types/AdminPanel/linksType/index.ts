@@ -33,14 +33,6 @@ export enum PixelPlatformsEnum {
 	vk = 'vk',
 }
 
-export enum IconTypeEnum {
-	ionic = 'ionic',
-	react = 'react',
-	svg = 'svg',
-	image = 'image',
-	others = 'others',
-}
-
 export enum IonLoaderEnum {
 	bubbles = 'bubbles',
 	circles = 'circles',
@@ -51,19 +43,6 @@ export enum IonLoaderEnum {
 	linesSharp = 'linesharp',
 	linesSharpSmall = 'linessharpsmall',
 	linesSmall = 'linessmall',
-}
-
-export enum UTMTagFieldsEnum {
-	utmCampaign = 'utmcampaign',
-	utmMedium = 'utmmedium',
-	utmSource = 'utmsource',
-	utmTerm = 'utmterm',
-	utmContent = 'utmcontent',
-}
-
-export enum CustomdomainFieldsEnum {
-	domain = 'domain',
-	customize = 'customize',
 }
 
 export enum EmbedWidgetsDisplayAtEnum {
@@ -184,15 +163,6 @@ export type IdNameType = {
 	formMode?: FormMode;
 };
 
-export type PixelAccountPlatformType = {
-	id?: string;
-	type: PixelPlatformsEnum;
-	title: string;
-
-	// Just to handle frontend form
-	formMode?: FormMode;
-};
-
 export type PixelAccountType = {
 	id?: string;
 	platform?: PixelPlatformsEnum;
@@ -299,16 +269,6 @@ export type ShortLinkType = {
 };
 
 // 'ionic' | 'react' | 'svg' | 'image' | other
-
-export type ShortUrlLinkOptionType = {
-	id?: string;
-	icon: {
-		iconName: string;
-		iconType?: 'ionic' | 'others';
-	};
-	text: string;
-	type: messengerPlatformsBlockEnum;
-};
 
 // const as = []
 

@@ -1,10 +1,6 @@
 import CONSTANTS from '@/utils/constants';
-import { LinkTypeOptionsData } from '@/data/UserDashboard/Links/index';
-import { atom, selector } from 'recoil';
-import {
-	ShortLinkType,
-	ShortUrlLinkOptionType,
-} from '@/types/AdminPanel/linksType';
+import { atom } from 'recoil';
+import { ShortLinkType } from '@/types/AdminPanel/linksType';
 import {
 	FormMode,
 	messengerPlatformsBlockEnum,
@@ -23,10 +19,3 @@ export const NewShortLinkFormState = atom<ShortLinkType>({
 		formMode: FormMode.ADD,
 	},
 });
-
-export const NewShortLinkSelectTypeOption = atom<ShortUrlLinkOptionType | null>(
-	{
-		key: 'NewShortLinkSelectTypeOption_key',
-		default: LinkTypeOptionsData[0],
-	}
-);

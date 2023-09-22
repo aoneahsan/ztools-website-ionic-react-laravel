@@ -68,10 +68,6 @@ export enum ZLinkInBioPageEnum {
 /**
  * Interfaces
  */
-export interface LinkInBioThemeFontFamilyInterface {
-	id?: string;
-	fontName: LinkInBioThemeFontEnum;
-}
 
 export interface LinkInBioFormPageInterface {
 	page?: ZLinkInBioPageEnum;

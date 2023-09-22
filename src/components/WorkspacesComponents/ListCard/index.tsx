@@ -255,23 +255,7 @@ const ZWorkspacesCard: React.FC<ZWorkspacesCardInterface> = ({
 			</ZIonCardHeader>
 
 			{/* Card body */}
-			<ZIonCardContent
-				className='zaions__cursor_pointer'
-				onClick={() => {
-					// Click on card will redirect to view workspace.
-					id &&
-						zNavigatePushRoute(
-							createRedirectRoute({
-								url: ZaionsRoutes.AdminPanel.ShortLinks.Main,
-								params: [
-									CONSTANTS.RouteParams.workspace.workspaceId,
-									CONSTANTS.RouteParams.folderIdToGetShortLinks,
-								],
-								values: [id, 'all'],
-							})
-						);
-				}}
-			>
+			<ZIonCardContent className='zaions__cursor_pointer'>
 				<ZIonRow>
 					<ZIonCol>
 						<ZIonButton

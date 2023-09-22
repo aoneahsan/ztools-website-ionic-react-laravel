@@ -22,17 +22,6 @@ const ZaionsRoutes = {
 	// Admin Panel
 	AdminPanel: {
 		AppStartupPage: '/app/startup',
-		Setting: {
-			Main: '/settings',
-			ZaionsAdminPanelSettingsCustomDomain: '/settings/custom-domain',
-			ZaionsAdminPanelSettingsPixels: '/settings/pixels',
-		},
-
-		ShortLinks: {
-			Main: `/workspaces/${workspaceIdParam}/short-links/list/${CONSTANTS.RouteParams.folderIdToGetShortLinks}`,
-			Create: `/workspaces/${workspaceIdParam}/short-links/create`,
-			Edit: `/workspaces/${workspaceIdParam}/short-links/edit/${CONSTANTS.RouteParams.editShortLinkIdParam}`,
-		},
 
 		Workspaces: {
 			Main: '/workspaces',
@@ -42,17 +31,8 @@ const ZaionsRoutes = {
 		},
 
 		ZaionsDashboard: {
-			DashboardInactive: '/dashboard-upgrade/',
-			LinkInBioInactive: '/launchpads/default/intro',
-			LinkCampaignsInactive: '/campaigns-upgrade/',
-			CustomlinksInactive: '/custom-links-upgrade/',
 			ZLinks: '/links',
 			ZProfile: '/settings/profile/',
-			ZCustomDomain: '/settings/custom-domains/',
-			ZGroup: '/settings/groups/',
-			ZCSVBulk: '/settings/bulk-upload/',
-			ZAccountDetails: '/settings/organization/details/',
-			ZIntegration: '/settings/integrations/',
 		},
 	},
 
