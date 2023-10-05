@@ -9,6 +9,9 @@ const ZaionsRoutes = {
 	SignUpRoute: '/sign-up',
 	PasswordResetEmailForm: '/forgot-password',
 
+	percentageCalculator: '/percentage-calculator',
+	wordCounter: '/word-counter',
+
 	// Company Section
 	Company: {
 		ZaionsAboutRoute: '/pages/about',

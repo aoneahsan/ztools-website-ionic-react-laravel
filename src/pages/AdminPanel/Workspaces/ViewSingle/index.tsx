@@ -26,7 +26,7 @@ import { useSetRecoilState } from 'recoil';
  * ? Like import of custom components is a custom import
  * */
 import ZUserAvatarButton from '@/components/WorkspacesComponents/UserButton';
-import ZaionsIonPage from '@/components/ZaionsIonPage';
+import ZIonPage from '@/components/ZIonPage';
 import {
 	ZIonButton,
 	ZIonButtons,
@@ -167,7 +167,7 @@ const ViewSingleWorkspace: React.FC = () => {
 	);
 
 	return (
-		<ZaionsIonPage
+		<ZIonPage
 			pageTitle='Zaions view single workspace page'
 			menu={PAGE_MENU.ADMIN_PANEL_WORKSPACE_VIEW_FILTER_MENU}
 			id={CONSTANTS.MENU_IDS.ADMIN_PAGE_WORKSPACE_VIEW_FILTER_MENU_ID}
@@ -617,7 +617,7 @@ const ViewSingleWorkspace: React.FC = () => {
 
 			{/* Compose Modal */}
 			<ZWorkspaceComposeModal />
-		</ZaionsIonPage>
+		</ZIonPage>
 	);
 };
 

@@ -27,7 +27,7 @@ import {
 	ZIonText,
 } from '@/components/ZIonComponents';
 import ZWorkspaceFormConnectPagesTab from '@/pages/AdminPanel/Workspaces/Form/ConnectPagesTab';
-import ZaionsIonPage from '@/components/ZaionsIonPage';
+import ZIonPage from '@/components/ZIonPage';
 import ZWorkspaceFormInviteClientsTab from './InviteClientsTab';
 import ZWorkspaceFormDetailTab from './DetailTab';
 
@@ -158,7 +158,7 @@ const ZWorkspaceForm: React.FC = () => {
 	if (!selectedWorkspace) return null;
 
 	return (
-		<ZaionsIonPage pageTitle='Zaions Workspace Form Page'>
+		<ZIonPage pageTitle='Zaions Workspace Form Page'>
 			<ZIonHeader className='ion-no-border'>
 				<ZIonRow className='pt-2 pb-3 ion-justify-content-center ion-align-items-center'>
 					{/*  */}
@@ -225,7 +225,7 @@ const ZWorkspaceForm: React.FC = () => {
 			) : (
 				''
 			)}
-		</ZaionsIonPage>
+		</ZIonPage>
 	);
 };
 

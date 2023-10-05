@@ -1252,3 +1252,116 @@ export const zPercentageCalculateHandler = ({
 		reportCustomError(error);
 	}
 };
+
+/**
+ * Function to count words in giving text.
+ * @param text string
+ */
+export const zCountWords = (text: string): number => {
+	if (text?.trim()?.length > 0) {
+		const words = text?.trim()?.split(/\s+/);
+		return words?.length;
+	} else {
+		return 0;
+	}
+};
+
+/**
+ * Function to count characters in giving text.
+ * @param text string
+ */
+export const zCountCharacters = (text: string): number => {
+	if (text?.trim()?.length > 0) {
+		return text?.length;
+	} else {
+		return 0;
+	}
+};
+
+/**
+ * Function to count characters without space in giving text.
+ * @param text string
+ */
+export const zCountCharactersWithoutSpace = (text: string): number => {
+	if (text?.trim()?.length > 0) {
+		return text?.replace(/\s/g, '')?.length;
+	} else {
+		return 0;
+	}
+};
+
+/**
+ * Function to count syllables in giving text.
+ * @param text string
+ */
+export const ZCountSyllables = (text: string): number => {
+	if (text?.trim()?.length > 0) {
+		// Convert the text to lowercase for consistency
+		text = text.toLowerCase();
+
+		// Define a regular expression to match vowels
+		const vowels = /[aeiouy]+/g;
+
+		// Use the regular expression to find all vowel sequences (syllables)
+		const syllables = text.match(vowels);
+
+		// Count the number of syllables
+		const syllableCount = syllables ? syllables.length : 0;
+
+		return syllableCount;
+	} else {
+		return 0;
+	}
+};
+
+/**
+ * Function to count sentences in giving text.
+ * @param text string
+ */
+export const ZCountSentences = (text: string): number => {
+	if (text?.trim()?.length > 0) {
+		// Use a regular expression to split the text into sentences based on common punctuation marks.
+		const sentences = text.match(/[^.!?]+[.!?]+/g);
+
+		// Check if there are sentences and return the count.
+		const sentenceCount = sentences ? sentences.length : 0;
+
+		return sentenceCount;
+	} else {
+		return 0;
+	}
+};
+
+// export const ZCountSentences = (text: string): number => {
+// 	if (text?.trim()?.length > 0) {
+// 		// Use a regular expression to split the text into sentences based on punctuation marks with space or lookahead assertion.
+// 		const sentences = text.match(/[^.!?]*[.!?]+/g);
+
+// 		// Check if there are sentences and return the count.
+// 		const sentenceCount = sentences ? sentences.length + 1 : 0; // Adding 1 to account for the last sentence.
+
+// 		return sentenceCount;
+// 	} else {
+// 		return 0;
+// 	}
+// };
+
+/**
+ * Function to count paragraphs in giving text.
+ * @param text string
+ */
+export const zCountParagraphs = (text: string): number => {
+	if (text?.trim()?.length > 0) {
+		// Split the text by single line breaks to count paragraphs.
+		const paragraphs = text.split('\n');
+
+		// Filter out empty paragraphs (due to leading/trailing line breaks) and count the rest.
+		const paragraphCount = paragraphs.filter(
+			(paragraph) => paragraph.trim() !== ''
+		).length;
+
+		return paragraphCount;
+	} else {
+		return 0;
+	}
+};

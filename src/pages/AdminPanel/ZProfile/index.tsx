@@ -17,7 +17,7 @@ import classNames from 'classnames';
  * Custom Imports go down
  * ? Like import of custom components is a custom import
  * */
-import ZaionsIonPage from '@/components/ZaionsIonPage';
+import ZIonPage from '@/components/ZIonPage';
 import AddEmailModal from '@/components/InPageComponents/ZaionsModals/EmailModal';
 import DeleteUserAccountModal from '@/components/InPageComponents/ZaionsModals/DeleteUserAccountModal';
 import {
@@ -158,7 +158,7 @@ const ZProfile: React.FC = () => {
 
 	return (
 		<>
-			<ZaionsIonPage
+			<ZIonPage
 				pageTitle='Dashboard'
 				id={CONSTANTS.MENU_IDS.DASHBOARD_SM_MENU_CONTENT_ID}
 				menu={PAGE_MENU.DASHBOARD_PAGE_MENU}
@@ -637,7 +637,7 @@ const ZProfile: React.FC = () => {
 						</ZIonContent>
 					</div>
 				</ZIonSplitPane>
-			</ZaionsIonPage>
+			</ZIonPage>
 		</>
 	);
 };

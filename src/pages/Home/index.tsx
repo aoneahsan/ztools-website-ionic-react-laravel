@@ -5,7 +5,7 @@ import React from 'react';
 
 // Custom Imports
 import InPageFooter from '@/components/InPageFooter';
-import ZaionsIonPage from '@/components/ZaionsIonPage';
+import ZIonPage from '@/components/ZIonPage';
 import ZaionsHPBanner from '@/components/ZaionsHomePage/HPBanner';
 import ZaionsHPConnectPlatform from '@/components/ZaionsHomePage/HPConnetPlateform';
 import ZaionsHPGlobal from '@/components/ZaionsHomePage/HPGlobal';
@@ -20,7 +20,7 @@ import './styles.css';
 
 const Home: React.FC = () => {
 	return (
-		<ZaionsIonPage pageTitle='Home Page'>
+		<ZIonPage pageTitle='Home Page'>
 			<ZIonContent fullscreen>
 				<ZaionsTopMenu />
 				<ZaionsHPBanner />
@@ -36,7 +36,7 @@ const Home: React.FC = () => {
 					btnText='Get Started'
 				/>
 			</ZIonContent>
-		</ZaionsIonPage>
+		</ZIonPage>
 	);
 };
 

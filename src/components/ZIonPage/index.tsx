@@ -19,7 +19,7 @@ import ZWorkspaceViewPageFilterMenu from '@/navigation/AdminPanel/WorkspaceViewP
 import { useParams } from 'react-router';
 
 // Types
-type ZaionsIonPageType = {
+type ZIonPageType = {
 	children: ReactNode | ReactNode[];
 	className?: string;
 	id?: string;
@@ -29,7 +29,7 @@ type ZaionsIonPageType = {
 };
 
 // Functional Component
-const ZaionsIonPage: React.FC<ZaionsIonPageType> = ({
+const ZIonPage: React.FC<ZIonPageType> = ({
 	menu,
 	id,
 	children,
@@ -66,4 +66,4 @@ const ZaionsIonPage: React.FC<ZaionsIonPageType> = ({
 	);
 };
 
-export default ZaionsIonPage;
+export default ZIonPage;

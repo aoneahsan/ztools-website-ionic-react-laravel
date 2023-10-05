@@ -16,7 +16,7 @@ import classNames from 'classnames';
  * Custom Imports go down
  * ? Like import of custom components is a custom import
  * */
-import ZaionsIonPage from '@/components/ZaionsIonPage';
+import ZIonPage from '@/components/ZIonPage';
 import {
 	ZIonButton,
 	ZIonButtons,
@@ -126,7 +126,7 @@ const ZWorkspaceListPage: React.FC = () => {
 	// }, [getWorkspaceData]);
 
 	return (
-		<ZaionsIonPage pageTitle='Zaions workspaces list page'>
+		<ZIonPage pageTitle='Zaions workspaces list page'>
 			<ZIonContent>
 				<ZCan havePermission={permissionsEnum.viewAny_workspace}>
 					{/* Main grid */}
@@ -302,7 +302,7 @@ const ZWorkspaceListPage: React.FC = () => {
 					</ZIonGrid>
 				</ZCan>
 			</ZIonContent>
-		</ZaionsIonPage>
+		</ZIonPage>
 	);
 };
 

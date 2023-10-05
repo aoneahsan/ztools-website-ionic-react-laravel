@@ -29,6 +29,7 @@ import ZWorkspaceForm from './pages/AdminPanel/Workspaces/Form';
 import ViewSingleWorkspace from './pages/AdminPanel/Workspaces/ViewSingle';
 import ZAppStartupPage from './pages/AdminPanel/StartUpPage';
 import ZPercentageCalculator from './pages/PercentageCalculator';
+import ZWordCounter from './pages/WordCounter';
 
 // Functional Component
 const AppRoutes: React.FC = () => {
@@ -37,11 +38,14 @@ const AppRoutes: React.FC = () => {
 			<IonRouterOutlet>
 				{/* Generic Routes */}
 				{/* <Route exact path={ZaionsRoutes.HomeRoute} component={Home} /> */}
+
 				<Route
 					exact
 					path={ZaionsRoutes.HomeRoute}
 					component={ZPercentageCalculator}
 				/>
+
+				<Route exact path={ZaionsRoutes.wordCounter} component={ZWordCounter} />
 
 				<Route
 					path={ZaionsRoutes.Testing.IonComponents.Main}

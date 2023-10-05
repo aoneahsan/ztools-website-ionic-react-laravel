@@ -22,7 +22,7 @@ import {
 // Global Constants
 import { validateFields, zConsoleLog } from '@/utils/helpers';
 import { VALIDATION_RULE } from '@/utils/enums';
-import ZaionsIonPage from '@/components/ZaionsIonPage';
+import ZIonPage from '@/components/ZIonPage';
 import { ProductLogo } from '@/assets/images';
 import { ZIonButton } from '@/components/ZIonComponents';
 import ZIonInputField from '@/components/CustomComponents/FormFields/ZIonInputField';
@@ -31,7 +31,7 @@ import ZIonInputField from '@/components/CustomComponents/FormFields/ZIonInputFi
 
 const ZaionsPasswordResetConfirm: React.FC = () => {
 	return (
-		<ZaionsIonPage>
+		<ZIonPage>
 			<ZIonContent color='light'>
 				<ZIonGrid className=''>
 					<ZIonRow className='ion-justify-content-center ion-align-items-top '>
@@ -138,7 +138,7 @@ const ZaionsPasswordResetConfirm: React.FC = () => {
 					</ZIonRow>
 				</ZIonGrid>
 			</ZIonContent>
-		</ZaionsIonPage>
+		</ZIonPage>
 	);
 };
 

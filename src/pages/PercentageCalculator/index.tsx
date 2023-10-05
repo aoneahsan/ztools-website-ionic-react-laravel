@@ -13,7 +13,7 @@ import React from 'react';
  * Custom Imports go down
  * ? Like import of custom components is a custom import
  * */
-import ZaionsIonPage from '@/components/ZaionsIonPage';
+import ZIonPage from '@/components/ZIonPage';
 import {
 	ZIonAccordion,
 	ZIonAccordionGroup,
@@ -78,7 +78,7 @@ import { ZCalculateType } from '@/utils/enums';
 
 const ZPercentageCalculator: React.FC = () => {
 	return (
-		<ZaionsIonPage>
+		<ZIonPage>
 			{/* Header  */}
 			<ZIonHeader className='px-2'>
 				<div className='flex w-full py-2 ion-align-items-center ion-text-center'>
@@ -477,7 +477,7 @@ const ZPercentageCalculator: React.FC = () => {
 					</ZIonRow>
 				</ZIonGrid>
 			</ZIonContent>
-		</ZaionsIonPage>
+		</ZIonPage>
 	);
 };
 
