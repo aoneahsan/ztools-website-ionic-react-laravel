@@ -13,8 +13,6 @@ import { addOutline, closeOutline } from 'ionicons/icons';
 import { FieldArray, Formik } from 'formik';
 import routeQueryString from 'qs';
 import classNames from 'classnames';
-import isEmail from 'validator/lib/isEmail';
-
 /**
  * Custom Imports go down
  * ? Like import of custom components is a custom import
@@ -45,7 +43,7 @@ import { useZNavigate } from '@/ZaionsHooks/zrouter-hooks';
  * Global Constants Imports go down
  * ? Like import of Constant is a global constants import
  * */
-import { createRedirectRoute } from '@/utils/helpers';
+import { createRedirectRoute, isValidEmail } from '@/utils/helpers';
 import ZaionsRoutes from '@/utils/constants/RoutesConstants';
 import CONSTANTS from '@/utils/constants';
 
@@ -123,7 +121,7 @@ const ZWorkspaceFormInviteClientsTab: React.FC = () => {
 		>
 			{({ values, handleBlur, handleChange, setFieldValue }) => {
 				const shouldShowNextButton = values.clients?.some(
-					(client) => client.email?.trim().length && isEmail(client.email)
+					(client) => client.email?.trim().length && isValidEmail(client.email)
 				);
 				return (
 					<>
@@ -197,12 +195,12 @@ const ZWorkspaceFormInviteClientsTab: React.FC = () => {
 														</div>
 
 														{/* Role & permission buttons */}
-														<div className='gap-2 zaions_max__content ms-2 flex'>
+														<div className='flex gap-2 zaions_max__content ms-2'>
 															{/* Role popover button */}
 															<ZIonButton
 																id={`role-popover-index-${index}`}
 																fill='outline'
-																className='m-0 flex h-full text-transform-initial'
+																className='flex h-full m-0 text-transform-initial'
 															>
 																{values.clients && values.clients[index].role}
 															</ZIonButton>
@@ -211,7 +209,7 @@ const ZWorkspaceFormInviteClientsTab: React.FC = () => {
 															<ZIonButton
 																fill='outline'
 																id={`permission-popover-index-${index}`}
-																className='m-0 flex h-full text-transform-initial'
+																className='flex h-full m-0 text-transform-initial'
 															>
 																{values.clients &&
 																	values.clients[index].permission}
@@ -422,7 +420,7 @@ const ZWorkspaceFormInviteClientsTab: React.FC = () => {
 															CONSTANTS.RouteParams.workspace
 																.editWorkspaceIdParam,
 														],
-														values: [editWorkspaceId],
+														values: [editWorkspaceId!],
 														routeSearchParams: {
 															tab: workspaceFormTabEnum.connectPages,
 														},
@@ -453,7 +451,7 @@ const ZWorkspaceFormInviteClientsTab: React.FC = () => {
 																CONSTANTS.RouteParams.workspace
 																	.editWorkspaceIdParam,
 															],
-															values: [editWorkspaceId],
+															values: [editWorkspaceId!],
 															routeSearchParams: {
 																tab: workspaceFormTabEnum.connectPages,
 															},

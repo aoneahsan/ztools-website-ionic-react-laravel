@@ -1,11 +1,10 @@
-import classNames from 'classnames';
-import React from 'react';
-import ReactDropzone from 'react-dropzone';
-import { API_URL_ENUM } from '@/utils/enums';
-import { zConsoleLog } from '@/utils/helpers';
-import { useZRQCreateRequest } from '@/ZaionsHooks/zreactquery-hooks';
+import classNames from "classnames";
+import React from "react";
+import { API_URL_ENUM } from "@/utils/enums";
+import { zConsoleLog } from "@/utils/helpers";
+import { useZRQCreateRequest } from "@/ZaionsHooks/zreactquery-hooks";
 
-import CLASSES from './styles.module.css';
+import CLASSES from "./styles.module.css";
 
 const TestingReactDropzone: React.FC = () => {
   const { mutateAsync: uploadSingleFile } = useZRQCreateRequest({
@@ -22,11 +21,11 @@ const TestingReactDropzone: React.FC = () => {
   const uploadFileToBackend = async (file: File) => {
     console.dir({ file });
     const formData = new FormData();
-    formData.append('file', file);
+    formData.append("file", file);
     console.dir({ formData });
     const result = await uploadSingleFile(formData);
-    zConsoleLog({ message: 'file uploaded', data: { result } });
-    alert('single file upload done');
+    zConsoleLog({ message: "file uploaded", data: { result } });
+    alert("single file upload done");
   };
 
   const uploadFilesToBackend = async (files: File[]) => {
@@ -34,12 +33,12 @@ const TestingReactDropzone: React.FC = () => {
     for (let i = 0; i < files.length; i++) {
       const file = files[i];
       console.dir({ file });
-      formData.append('files[]', file);
+      formData.append("files[]", file);
     }
     console.dir({ formData });
     const result = await uploadFiles(formData);
-    zConsoleLog({ message: 'files uploaded', data: { result } });
-    alert('files upload done');
+    zConsoleLog({ message: "files uploaded", data: { result } });
+    alert("files upload done");
   };
 
   return (
@@ -47,7 +46,7 @@ const TestingReactDropzone: React.FC = () => {
       TestingReactDropzone
       <h1>Drag & Drop files below</h1>
       <br />
-      <ReactDropzone
+      {/* <ReactDropzone
         multiple={false}
         // accept={{ '*': ['.png', '.gif', '.jpeg', '.jpg'] }} // don't pass this if you want to select any file
         autoFocus
@@ -140,10 +139,10 @@ const TestingReactDropzone: React.FC = () => {
             </>
           );
         }}
-      </ReactDropzone>
+      </ReactDropzone> */}
       <br />
       <br />
-      <ReactDropzone
+      {/* <ReactDropzone
         multiple={true}
         // accept={{ '*': ['.png', '.gif', '.jpeg', '.jpg'] }} // don't pass this if you want to select any file
         autoFocus
@@ -208,10 +207,10 @@ const TestingReactDropzone: React.FC = () => {
             </>
           );
         }}
-      </ReactDropzone>
+      </ReactDropzone> */}
       <hr />
       <input
-        type={'file'}
+        type={"file"}
         onChange={(event) => {
           const file = event.target.files && event.target.files[0];
 

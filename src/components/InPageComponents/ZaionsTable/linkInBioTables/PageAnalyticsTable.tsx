@@ -2,22 +2,14 @@
  * Core Imports go down
  * ? Like Import of React is a Core Import
  * */
-import React from 'react';
+import React from "react";
 
 /**
  * Packages Imports go down
  * ? Like import of ionic components is a packages import
  * */
-import { ZIonCol, ZIonRow } from '@/components/ZIonComponents';
-import {
-  ZTable,
-  ZTableHeadCol,
-  ZTableRow,
-  ZTableRowCol,
-  ZTableTBody,
-  ZTableTHead,
-} from '@/components/InPageComponents/ZaionsTable/table-styled-components.sc';
-import { LinkInBioPageAnalyticsDataInterface } from '@/types/InPageComponentTypes/ZaionsTables.type';
+import { ZIonCol, ZIonRow } from "@/components/ZIonComponents";
+import { LinkInBioPageAnalyticsDataInterface } from "@/types/InPageComponentTypes/ZaionsTables.type";
 
 /**
  * Custom Imports go down
@@ -70,7 +62,7 @@ const LinkInBioPageAnalyticsTable: React.FC<
   return (
     <ZIonRow>
       <ZIonCol>
-        <ZTable>
+        {/* <ZTable>
           <ZTableTHead>
             <ZTableRow>
               <ZTableHeadCol>{headColumnFirst}</ZTableHeadCol>
@@ -84,17 +76,17 @@ const LinkInBioPageAnalyticsTable: React.FC<
               tableData.map((el, i) => {
                 return (
                   <ZTableRow key={i}>
-                    <ZTableRowCol className='ps-3'>{el.value}</ZTableRowCol>
-                    <ZTableRowCol className='ps-3'>{el.visit}</ZTableRowCol>
-                    <ZTableRowCol className='ps-3'>{el.unique}</ZTableRowCol>
-                    <ZTableRowCol className='ps-3'>
+                    <ZTableRowCol className="ps-3">{el.value}</ZTableRowCol>
+                    <ZTableRowCol className="ps-3">{el.visit}</ZTableRowCol>
+                    <ZTableRowCol className="ps-3">{el.unique}</ZTableRowCol>
+                    <ZTableRowCol className="ps-3">
                       {el.visitPercentage}
                     </ZTableRowCol>
                   </ZTableRow>
                 );
               })}
           </ZTableTBody>
-        </ZTable>
+        </ZTable> */}
       </ZIonCol>
     </ZIonRow>
   );
