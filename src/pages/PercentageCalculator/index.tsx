@@ -22,12 +22,9 @@ import {
   ZIonCol,
   ZIonContent,
   ZIonGrid,
-  ZIonHeader,
-  ZIonImg,
   ZIonInput,
   ZIonItem,
   ZIonLabel,
-  ZIonRouterLink,
   ZIonRow,
   ZIonText,
   ZIonTitle,
@@ -45,7 +42,6 @@ import { useZMediaQueryScale } from "@/ZaionsHooks/ZGenericHooks";
  * */
 import { zPercentageCalculateHandler } from "@/utils/helpers";
 import { ZCalculateType } from "@/utils/enums";
-import ZaionsRoutes from "@/utils/constants/RoutesConstants";
 
 /**
  * Type Imports go down
@@ -66,7 +62,7 @@ import ZaionsRoutes from "@/utils/constants/RoutesConstants";
  * Images Imports go down
  * ? Import of images like png,jpg,jpeg,gif,svg etc. is a Images Imports import
  * */
-import { ProductLogo } from "@/assets/images";
+import Header from "@/components/Header";
 
 /**
  * Component props type go down
@@ -80,21 +76,11 @@ import { ProductLogo } from "@/assets/images";
  * */
 
 const ZPercentageCalculator: React.FC = () => {
-  const { isSmScale, isLgScale } = useZMediaQueryScale();
+  const { isLgScale } = useZMediaQueryScale();
   return (
     <ZIonPage>
       {/* Header  */}
-      <ZIonHeader className="px-2">
-        <div className="flex w-full py-2 ion-align-items-center ion-text-center">
-          <ZIonRouterLink routerLink={ZaionsRoutes.HomeRoute}>
-            <ZIonImg src={ProductLogo} className="w-[2.4rem]" />
-          </ZIonRouterLink>
-
-          <ZIonTitle className="text-xl font-semibold tracking-widest">
-            Percentage Calculator
-          </ZIonTitle>
-        </div>
-      </ZIonHeader>
+      <Header title="Percentage Calculator" />
 
       {/* Content */}
       <ZIonContent color="light">

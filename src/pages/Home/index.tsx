@@ -34,6 +34,7 @@ import { useZNavigate } from "@/ZaionsHooks/zrouter-hooks";
 
 // Styles
 import "./styles.css";
+import Header from "@/components/Header";
 
 const Home: React.FC = () => {
   const { zNavigatePushRoute } = useZNavigate();
@@ -41,16 +42,8 @@ const Home: React.FC = () => {
   return (
     <ZIonPage pageTitle="Home Page">
       {/* Header  */}
-      <ZIonHeader className="px-2">
-        <div className="flex w-full py-2 ion-align-items-center ion-text-center">
-          <ZIonImg src={ProductLogo} className="w-[2.4rem]" />
+      <Header title={PRODUCT_NAME} />
 
-          <ZIonTitle className="text-2xl font-semibold tracking-widest">
-            {PRODUCT_NAME}
-          </ZIonTitle>
-        </div>
-      </ZIonHeader>
-      {/* Whether you're a student, professional, or simply looking to simplify life's complexities, Z Tool offers a suite of tools designed to make your tasks easier. */}
       <ZIonContent fullscreen>
         <ZIonGrid className="lg:w-[80%] md:w-[95%] sm:w-[98%] xs:w-[100%] xl:w-[60%] mx-auto my-2 pt-5">
           <ZIonRow>

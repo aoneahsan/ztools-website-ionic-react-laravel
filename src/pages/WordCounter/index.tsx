@@ -20,9 +20,6 @@ import {
   ZIonCol,
   ZIonContent,
   ZIonGrid,
-  ZIonHeader,
-  ZIonImg,
-  ZIonRouterLink,
   ZIonRow,
   ZIonText,
   ZIonTextarea,
@@ -47,7 +44,6 @@ import {
   ZCountSyllables,
   zCountWords,
 } from "@/utils/helpers";
-import ZaionsRoutes from "@/utils/constants/RoutesConstants";
 
 /**
  * Type Imports go down
@@ -68,7 +64,7 @@ import ZaionsRoutes from "@/utils/constants/RoutesConstants";
  * Images Imports go down
  * ? Import of images like png,jpg,jpeg,gif,svg etc. is a Images Imports import
  * */
-import { ProductLogo } from "@/assets/images";
+import Header from "@/components/Header";
 
 /**
  * Component props type go down
@@ -86,17 +82,7 @@ const ZWordCounter: React.FC = () => {
   return (
     <ZIonPage>
       {/* Header  */}
-      <ZIonHeader className="px-2">
-        <div className="flex w-full py-2 ion-align-items-center ion-text-center">
-          <ZIonRouterLink routerLink={ZaionsRoutes.HomeRoute}>
-            <ZIonImg src={ProductLogo} className="w-[2.4rem]" />
-          </ZIonRouterLink>
-
-          <ZIonTitle className="text-xl font-semibold tracking-widest">
-            Word counter
-          </ZIonTitle>
-        </div>
-      </ZIonHeader>
+      <Header title="Word Counter" />
 
       {/* Content */}
       <ZIonContent color="light">
