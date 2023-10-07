@@ -1,8 +1,8 @@
 // Core Imports
-import React from 'react';
+import React from "react";
 
 // Packages Imports
-import AceEditor from 'react-ace';
+// import AceEditor from 'react-ace';
 
 // Custom Imports
 
@@ -24,7 +24,8 @@ type ZEditorType = {
 };
 
 const ZEditor: React.FC<ZEditorType> = (props) => {
-  return <AceEditor {...props} />;
+  // return <AceEditor {...props} />;
+  return <></>;
 };
 
 export default ZEditor;

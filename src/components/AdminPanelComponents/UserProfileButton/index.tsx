@@ -2,14 +2,14 @@
  * Core Imports go down
  * ? Like Import of React is a Core Import
  * */
-import React from 'react';
+import React from "react";
 
 /**
  * Packages Imports go down
  * ? Like import of ionic components is a packages import
  * */
-import ZWorkspaceProfilePopover from '@/components/InPageComponents/ZaionsPopovers/Workspace/ProfilePopover';
-import ZUserAvatarButton from '@/components/WorkspacesComponents/UserButton';
+import ZWorkspaceProfilePopover from "@/components/InPageComponents/ZaionsPopovers/Workspace/ProfilePopover";
+import ZUserAvatarButton from "@/components/WorkspacesComponents/UserButton";
 
 /**
  * Custom Imports go down
@@ -20,7 +20,7 @@ import ZUserAvatarButton from '@/components/WorkspacesComponents/UserButton';
  * Custom Hooks Imports go down
  * ? Like import of custom Hook is a custom import
  * */
-import { useZIonPopover } from '@/ZaionsHooks/zionic-hooks';
+import { useZIonPopover } from "@/ZaionsHooks/zionic-hooks";
 
 /**
  * Global Constants Imports go down
@@ -59,22 +59,22 @@ import { useZIonPopover } from '@/ZaionsHooks/zionic-hooks';
  * */
 
 const ZUserProfileButton: React.FC = () => {
-	const { presentZIonPopover: presentWorkspaceProfilePopover } = useZIonPopover(
-		ZWorkspaceProfilePopover
-	); // popover hook to show ZWorkspaceProfilePopover
+  const { presentZIonPopover: presentWorkspaceProfilePopover } = useZIonPopover(
+    ZWorkspaceProfilePopover
+  ); // popover hook to show ZWorkspaceProfilePopover
 
-	return (
-		<ZUserAvatarButton
-			style={{ height: '40px', width: '40px' }}
-			onClick={(event: unknown) => {
-				presentWorkspaceProfilePopover({
-					_event: event as Event,
-					_cssClass: 'zaions_workspaces_profile_popover_size',
-					_dismissOnSelect: false,
-				});
-			}}
-		/>
-	);
+  return (
+    <ZUserAvatarButton
+      style={{ height: "40px", width: "40px" }}
+      onClick={(event: unknown) => {
+        presentWorkspaceProfilePopover({
+          _event: event as Event,
+          _cssClass: "zaions_workspaces_profile_popover_size",
+          _dismissOnSelect: false,
+        });
+      }}
+    />
+  );
 };
 
 export default ZUserProfileButton;

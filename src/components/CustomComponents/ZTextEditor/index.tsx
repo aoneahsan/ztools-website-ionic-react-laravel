@@ -2,13 +2,12 @@
  * Core Imports go down
  * ? Like Import of React is a Core Import
  * */
-import React from 'react';
+import React from "react";
 
 /**
  * Packages Imports go down
  * ? Like import of ionic components is a packages import
  * */
-import ReactQuill from 'react-quill';
 
 /**
  * Custom Imports go down
@@ -24,7 +23,6 @@ import ReactQuill from 'react-quill';
  * Type Imports go down
  * ? Like import of type or type of some recoil state or any external type import is a Type import
  * */
-import { DeltaStatic, Sources } from 'quill/index';
 
 /**
  * Recoil State Imports go down
@@ -35,7 +33,7 @@ import { DeltaStatic, Sources } from 'quill/index';
  * Style files Imports go down
  * ? Import of style sheet is a style import
  * */
-import 'react-quill/dist/quill.snow.css';
+import "react-quill/dist/quill.snow.css";
 
 /**
  * Images Imports go down
@@ -46,36 +44,36 @@ import 'react-quill/dist/quill.snow.css';
  * Component props type go down
  * ? Like if you have a type for props it should be please Down
  * */
-interface ZTextEditorInterface {
-  value?: ReactQuill.Value;
-  defaultValue?: ReactQuill.Value;
-  bounds?: string | HTMLElement;
-  className?: string;
-  children?: React.ReactElement<
-    unknown,
-    string | React.JSXElementConstructor<unknown>
-  >;
-  formats?: string[];
-  style?: React.CSSProperties;
-  id?: string;
-  placeholder?: string;
-  onChange?: (
-    value: string,
-    delta: DeltaStatic,
-    source: Sources,
-    editor: ReactQuill.UnprivilegedEditor
-  ) => void;
-  onBlur?: (
-    previousSelection: ReactQuill.Range,
-    source: Sources,
-    editor: ReactQuill.UnprivilegedEditor
-  ) => void;
-  onChangeSelection?: (
-    selection: ReactQuill.Range,
-    source: Sources,
-    editor: ReactQuill.UnprivilegedEditor
-  ) => void;
-}
+// interface ZTextEditorInterface {
+//   value?: ReactQuill.Value;
+//   defaultValue?: ReactQuill.Value;
+//   bounds?: string | HTMLElement;
+//   className?: string;
+//   children?: React.ReactElement<
+//     unknown,
+//     string | React.JSXElementConstructor<unknown>
+//   >;
+//   formats?: string[];
+//   style?: React.CSSProperties;
+//   id?: string;
+//   placeholder?: string;
+//   onChange?: (
+//     value: string,
+//     delta: DeltaStatic,
+//     source: Sources,
+//     editor: ReactQuill.UnprivilegedEditor
+//   ) => void;
+//   onBlur?: (
+//     previousSelection: ReactQuill.Range,
+//     source: Sources,
+//     editor: ReactQuill.UnprivilegedEditor
+//   ) => void;
+//   onChangeSelection?: (
+//     selection: ReactQuill.Range,
+//     source: Sources,
+//     editor: ReactQuill.UnprivilegedEditor
+//   ) => void;
+// }
 
 /**
  * Functional Component
@@ -83,8 +81,9 @@ interface ZTextEditorInterface {
  * @type {*}
  * */
 
-const ZTextEditor: React.FC<ZTextEditorInterface> = (props) => {
-  return <ReactQuill theme='snow' {...props} style={{ ...props.style }} />;
+const ZTextEditor: React.FC = () => {
+  // return <ReactQuill theme='snow' {...props} style={{ ...props.style }} />;
+  return <></>;
 };
 
 export default ZTextEditor;

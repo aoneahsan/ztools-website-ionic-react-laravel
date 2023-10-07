@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from "react";
 
-import { Scrollbars } from 'react-custom-scrollbars-2';
+// import { Scrollbars } from "react-custom-scrollbars-2";
 
 type ZRScrollBarType = {
   children?: ReactNode;
@@ -11,7 +11,8 @@ type ZRScrollBarType = {
 };
 
 const ZRScrollbars: React.FC<ZRScrollBarType> = (props) => {
-  return <Scrollbars {...props}>{props.children}</Scrollbars>;
+  // return <Scrollbars {...props}>{props.children}</Scrollbars>;
+  return <></>;
 };
 
 export default ZRScrollbars;
