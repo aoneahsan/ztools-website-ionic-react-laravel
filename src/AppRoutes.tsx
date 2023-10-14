@@ -29,6 +29,8 @@ import ViewSingleWorkspace from "./pages/AdminPanel/Workspaces/ViewSingle";
 import ZAppStartupPage from "./pages/AdminPanel/StartUpPage";
 import ZPercentageCalculator from "./pages/PercentageCalculator";
 import ZWordCounter from "./pages/WordCounter";
+import ZTestingCssSpecificity from "./Testing/CssSpecificity";
+import ZCssSpecificityCalculator from "./pages/CssSpecificityCaculator";
 
 // Functional Component
 const AppRoutes: React.FC = () => {
@@ -45,6 +47,12 @@ const AppRoutes: React.FC = () => {
           exact
           path={ZaionsRoutes.percentageCalculator}
           component={ZPercentageCalculator}
+        />
+
+        <Route
+          exact
+          path={ZaionsRoutes.cssSpecificityCalculator}
+          component={ZCssSpecificityCalculator}
         />
 
         <Route
@@ -118,6 +126,11 @@ const AppRoutes: React.FC = () => {
         <Route
           path={ZaionsRoutes.Testing.TestingTabs.Main}
           component={TestingTabs}
+        />
+
+        <Route
+          path={ZaionsRoutes.Testing.CssSpecificity.Main}
+          component={ZTestingCssSpecificity}
         />
       </IonRouterOutlet>
     </IonReactRouter>

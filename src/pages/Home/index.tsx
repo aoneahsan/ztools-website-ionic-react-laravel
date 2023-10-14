@@ -116,7 +116,7 @@ const Home: React.FC = () => {
               </ZIonCard>
             </ZIonCol>
 
-            {/* Wordpress Password Generator */}
+            {/* Css Specificity Calculator */}
             <ZIonCol
               sizeXl="3.9"
               sizeLg="3.9"
@@ -124,15 +124,20 @@ const Home: React.FC = () => {
               sizeSm="12"
               sizeXs="12"
             >
-              <ZIonCard className="h-full cursor-pointer ion-no-margin">
+              <ZIonCard
+                className="h-full cursor-pointer ion-no-margin"
+                onClick={() => {
+                  zNavigatePushRoute(ZaionsRoutes.cssSpecificityCalculator);
+                }}
+              >
                 <ZIonCardContent className="flex flex-col h-full py-10 ion-justify-content-center ion-align-items-center ion-text-center">
                   <ZIonIcon
-                    icon={lockClosedOutline}
+                    icon={calculatorOutline}
                     className="w-9 h-9"
                     color="primary"
                   />
                   <ZIonCardTitle className="mt-2" color="dark">
-                    Wordpress Password Generator
+                    Css Specificity Calculator
                   </ZIonCardTitle>
                 </ZIonCardContent>
               </ZIonCard>

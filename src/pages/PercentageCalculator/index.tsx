@@ -78,7 +78,7 @@ import Header from "@/components/Header";
 const ZPercentageCalculator: React.FC = () => {
   const { isLgScale } = useZMediaQueryScale();
   return (
-    <ZIonPage>
+    <ZIonPage pageTitle="ZTool Percentage Calculator">
       {/* Header  */}
       <Header title="Percentage Calculator" />
 
