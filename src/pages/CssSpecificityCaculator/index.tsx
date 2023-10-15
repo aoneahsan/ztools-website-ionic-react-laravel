@@ -35,6 +35,7 @@ import ZIonPage from "@/components/ZIonPage";
 import { useZMediaQueryScale } from "@/ZaionsHooks/ZGenericHooks";
 import { FieldArray, Formik } from "formik";
 import {
+  addCircleOutline,
   addOutline,
   duplicateOutline,
   listOutline,
@@ -134,7 +135,7 @@ const ZCssSpecificityCalculator: React.FC = () => {
                                 "ion-text-end": isMdScale,
                               })}
                             >
-                              <ZIonButton
+                              {/* <ZIonButton
                                 className={classNames({
                                   "ion-no-margin": true,
                                   "me-2": isMdScale,
@@ -158,7 +159,7 @@ const ZCssSpecificityCalculator: React.FC = () => {
                               >
                                 <ZIonIcon icon={listOutline} className="me-1" />
                                 Sort by specificity
-                              </ZIonButton>
+                              </ZIonButton> */}
 
                               <ZIonButton
                                 className={classNames({
@@ -184,6 +185,34 @@ const ZCssSpecificityCalculator: React.FC = () => {
                             </ZIonCol>
                           </ZIonRow>
 
+                          {values?.items?.length === 0 && (
+                            <ZIonRow>
+                              <ZIonCol
+                                className="flex flex-col mt-3 rounded-lg shadow-md cursor-pointer ion-align-items-center ion-justify-content-center ion-padding zaions__bg_white"
+                                onClick={() => {
+                                  push({
+                                    id: getRandomKey(),
+                                    value: "",
+                                    result: {
+                                      A: "0",
+                                      B: "0",
+                                      C: "0",
+                                    },
+                                  });
+                                }}
+                              >
+                                <ZIonIcon
+                                  icon={addCircleOutline}
+                                  className="w-10 h-10"
+                                  color="primary"
+                                />
+                                <ZIonText className="block mt-2">
+                                  Add a new Item
+                                </ZIonText>
+                              </ZIonCol>
+                            </ZIonRow>
+                          )}
+
                           {values?.items?.map((el, _index) => {
                             return (
                               <ZIonRow key={_index}>
@@ -191,6 +220,7 @@ const ZCssSpecificityCalculator: React.FC = () => {
                                   className="flex flex-col gap-4 mt-2 rounded-lg shadow-md ion-padding zaions__bg_white md:ion-align-items-center md:gap-0 ion-justify-content-between"
                                   size="12"
                                 >
+                                  {/* Input */}
                                   <div className="w-full">
                                     <ZIonInput
                                       name={`items.${_index}.value`}
@@ -204,19 +234,20 @@ const ZCssSpecificityCalculator: React.FC = () => {
                                           handleChange(e);
 
                                           if (
-                                            e.target?.value &&
                                             !isNaN(
                                               parseFloat(
-                                                e.target?.value.toString()
+                                                e.target?.value!.toString()
                                               )
-                                            )
+                                            ) ||
+                                            e.target?.value!.toString()?.trim()
+                                              ?.length === 0
                                           ) {
                                             setFieldValue(
                                               `items.${_index}.result`,
                                               {
-                                                A: 0,
-                                                B: 0,
-                                                C: 0,
+                                                A: "0",
+                                                B: "0",
+                                                C: "0",
                                               },
                                               false
                                             );
@@ -235,9 +266,9 @@ const ZCssSpecificityCalculator: React.FC = () => {
                                               setFieldValue(
                                                 `items.${_index}.result`,
                                                 {
-                                                  A: 0,
-                                                  B: 0,
-                                                  C: 0,
+                                                  A: "0",
+                                                  B: "0",
+                                                  C: "0",
                                                 },
                                                 false
                                               );
@@ -258,6 +289,7 @@ const ZCssSpecificityCalculator: React.FC = () => {
                                           isMdScale,
                                       })}
                                     >
+                                      {/* ID's */}
                                       <div className="flex w-auto mt-3 me-3 ion-align-items-center">
                                         <div className="flex w-10 h-10 rounded-full zaions__primary_bg ion-align-items-center ion-justify-content-center">
                                           <ZIonText
@@ -281,6 +313,7 @@ const ZCssSpecificityCalculator: React.FC = () => {
                                         </ZIonText>
                                       </div>
 
+                                      {/* Classes, attributes and pseudo-classes */}
                                       <div className="flex w-auto mt-3 me-3 ion-align-items-center">
                                         <div className="flex w-10 h-10 rounded-full zaions__secondary_bg ion-align-items-center ion-justify-content-center">
                                           <ZIonText
@@ -304,6 +337,7 @@ const ZCssSpecificityCalculator: React.FC = () => {
                                         </ZIonText>
                                       </div>
 
+                                      {/* Elements and pseudo-elements */}
                                       <div className="flex w-auto mt-3 me-3 ion-align-items-center">
                                         <div className="flex w-10 h-10 rounded-full zaions__tertiary_bg ion-align-items-center ion-justify-content-center">
                                           <ZIonText
@@ -326,12 +360,22 @@ const ZCssSpecificityCalculator: React.FC = () => {
                                           Elements and pseudo-elements
                                         </ZIonText>
                                       </div>
+                                    </ZIonCol>
 
+                                    <ZIonCol
+                                      className={classNames({
+                                        "flex ion-align-items-end ion-justify-content-between":
+                                          isMdScale,
+                                        "mt-1": isXlScale,
+                                        "mt-2": !isXlScale,
+                                      })}
+                                    >
+                                      {/* Total Specificity Count */}
                                       <div className="flex w-auto mt-3 me-3 ion-align-items-center">
-                                        <div className="flex w-10 h-10 rounded-full zaions__tertiary_bg ion-align-items-center ion-justify-content-center">
+                                        <div className="flex w-[5.5rem] h-10 border-4 rounded-lg ion-align-items-center ion-justify-content-center">
                                           <ZIonText
                                             className="text-xl"
-                                            color="light"
+                                            color="dark"
                                           >
                                             {(
                                               (+values.items[_index]?.result
@@ -358,65 +402,59 @@ const ZCssSpecificityCalculator: React.FC = () => {
                                           Total Specificity Count
                                         </ZIonText>
                                       </div>
-                                    </ZIonCol>
 
-                                    <ZIonCol
-                                      className={classNames({
-                                        "flex ion-align-items-end ion-justify-content-end":
-                                          isMdScale,
-                                        "mt-1": isXlScale,
-                                        "mt-2": !isXlScale,
-                                      })}
-                                    >
-                                      <ZIonButton
-                                        color="danger"
-                                        className={classNames({
-                                          "ion-no-margin": true,
-                                          "me-2": isMdScale,
-                                          "mt-2": !isMdScale,
-                                        })}
-                                        expand={
-                                          !isMdScale ? "block" : undefined
-                                        }
-                                        onClick={() => {
-                                          setTimeout(() => {
-                                            remove(_index);
-                                          }, 300);
-                                        }}
-                                      >
-                                        <ZIonIcon
-                                          icon={trashBinOutline}
-                                          className="me-1"
-                                        />
-                                        <ZIonText className="mt-[2px]">
-                                          Delete
-                                        </ZIonText>
-                                      </ZIonButton>
+                                      <div className="">
+                                        <ZIonButton
+                                          color="danger"
+                                          className={classNames({
+                                            "ion-no-margin": true,
+                                            "me-2": isMdScale,
+                                            "mt-2": !isMdScale,
+                                          })}
+                                          expand={
+                                            !isMdScale ? "block" : undefined
+                                          }
+                                          onClick={() => {
+                                            setTimeout(() => {
+                                              remove(_index);
+                                            }, 300);
+                                          }}
+                                        >
+                                          <ZIonIcon
+                                            icon={trashBinOutline}
+                                            className="me-1"
+                                          />
+                                          <ZIonText className="mt-[2px]">
+                                            Delete
+                                          </ZIonText>
+                                        </ZIonButton>
 
-                                      <ZIonButton
-                                        className={classNames({
-                                          "ion-no-margin": true,
-                                          "mt-2": !isMdScale,
-                                        })}
-                                        expand={
-                                          !isMdScale ? "block" : undefined
-                                        }
-                                        onClick={() => {
-                                          push({
-                                            id: getRandomKey(),
-                                            value: values.items[_index].value,
-                                            result: values.items[_index].result,
-                                          });
-                                        }}
-                                      >
-                                        <ZIonIcon
-                                          icon={duplicateOutline}
-                                          className="me-1"
-                                        />
-                                        <ZIonText className="mt-[2px]">
-                                          Duplicate
-                                        </ZIonText>
-                                      </ZIonButton>
+                                        <ZIonButton
+                                          className={classNames({
+                                            "ion-no-margin": true,
+                                            "mt-2": !isMdScale,
+                                          })}
+                                          expand={
+                                            !isMdScale ? "block" : undefined
+                                          }
+                                          onClick={() => {
+                                            push({
+                                              id: getRandomKey(),
+                                              value: values.items[_index].value,
+                                              result:
+                                                values.items[_index].result,
+                                            });
+                                          }}
+                                        >
+                                          <ZIonIcon
+                                            icon={duplicateOutline}
+                                            className="me-1"
+                                          />
+                                          <ZIonText className="mt-[2px]">
+                                            Duplicate
+                                          </ZIonText>
+                                        </ZIonButton>
+                                      </div>
                                     </ZIonCol>
                                   </ZIonRow>
                                 </ZIonCol>
