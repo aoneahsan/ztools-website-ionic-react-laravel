@@ -5,6 +5,7 @@ import React from "react";
 import {
   calculatorOutline,
   lockClosedOutline,
+  logoCss3,
   textOutline,
 } from "ionicons/icons";
 import classNames from "classnames";
@@ -28,7 +29,7 @@ import {
 
 // Constants
 import ZaionsRoutes from "@/utils/constants/RoutesConstants";
-import { PRODUCT_NAME } from "@/utils/constants";
+import { PRODUCT_NAME, PRODUCT_TITLE } from "@/utils/constants";
 import { ProductLogo } from "@/assets/images";
 import { useZNavigate } from "@/ZaionsHooks/zrouter-hooks";
 
@@ -42,7 +43,7 @@ const Home: React.FC = () => {
   return (
     <ZIonPage pageTitle="Home Page">
       {/* Header  */}
-      <Header title={PRODUCT_NAME} />
+      <Header title={PRODUCT_TITLE} />
 
       <ZIonContent fullscreen>
         <ZIonGrid className="lg:w-[80%] md:w-[95%] sm:w-[98%] xs:w-[100%] xl:w-[60%] mx-auto my-2 pt-5">
@@ -132,7 +133,7 @@ const Home: React.FC = () => {
               >
                 <ZIonCardContent className="flex flex-col h-full py-10 ion-justify-content-center ion-align-items-center ion-text-center">
                   <ZIonIcon
-                    icon={calculatorOutline}
+                    icon={logoCss3}
                     className="w-9 h-9"
                     color="primary"
                   />

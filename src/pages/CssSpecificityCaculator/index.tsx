@@ -38,11 +38,13 @@ import {
   addCircleOutline,
   addOutline,
   duplicateOutline,
+  informationCircleOutline,
   listOutline,
   trashBinOutline,
 } from "ionicons/icons";
 import { getRandomKey } from "@/utils/helpers";
 import { reportCustomError } from "@/utils/customErrorType";
+import ZRTooltip from "@/components/CustomComponents/ZRTooltip";
 
 /**
  * Global Constants Imports go down
@@ -160,11 +162,75 @@ const ZCssSpecificityCalculator: React.FC = () => {
                                 <ZIonIcon icon={listOutline} className="me-1" />
                                 Sort by specificity
                               </ZIonButton> */}
+                              <ZIonButton
+                                color="tertiary"
+                                expand={!isMdScale ? "block" : undefined}
+                                id="css-specificity-calculator-warning"
+                                className={classNames({
+                                  "ion-no-margin ion-no-padding ion-padding-horizontal px-0":
+                                    true,
+                                  "mt-2": !isMdScale,
+                                })}
+                              >
+                                <ZIonIcon
+                                  color="light"
+                                  icon={informationCircleOutline}
+                                  className="w-7 h-7 me-1"
+                                />
+                                Info
+                              </ZIonButton>
+                              <ZRTooltip
+                                anchorSelect="#css-specificity-calculator-warning"
+                                className="z-50 border shadow-lg opacity-100 ion-text-start"
+                                variant="light"
+                              >
+                                <div
+                                  className={classNames({
+                                    "w-[40rem]": isMdScale,
+                                    "w-[20rem]": !isMdScale,
+                                    "w-[8rem]": !isSmScale && isXsScale,
+                                  })}
+                                >
+                                  <p className="pt-2 tracking-wider text-black first-letter:text-2xl text-md">
+                                    We want to inform you that “Combinator
+                                    Selectors” are currently not included in the
+                                    final “Weight Count.” This feature is on our
+                                    roadmap and will be integrated in an
+                                    upcoming update.
+                                  </p>
+                                  <p className="pt-2 tracking-wider text-black first-letter:text-2xl text-md">
+                                    Our development team is focused on
+                                    introducing new functionalities to enhance
+                                    your experience with ZTools. Therefore, we
+                                    kindly request your patience as we work
+                                    diligently to implement this and other
+                                    features.
+                                  </p>
+                                  <p className="pt-2 first-letter:text-2xl">
+                                    We value your patronage and hope you have
+                                    found our suite of tools beneficial. Suppose
+                                    you have any specific tool requests or
+                                    feature suggestions or encounter any issues.
+                                  </p>
+                                  <p className="py-2 tracking-wider text-black first-letter:text-2xl text-md">
+                                    we encourage you to utilize our feedback
+                                    system, accessible via the button at the
+                                    bottom-right corner of our platform.
+                                    Additionally, the feedback feature is the
+                                    ideal channel for such contributions if you
+                                    would like to express gratitude or share
+                                    your testimonials. Thank you once again for
+                                    your understanding and support. Wishing you
+                                    an excellent day ahead.
+                                  </p>
+                                </div>
+                              </ZRTooltip>
 
                               <ZIonButton
                                 className={classNames({
                                   "ion-no-margin": true,
                                   "mt-2": !isMdScale,
+                                  "ms-2": isMdScale,
                                 })}
                                 expand={!isMdScale ? "block" : undefined}
                                 onClick={() => {
@@ -215,7 +281,10 @@ const ZCssSpecificityCalculator: React.FC = () => {
 
                           {values?.items?.map((el, _index) => {
                             return (
-                              <ZIonRow key={_index}>
+                              <ZIonRow
+                                key={_index}
+                                className="mt-3 transition-all z-csc-item hover:shadow-lg"
+                              >
                                 <ZIonCol
                                   className="flex flex-col gap-4 mt-2 rounded-lg shadow-md ion-padding zaions__bg_white md:ion-align-items-center md:gap-0 ion-justify-content-between"
                                   size="12"
@@ -366,15 +435,15 @@ const ZCssSpecificityCalculator: React.FC = () => {
                                       className={classNames({
                                         "flex ion-align-items-end ion-justify-content-between":
                                           isMdScale,
-                                        "mt-1": isXlScale,
+                                        "mt-3": isXlScale,
                                         "mt-2": !isXlScale,
                                       })}
                                     >
                                       {/* Total Specificity Count */}
-                                      <div className="flex w-auto mt-3 me-3 ion-align-items-center">
-                                        <div className="flex w-[5.5rem] h-10 border-4 rounded-lg ion-align-items-center ion-justify-content-center">
+                                      <div className="flex w-auto mt-3 me-3 ion-align-items-center total-specificity-count-box zaions-transition">
+                                        <div className="flex w-[6rem] h-[3rem] border-4 z-bc-ion-primary rounded-lg ion-align-items-center ion-justify-content-center relative zaions-transition z-rainbow-btn">
                                           <ZIonText
-                                            className="text-xl"
+                                            className="relative z-20 font-sans text-3xl font-semibold "
                                             color="dark"
                                           >
                                             {(
@@ -393,7 +462,7 @@ const ZCssSpecificityCalculator: React.FC = () => {
                                         <ZIonText
                                           className={classNames({
                                             "ms-3": true,
-                                            "text-xl": isXlScale,
+                                            "text-2xl": isXlScale,
                                             "text-lg": !isXlScale && isLgScale,
                                             "text-md": !isLgScale && isMdScale,
                                             // "text-sm": !isMdScale && isSmScale,

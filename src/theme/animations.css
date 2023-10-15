@@ -10,6 +10,18 @@
   animation-iteration-count: infinite;
 }
 
+/* rotate-hue */
+@keyframes rotate-hue {
+  to {
+    filter: hue-rotate(1turn);
+    -webkit-filter: hue-rotate(1turn);
+  }
+}
+.pulse {
+  animation: rotate-hue linear 500ms infinite;
+  -webkit-animation: rotate-hue linear 500ms infinite;
+}
+
 /* Pulse */
 @-webkit-keyframes pulse {
   0% {

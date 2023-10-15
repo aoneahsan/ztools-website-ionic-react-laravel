@@ -863,6 +863,9 @@ ion-modal.zaions__modal_w100 {
 .zaions-border-color-secondary {
   border-color: var(--ion-color-secondary) !important;
 }
+.z-bc-ion-primary {
+  border-color: var(--ion-color-primary) !important;
+}
 .zaions-border-transparent {
   --border-width: 2px;
   --border-style: solid;
@@ -1041,13 +1044,63 @@ ion-modal.zaions__modal_w100 {
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08))
     drop-shadow(0 0 1px rgba(50, 79, 58, 0.15));
 }
-/* .zaions_comment_box::before {
-	background: inherit;
-	content: '';
-	height: 10px;
-	left: -5px;
-	position: absolute;
-	top: 16px;
-	transform: rotate(45deg);
-	width: 10px;
-} */
+.zaions_comment_box::before {
+  background: inherit;
+  content: "";
+  height: 10px;
+  left: -5px;
+  position: absolute;
+  top: 16px;
+  transform: rotate(45deg);
+  width: 10px;
+}
+
+.total-specificity-count-box {
+  transform: scale(0.9);
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -o-transform: scale(0.9);
+}
+.z-rainbow-btn::before {
+  content: "";
+  position: absolute;
+  inset: -0.4rem;
+  z-index: 1;
+  border-radius: inherit;
+  background-image: conic-gradient(#4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
+  animation: rotate-hue linear 500ms infinite;
+  transition: translate 0.25s ease-out;
+  -webkit-animation: rotate-hue linear 500ms infinite;
+  -webkit-border-radius: inherit;
+  -moz-border-radius: inherit;
+  -ms-border-radius: inherit;
+  -o-border-radius: inherit;
+  animation-play-state: paused;
+}
+.z-rainbow-btn::after {
+  content: "";
+  position: absolute;
+  border-radius: 0.3rem;
+  inset: 0rem;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: var(--ion-color-light);
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+}
+
+.z-csc-item:hover .total-specificity-count-box {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+
+.z-csc-item:hover .z-rainbow-btn::before {
+  animation-play-state: running;
+}

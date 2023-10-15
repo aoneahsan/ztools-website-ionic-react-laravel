@@ -84,6 +84,7 @@ export const API_URLS = {
 
 // Site
 export const PRODUCT_NAME = "ZTools";
+export const PRODUCT_TITLE = `${PRODUCT_NAME}: Your Digital Toolbox, Simplified`;
 export const PRODUCT_DOMAIN = "prettylinks.zaions.com";
 export const CurrentProductDetails = {
   Name: "",
