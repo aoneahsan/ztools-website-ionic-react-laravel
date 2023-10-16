@@ -3,6 +3,8 @@ type SVGFileRequireType = {
   default: string;
 };
 
+import ProductLogoPng2 from "./global-images/product-logo-2.png";
+
 // Home Page
 import vector from "./pages/home-page/vector.png";
 import GlobeImage from "./pages/home-page/global.png";
@@ -411,6 +413,7 @@ import bulkUploadEmptyState from "./pages/admin-panel/dashboard/bulk-upload-empt
 
 export {
   vector,
+  ProductLogoPng2,
   GlobeImage,
   HomePageHeroDesktopImage,
   linkMngt3,

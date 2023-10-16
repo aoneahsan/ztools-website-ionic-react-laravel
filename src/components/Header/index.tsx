@@ -30,7 +30,7 @@ import ZaionsRoutes from "@/utils/constants/RoutesConstants";
  * Images Imports go down
  * ? Import of images like png,jpg,jpeg,gif,svg etc. is a Images Imports import
  * */
-import { ProductFavicon } from "@/assets/images";
+import { ProductFavicon, ProductLogoPng2 } from "@/assets/images";
 
 /**
  * Component props type Imports go down
@@ -47,7 +47,7 @@ const Header: React.FC<{ title?: String }> = ({ title }) => {
     <ZIonHeader className="px-2">
       <div className="flex w-full py-2 ion-align-items-center ion-text-center">
         <ZIonRouterLink routerLink={ZaionsRoutes.HomeRoute}>
-          <ZIonImg src={ProductFavicon} className="w-[3.5rem] ms-1" />
+          <ZIonImg src={ProductLogoPng2} className="w-[10.5rem] ms-1" />
         </ZIonRouterLink>
 
         <ZIonTitle className="text-xl font-semibold tracking-widest">
