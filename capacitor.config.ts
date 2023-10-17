@@ -1,10 +1,10 @@
-import { CapacitorConfig } from '@capacitor/cli';
+import { CapacitorConfig } from '@capacitor/cli'
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'zlink-ionic7-react-project',
-  webDir: 'dist',
-  bundledWebRuntime: false
-};
+	appId: 'com.zaions.ztools',
+	appName: 'ztools',
+	webDir: 'dist',
+	bundledWebRuntime: false,
+}
 
-export default config;
+export default config
