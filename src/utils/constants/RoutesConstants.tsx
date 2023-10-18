@@ -13,9 +13,13 @@ const ZaionsRoutes = {
   cssSpecificityCalculator: "/css-specificity-calculator",
   wordCounter: "/word-counter",
 
+  privacyPolicy: "/privacy-policy",
+  termAndConditions: "/term-and-conditions",
+  about: "/about-us",
+
   // Company Section
   Company: {
-    ZaionsAboutRoute: "/pages/about",
+    about: "/company/about",
     ZaionsContactRoute: "/pages/contact",
     ZaionsCareersRoute: "/pages/careers",
     ZaionsPartnersRoute: "/pages/partners",

@@ -33,7 +33,6 @@ import { zStringify } from "@/utils/helpers";
 // Images
 import {
   uploadModalCamera,
-  uploadModalFolder,
   uploadModalLink,
 } from "@/assets/images";
 

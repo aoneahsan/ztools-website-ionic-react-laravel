@@ -19,7 +19,6 @@ import {
 	ZIonImg,
 	ZIonText,
 } from '@/components/ZIonComponents';
-import { WorkspaceSettingsTimetablePlaceholder } from '@/assets/images';
 
 /**
  * Custom Hooks Imports go down
@@ -72,7 +71,7 @@ const ZWorkspaceSettingPlaceholderComp: React.FC<
 	ZWorkspaceSettingPlaceholderComp
 > = ({ buttonOnClick, buttonText, image, title }) => {
 	return (
-		<ZIonCol className='pt-4 mt-4 flex ion-align-items-center ion-justify-content-center flex-col ion-text-center'>
+		<ZIonCol className='flex flex-col pt-4 mt-4 ion-align-items-center ion-justify-content-center ion-text-center'>
 			<ZIonImg src={image} />
 
 			<ZIonText className='mt-3 text-3xl ion-text-center'>{title}</ZIonText>

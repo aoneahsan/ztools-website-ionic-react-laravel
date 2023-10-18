@@ -2,7 +2,7 @@
  * Core Imports go down
  * ? Like Import of React is a Core Import
  * */
-import React from 'react';
+import React from "react";
 
 /**
  * Packages Imports go down
@@ -13,8 +13,8 @@ import React from 'react';
  * Custom Imports go down
  * ? Like import of custom components is a custom import
  * */
-import { WorkspaceSettingsTimetablePlaceholder } from '@/assets/images';
-import ZWorkspaceSettingPlaceholderComp from '@/components/InPageComponents/ZaionsModals/Workspace/SettingsModal/PlaceholderComp';
+import { WorkspaceSettingsTimetablePlaceholder } from "@/assets/images";
+import ZWorkspaceSettingPlaceholderComp from "@/components/InPageComponents/ZaionsModals/Workspace/SettingsModal/PlaceholderComp";
 
 /**
  * Custom Hooks Imports go down
@@ -58,19 +58,19 @@ import ZWorkspaceSettingPlaceholderComp from '@/components/InPageComponents/Zaio
  * */
 
 const ZTimetableTab: React.FC = () => {
-	return (
-		<>
-			<ZWorkspaceSettingPlaceholderComp
-				buttonText='Add a time'
-				image={WorkspaceSettingsTimetablePlaceholder}
-				title={
-					<span>
-						Add your preferred publishing times <br /> for faster scheduling
-					</span>
-				}
-			/>
-		</>
-	);
+  return (
+    <>
+      <ZWorkspaceSettingPlaceholderComp
+        buttonText="Add a time"
+        image={WorkspaceSettingsTimetablePlaceholder}
+        title={
+          <span>
+            Add your preferred publishing times <br /> for faster scheduling
+          </span>
+        }
+      />
+    </>
+  );
 };
 
 export default ZTimetableTab;
