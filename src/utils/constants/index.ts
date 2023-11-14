@@ -121,6 +121,31 @@ const MENU_IDS = {
     "admin_page_links_in_bio_folders_menu_id",
   ADMIN_PAGE_WORKSPACE_VIEW_FILTER_MENU_ID:
     "admin_page_workspace_view_filter_menu_id",
+
+  APP_SIDE_MENU_ID: "app_side_menu_id",
+};
+
+const PAGE_IDS = {
+  HOME_PAGE_ID: "home_page_id",
+  PERCENTAGE_CALCULATOR_PAGE_ID: "percentage_calculator_page_id",
+  WORD_COUNTER_PAGE_ID: "word_counter_page_id",
+  CSS_SPECIFICITY_CALCULATOR_PAGE_ID: "css_specificity_calculator_id",
+  PRIVACY_POLICY_PAGE_ID: "privacy_policy_page_id",
+  TERM_AND_CONDITIONS_PAGE_ID: "term_and_conditions_page_id",
+  ABOUT_PAGE_ID: "about_page_id",
+  ABOUT_COMPANY_PAGE_ID: "about_company_page_id",
+};
+
+const PRODUCT_DETAILS = {
+  URL: "https://ztools.zaions.com",
+};
+
+const COMPANY_DETAILS = {
+  NAME: "Zaions",
+  CONTACT_LINK: "https://zaions.com/contact",
+  ADDRESS_LINK: "https://zaions.com/address",
+  NUMBER: "+92-304-6619706",
+  EMAIL: "info@zaions.com",
 };
 
 // Other
@@ -476,6 +501,8 @@ const LINK_In_BIO = {
 
 const CONSTANTS = {
   PIXEL_ACCOUNTS,
+  PRODUCT_DETAILS,
+  COMPANY_DETAILS,
   ION_LOADER_DEFAULTS,
   ION_TOAST,
   NO_VALUE_FOUND: "-",
@@ -488,6 +515,7 @@ const CONSTANTS = {
   LINK_In_BIO,
   DateTime,
   MENU_IDS,
+  PAGE_IDS,
   ExternalURL,
   ZTooltipIds,
 };

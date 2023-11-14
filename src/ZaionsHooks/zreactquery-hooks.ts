@@ -92,7 +92,7 @@ export const useZRQGetRequest = <T>({
         });
       }
     },
-    onSuccess: (_data) => {
+    onSuccess: (_data: unknown) => {
       // onSucceed dismissing loader...
       void dismissZIonLoader();
       // zConsoleLog({
@@ -101,7 +101,7 @@ export const useZRQGetRequest = <T>({
       // 	data: _data,
       // });
     },
-    onError: async (_error) => {
+    onError: async (_error: unknown) => {
       // need to dismiss the loader first, then showing error just so, user will not get redirected to login without knowing that there was a authenticated error
       // OnError dismissing loader...
       void dismissZIonLoader();

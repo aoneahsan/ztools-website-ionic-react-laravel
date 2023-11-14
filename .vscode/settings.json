@@ -1,21 +1,23 @@
 {
-	"css.format.enable": true,
-	"editor.formatOnSave": true,
-	"files.autoSave": "onFocusChange",
-	"prettier.enable": true,
-	"cSpell.words": [
-		"chatbubble",
-		"Collabes",
-		"Datetime",
-		"embeded",
-		"middlewares",
-		"Planable",
-		"prettylinks",
-		"pricetag",
-		"pricetags",
-		"Searchbar",
-		"shortlink",
-		"Swiper",
-		"videocam"
-	]
+  "css.format.enable": true,
+  "editor.formatOnSave": true,
+  "files.autoSave": "onFocusChange",
+  "prettier.enable": true,
+  "cSpell.words": [
+    "chatbubble",
+    "Collabes",
+    "Datetime",
+    "embeded",
+    "endregion",
+    "middlewares",
+    "Planable",
+    "prettylinks",
+    "pricetag",
+    "pricetags",
+    "Searchbar",
+    "shortlink",
+    "Swiper",
+    "videocam"
+  ],
+  "svg.preview.background": "editor"
 }

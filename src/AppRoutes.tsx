@@ -31,6 +31,10 @@ import ZPercentageCalculator from "./pages/PercentageCalculator";
 import ZWordCounter from "./pages/WordCounter";
 import ZTestingCssSpecificity from "./Testing/CssSpecificity";
 import ZCssSpecificityCalculator from "./pages/CssSpecificityCaculator";
+import ZPrivacyPolicy from "./pages/PrivacyPolicy";
+import ZTermsAndConditions from "./pages/TermsAndConditions";
+import ZAboutProduct from "./pages/About/aboutProduct";
+import ZAboutCompany from "./pages/About/aboutCompany";
 
 // Functional Component
 const AppRoutes: React.FC = () => {
@@ -43,6 +47,7 @@ const AppRoutes: React.FC = () => {
         <Route exact path={ZaionsRoutes.HomeRoute} component={Home} />
 
         <Route exact path={ZaionsRoutes.wordCounter} component={ZWordCounter} />
+
         <Route
           exact
           path={ZaionsRoutes.percentageCalculator}
@@ -53,6 +58,26 @@ const AppRoutes: React.FC = () => {
           exact
           path={ZaionsRoutes.cssSpecificityCalculator}
           component={ZCssSpecificityCalculator}
+        />
+
+        <Route
+          exact
+          path={ZaionsRoutes.privacyPolicy}
+          component={ZPrivacyPolicy}
+        />
+
+        <Route
+          exact
+          path={ZaionsRoutes.termAndConditions}
+          component={ZTermsAndConditions}
+        />
+
+        <Route exact path={ZaionsRoutes.about} component={ZAboutProduct} />
+
+        <Route
+          exact
+          path={ZaionsRoutes.Company.about}
+          component={ZAboutCompany}
         />
 
         <Route
