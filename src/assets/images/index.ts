@@ -7,6 +7,7 @@ import ProductLogoPng2 from "./global-images/product-logo-2.png";
 import ProductLogoPng from "./global-images/product-logo.png";
 
 // SVG's
+import EmptyBox from "./svg/empty.svg";
 import ProductLogo from "./svg/product-logo.svg";
 import ProductLogo2 from "./svg/product-logo-2.svg";
 import ProductFavicon from "./svg/product-favicon.svg";
@@ -93,6 +94,7 @@ import addIcon from "./global-images/add-icon.png";
 import qrCodeImage from "./pages/admin-panel/dashboard/qr-code-images.png";
 
 export {
+  EmptyBox,
   ProductLogoPng2,
   ProductLogoPng,
   upload_send,

@@ -15,6 +15,7 @@ import {
   calculatorOutline,
   chevronForwardOutline,
   closeOutline,
+  documentTextOutline,
   logoCss3,
   textOutline,
 } from "ionicons/icons";
@@ -221,6 +222,28 @@ const ZAppSideMenu: React.FC<{
                 color={isCSSpecificityCalculatorPage ? "primary" : undefined}
               >
                 Css Specificity Calculator
+              </ZIonText>
+
+              <ZIonIcon slot="end" icon={chevronForwardOutline} />
+            </ZIonItem>
+
+            {/*  Lorem Ipsum Generator  */}
+            <ZIonItem
+              className="cursor-pointer ion-activatable"
+              color={isCSSpecificityCalculatorPage ? "light" : undefined}
+              routerLink={ZaionsRoutes.loremIpsumGenerator}
+            >
+              <ZIonIcon
+                slot="start"
+                icon={documentTextOutline}
+                className="me-2"
+                color="primary"
+              />
+              <ZIonText
+                className="mt-1 tracking-wider"
+                color={isCSSpecificityCalculatorPage ? "primary" : undefined}
+              >
+                Lorem Ipsum Generator
               </ZIonText>
 
               <ZIonIcon slot="end" icon={chevronForwardOutline} />

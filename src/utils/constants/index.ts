@@ -130,6 +130,7 @@ const PAGE_IDS = {
   PERCENTAGE_CALCULATOR_PAGE_ID: "percentage_calculator_page_id",
   WORD_COUNTER_PAGE_ID: "word_counter_page_id",
   CSS_SPECIFICITY_CALCULATOR_PAGE_ID: "css_specificity_calculator_id",
+  LOREM_IPSUM_GENERATOR_PAGE_ID: "lorem_ipsum_generator_id",
   PRIVACY_POLICY_PAGE_ID: "privacy_policy_page_id",
   TERM_AND_CONDITIONS_PAGE_ID: "term_and_conditions_page_id",
   ABOUT_PAGE_ID: "about_page_id",

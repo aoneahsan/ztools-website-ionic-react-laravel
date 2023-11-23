@@ -35,6 +35,7 @@ import ZPrivacyPolicy from "./pages/PrivacyPolicy";
 import ZTermsAndConditions from "./pages/TermsAndConditions";
 import ZAboutProduct from "./pages/About/aboutProduct";
 import ZAboutCompany from "./pages/About/aboutCompany";
+import ZLPGenerator from "./pages/LPGenerator";
 
 // Functional Component
 const AppRoutes: React.FC = () => {
@@ -58,6 +59,12 @@ const AppRoutes: React.FC = () => {
           exact
           path={ZaionsRoutes.cssSpecificityCalculator}
           component={ZCssSpecificityCalculator}
+        />
+
+        <Route
+          exact
+          path={ZaionsRoutes.loremIpsumGenerator}
+          component={ZLPGenerator}
         />
 
         <Route

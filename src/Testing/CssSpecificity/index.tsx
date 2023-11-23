@@ -8,9 +8,9 @@ import {
   ZIonGrid,
   ZIonInput,
   ZIonRow,
+  ZIonText,
 } from "@/components/ZIonComponents";
 import ZIonPage from "@/components/ZIonPage";
-import { zStringify } from "@/utils/helpers";
 import { Formik } from "formik";
 import React from "react";
 import { calculate } from "specificity";
@@ -92,8 +92,6 @@ const ZTestingCssSpecificity: React.FC = () => {
                           console.log({ c: calculate(String(target?.value)) });
                         }}
                       />
-
-                      <div className="">{zStringify(values.check)}</div>
                     </>
                   );
                 }}

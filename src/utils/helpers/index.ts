@@ -677,9 +677,8 @@ export const zAxiosApiRequest = async <T>({
         }`,
       },
     };
-    const __res = await axiosInstance.request<AxiosRequestResponseType>(
-      reqInput
-    );
+    const __res =
+      await axiosInstance.request<AxiosRequestResponseType>(reqInput);
     return __res.data as unknown as T;
   } else if (_isAuthenticatedRequest && !_authToken) {
     throwZCustomErrorUnAuthenticated();
