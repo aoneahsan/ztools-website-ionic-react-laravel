@@ -11,24 +11,25 @@ import ZLinks from '@/pages/AdminPanel/ZLinks';
 import ZProfile from '@/pages/AdminPanel/ZProfile';
 
 // Routes
-import Home from '@/pages/Home';
-import Login from '@/pages/Login';
-import ZaionsRoutes from './utils/constants/RoutesConstants';
-import SignUp from '@/pages/SignUp';
-import ZaionsPasswordResetConfirm from '@/pages/ResetPassword/PasswordResetConfirmForm';
-import PublicRoute from './components/PublicRoute';
-import PrivateRoute from './components/PrivateRoute';
-import ZWorkspaceListPage from './pages/AdminPanel/Workspaces';
-import ZWorkspaceForm from './pages/AdminPanel/Workspaces/Form';
-import ViewSingleWorkspace from './pages/AdminPanel/Workspaces/ViewSingle';
-import ZAppStartupPage from './pages/AdminPanel/StartUpPage';
-import ZPercentageCalculator from './pages/PercentageCalculator';
-import ZWordCounter from './pages/WordCounter';
-import ZCssSpecificityCalculator from './pages/CssSpecificityCaculator';
-import ZPrivacyPolicy from './pages/PrivacyPolicy';
-import ZTermsAndConditions from './pages/TermsAndConditions';
-import ZAboutProduct from './pages/About/aboutProduct';
-import ZAboutCompany from './pages/About/aboutCompany';
+import Home from "@/pages/Home";
+import Login from "@/pages/Login";
+import ZaionsRoutes from "./utils/constants/RoutesConstants";
+import SignUp from "@/pages/SignUp";
+import ZaionsPasswordResetConfirm from "@/pages/ResetPassword/PasswordResetConfirmForm";
+import PublicRoute from "./components/PublicRoute";
+import PrivateRoute from "./components/PrivateRoute";
+import ZWorkspaceListPage from "./pages/AdminPanel/Workspaces";
+import ZWorkspaceForm from "./pages/AdminPanel/Workspaces/Form";
+import ViewSingleWorkspace from "./pages/AdminPanel/Workspaces/ViewSingle";
+import ZAppStartupPage from "./pages/AdminPanel/StartUpPage";
+import ZPercentageCalculator from "./pages/PercentageCalculator";
+import ZWordCounter from "./pages/WordCounter";
+import ZCssSpecificityCalculator from "./pages/CssSpecificityCaculator";
+import ZPrivacyPolicy from "./pages/PrivacyPolicy";
+import ZTermsAndConditions from "./pages/TermsAndConditions";
+import ZAboutProduct from "./pages/About/aboutProduct";
+import ZAboutCompany from "./pages/About/aboutCompany";
+import ZLPGenerator from "./pages/LPGenerator";
 
 // Functional Component
 const AppRoutes: React.FC = () => {
@@ -60,6 +61,12 @@ const AppRoutes: React.FC = () => {
           exact
           path={ZaionsRoutes.cssSpecificityCalculator}
           component={ZCssSpecificityCalculator}
+        />
+
+        <Route
+          exact
+          path={ZaionsRoutes.loremIpsumGenerator}
+          component={ZLPGenerator}
         />
 
         <Route

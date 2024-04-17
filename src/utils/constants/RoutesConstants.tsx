@@ -12,6 +12,7 @@ const ZaionsRoutes = {
   percentageCalculator: "/percentage-calculator",
   cssSpecificityCalculator: "/css-specificity-calculator",
   wordCounter: "/word-counter",
+  loremIpsumGenerator: "/lorem-ipsum-generator",
 
   privacyPolicy: "/privacy-policy",
   termAndConditions: "/term-and-conditions",
