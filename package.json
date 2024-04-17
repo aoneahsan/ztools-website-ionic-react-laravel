@@ -33,6 +33,7 @@
     "preinstall": "node -e \"if (require('path').basename(process.env.npm_execpath) === 'npm-cli.js') throw new Error('Please use Yarn for installation: yarn install')\"",
     "sync:apps-config": "trapeze run apps-config.yaml",
     "cap:gen:assets-android": "capacitor-assets generate --android",
+    "cap:gen:assets-pwa": "capacitor-assets generate --pwa",
     "cap:add-android": "capacitor add android",
     "cap:update-android": "capacitor update android",
     "cap:copy-android": "capacitor copy android",
