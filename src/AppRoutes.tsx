@@ -1,40 +1,34 @@
 // Core Imports
-import React from "react";
+import React from 'react';
 
 // Packages Imports
-import { IonRouterOutlet } from "@ionic/react";
-import { IonReactRouter } from "@ionic/react-router";
-import { Route } from "react-router-dom";
+import { IonRouterOutlet } from '@ionic/react';
+import { IonReactRouter } from '@ionic/react-router';
+import { Route } from 'react-router-dom';
 
 // Commented Routes
-import ZaionsReactArea from "@/Testing/ReactArea";
-import TestingReactTable from "@/Testing/ReactTable";
-import ZLinks from "@/pages/AdminPanel/ZLinks";
-import ChartsExamples from "@/Testing/Charts";
-import ZProfile from "@/pages/AdminPanel/ZProfile";
-import TestingTabs from "@/Testing/TestingTabs";
+import ZLinks from '@/pages/AdminPanel/ZLinks';
+import ZProfile from '@/pages/AdminPanel/ZProfile';
 
 // Routes
-import Home from "@/pages/Home";
-import Login from "@/pages/Login";
-import ZaionsRoutes from "./utils/constants/RoutesConstants";
-import SignUp from "@/pages/SignUp";
-import ZaionsPasswordResetConfirm from "@/pages/ResetPassword/PasswordResetConfirmForm";
-import TestingIonComponents from "./Testing/TestingIonComponents";
-import PublicRoute from "./components/PublicRoute";
-import PrivateRoute from "./components/PrivateRoute";
-import ZWorkspaceListPage from "./pages/AdminPanel/Workspaces";
-import ZWorkspaceForm from "./pages/AdminPanel/Workspaces/Form";
-import ViewSingleWorkspace from "./pages/AdminPanel/Workspaces/ViewSingle";
-import ZAppStartupPage from "./pages/AdminPanel/StartUpPage";
-import ZPercentageCalculator from "./pages/PercentageCalculator";
-import ZWordCounter from "./pages/WordCounter";
-import ZTestingCssSpecificity from "./Testing/CssSpecificity";
-import ZCssSpecificityCalculator from "./pages/CssSpecificityCaculator";
-import ZPrivacyPolicy from "./pages/PrivacyPolicy";
-import ZTermsAndConditions from "./pages/TermsAndConditions";
-import ZAboutProduct from "./pages/About/aboutProduct";
-import ZAboutCompany from "./pages/About/aboutCompany";
+import Home from '@/pages/Home';
+import Login from '@/pages/Login';
+import ZaionsRoutes from './utils/constants/RoutesConstants';
+import SignUp from '@/pages/SignUp';
+import ZaionsPasswordResetConfirm from '@/pages/ResetPassword/PasswordResetConfirmForm';
+import PublicRoute from './components/PublicRoute';
+import PrivateRoute from './components/PrivateRoute';
+import ZWorkspaceListPage from './pages/AdminPanel/Workspaces';
+import ZWorkspaceForm from './pages/AdminPanel/Workspaces/Form';
+import ViewSingleWorkspace from './pages/AdminPanel/Workspaces/ViewSingle';
+import ZAppStartupPage from './pages/AdminPanel/StartUpPage';
+import ZPercentageCalculator from './pages/PercentageCalculator';
+import ZWordCounter from './pages/WordCounter';
+import ZCssSpecificityCalculator from './pages/CssSpecificityCaculator';
+import ZPrivacyPolicy from './pages/PrivacyPolicy';
+import ZTermsAndConditions from './pages/TermsAndConditions';
+import ZAboutProduct from './pages/About/aboutProduct';
+import ZAboutCompany from './pages/About/aboutCompany';
 
 // Functional Component
 const AppRoutes: React.FC = () => {
@@ -44,9 +38,17 @@ const AppRoutes: React.FC = () => {
         {/* Generic Routes */}
         {/* <Route exact path={ZaionsRoutes.HomeRoute} component={Home} /> */}
 
-        <Route exact path={ZaionsRoutes.HomeRoute} component={Home} />
+        <Route
+          exact
+          path={ZaionsRoutes.HomeRoute}
+          component={Home}
+        />
 
-        <Route exact path={ZaionsRoutes.wordCounter} component={ZWordCounter} />
+        <Route
+          exact
+          path={ZaionsRoutes.wordCounter}
+          component={ZWordCounter}
+        />
 
         <Route
           exact
@@ -72,7 +74,11 @@ const AppRoutes: React.FC = () => {
           component={ZTermsAndConditions}
         />
 
-        <Route exact path={ZaionsRoutes.about} component={ZAboutProduct} />
+        <Route
+          exact
+          path={ZaionsRoutes.about}
+          component={ZAboutProduct}
+        />
 
         <Route
           exact
@@ -80,15 +86,18 @@ const AppRoutes: React.FC = () => {
           component={ZAboutCompany}
         />
 
-        <Route
-          path={ZaionsRoutes.Testing.IonComponents.Main}
-          component={TestingIonComponents}
+        {/* Public Routes */}
+        <PublicRoute
+          exact
+          path={ZaionsRoutes.LoginRoute}
+          Component={Login}
         />
 
-        {/* Public Routes */}
-        <PublicRoute exact path={ZaionsRoutes.LoginRoute} Component={Login} />
-
-        <PublicRoute exact path={ZaionsRoutes.SignUpRoute} Component={SignUp} />
+        <PublicRoute
+          exact
+          path={ZaionsRoutes.SignUpRoute}
+          Component={SignUp}
+        />
 
         <PublicRoute
           exact
@@ -133,29 +142,6 @@ const AppRoutes: React.FC = () => {
         <PrivateRoute
           path={ZaionsRoutes.AdminPanel.ZaionsDashboard.ZProfile}
           Component={ZProfile}
-        />
-
-        <Route
-          path={ZaionsRoutes.Testing.ReactTable.Main}
-          component={TestingReactTable}
-        />
-
-        <Route
-          path={ZaionsRoutes.Testing.ReactArea.Main}
-          component={ZaionsReactArea}
-        />
-        <Route
-          path={ZaionsRoutes.Testing.ReactCharts.Main}
-          component={ChartsExamples}
-        />
-        <Route
-          path={ZaionsRoutes.Testing.TestingTabs.Main}
-          component={TestingTabs}
-        />
-
-        <Route
-          path={ZaionsRoutes.Testing.CssSpecificity.Main}
-          component={ZTestingCssSpecificity}
         />
       </IonRouterOutlet>
     </IonReactRouter>

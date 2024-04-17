@@ -2,22 +2,22 @@
  * Core Imports go down
  * ? Like Import of React is a Core Import
  * */
-import React from "react";
+import React from 'react';
 
 /**
  * Packages Imports go down
  * ? Like import of ionic components is a packages import
  * */
-import { menuController } from "@ionic/core/components";
-import { useRouteMatch } from "react-router";
-import classNames from "classnames";
+import { menuController } from '@ionic/core/components';
+import { useRouteMatch } from 'react-router';
+import classNames from 'classnames';
 import {
   calculatorOutline,
   chevronForwardOutline,
   closeOutline,
   logoCss3,
-  textOutline,
-} from "ionicons/icons";
+  textOutline
+} from 'ionicons/icons';
 
 /**
  * Custom Imports go down
@@ -34,21 +34,21 @@ import {
   ZIonList,
   ZIonMenu,
   ZIonRouterLink,
-  ZIonText,
-} from "@/components/ZIonComponents";
+  ZIonText
+} from '@/components/ZIonComponents';
 
 /**
  * Custom Hooks Imports go down
  * ? Like import of custom Hook is a custom import
  * */
-import { useZMediaQueryScale } from "@/ZaionsHooks/ZGenericHooks";
+import { useZMediaQueryScale } from '@/ZaionsHooks/ZGenericHooks';
 
 /**
  * Global Constants Imports go down
  * ? Like import of Constant is a global constants import
  * */
-import CONSTANTS from "@/utils/constants";
-import ZaionsRoutes from "@/utils/constants/RoutesConstants";
+import CONSTANTS from '@/utils/constants';
+import ZaionsRoutes from '@/utils/constants/RoutesConstants';
 
 /**
  * Type Imports go down
@@ -69,7 +69,7 @@ import ZaionsRoutes from "@/utils/constants/RoutesConstants";
  * Images Imports go down
  * ? Import of images like png,jpg,jpeg,gif,svg etc. is a Images Imports import
  * */
-import { ProductLogoPng2 } from "@/assets/images";
+import { ProductLogoPng2 } from '@/assets/images';
 
 /**
  * Component props type go down
@@ -92,7 +92,7 @@ const ZAppSideMenu: React.FC<{
     isXlScale,
     isLgScale,
     isMdScale,
-    isSmScale,
+    isSmScale
   } = useZMediaQueryScale();
   // #endregion
 
@@ -110,39 +110,43 @@ const ZAppSideMenu: React.FC<{
 
   return (
     <ZIonMenu
-      side="start"
+      side='start'
       contentId={pageId}
       menuId={CONSTANTS.MENU_IDS.APP_SIDE_MENU_ID}
       style={
         !isMdScale && isSmScale
           ? {}
           : {
-              "--width": isAboveXlScale
-                ? "25%"
+              '--width': isAboveXlScale
+                ? '25%'
                 : !isAboveXlScale && isXlScale && !isMdScale
-                ? "23rem"
+                ? '23rem'
                 : isMdScale && !isSmScale
-                ? "45%"
+                ? '45%'
                 : isSmScale
-                ? "339px"
-                : "",
+                ? '339px'
+                : ''
             }
-      }
-    >
+      }>
       <ZIonHeader>
-        <div className="flex py-2 ion-align-items-center ion-justify-content-between pe-1">
+        <div className='flex py-2 ion-align-items-center ion-justify-content-between pe-1'>
           <ZIonRouterLink routerLink={ZaionsRoutes.HomeRoute}>
-            <ZIonImg src={ProductLogoPng2} className="w-[10.5rem] ms-1" />
+            <ZIonImg
+              src={ProductLogoPng2}
+              className='w-[10.5rem] ms-1'
+            />
           </ZIonRouterLink>
 
           <ZIonButton
-            fill="clear"
-            className="overflow-hidden rounded-full ion-no-margin ion-no-padding w-9 h-7"
+            fill='clear'
+            className='overflow-hidden rounded-full ion-no-margin ion-no-padding w-9 h-7'
             onClick={async () => {
               await menuController.close(CONSTANTS.MENU_IDS.APP_SIDE_MENU_ID);
-            }}
-          >
-            <ZIonIcon icon={closeOutline} className="w-7 h-7" />
+            }}>
+            <ZIonIcon
+              icon={closeOutline}
+              className='w-7 h-7'
+            />
           </ZIonButton>
         </div>
       </ZIonHeader>
@@ -150,80 +154,81 @@ const ZAppSideMenu: React.FC<{
       <ZIonContent>
         <ZIonGrid
           className={classNames({
-            "py-3": true,
-            "px-0": isLgScale,
-          })}
-        >
+            'py-3': true,
+            'px-0': isLgScale
+          })}>
           <ZIonList
-            lines="none"
+            lines='none'
             className={classNames({
-              "px-1": isAboveLgScale,
-            })}
-          >
+              'px-1': isAboveLgScale
+            })}>
             {/* Percentage calculator */}
             <ZIonItem
-              className="cursor-pointer ion-activatable"
-              color={isPercentageCalculatorPage ? "light" : undefined}
-              routerLink={ZaionsRoutes.percentageCalculator}
-            >
+              className='cursor-pointer ion-activatable'
+              color={isPercentageCalculatorPage ? 'light' : undefined}
+              routerLink={ZaionsRoutes.percentageCalculator}>
               <ZIonIcon
-                slot="start"
+                slot='start'
                 icon={calculatorOutline}
-                className="me-1"
-                color="primary"
+                className='me-1'
+                color='primary'
               />
               <ZIonText
-                className="mt-1 tracking-wider"
-                color={isPercentageCalculatorPage ? "primary" : undefined}
-              >
+                className='mt-1 tracking-wider'
+                color={isPercentageCalculatorPage ? 'primary' : undefined}>
                 Percentage Calculator
               </ZIonText>
 
-              <ZIonIcon slot="end" icon={chevronForwardOutline} />
+              <ZIonIcon
+                slot='end'
+                icon={chevronForwardOutline}
+              />
             </ZIonItem>
 
             {/* Word counter */}
             <ZIonItem
-              className="cursor-pointer ion-activatable"
-              color={isWordCounterPage ? "light" : undefined}
-              routerLink={ZaionsRoutes.wordCounter}
-            >
+              className='cursor-pointer ion-activatable'
+              color={isWordCounterPage ? 'light' : undefined}
+              routerLink={ZaionsRoutes.wordCounter}>
               <ZIonIcon
-                slot="start"
+                slot='start'
                 icon={textOutline}
-                className="me-2"
-                color="primary"
+                className='me-2'
+                color='primary'
               />
               <ZIonText
-                className="mt-1 tracking-wider"
-                color={isWordCounterPage ? "primary" : undefined}
-              >
+                className='mt-1 tracking-wider'
+                color={isWordCounterPage ? 'primary' : undefined}>
                 Word counter
               </ZIonText>
 
-              <ZIonIcon slot="end" icon={chevronForwardOutline} />
+              <ZIonIcon
+                slot='end'
+                icon={chevronForwardOutline}
+              />
             </ZIonItem>
 
             {/* Css Specificity Calculator */}
             <ZIonItem
-              className="cursor-pointer ion-activatable"
-              color={isCSSpecificityCalculatorPage ? "light" : undefined}
-              routerLink={ZaionsRoutes.cssSpecificityCalculator}
-            >
+              className='cursor-pointer ion-activatable'
+              color={isCSSpecificityCalculatorPage ? 'light' : undefined}
+              routerLink={ZaionsRoutes.cssSpecificityCalculator}>
               <ZIonIcon
-                slot="start"
+                slot='start'
                 icon={logoCss3}
-                className="me-2"
-                color="primary"
+                className='me-2'
+                color='primary'
               />
               <ZIonText
-                className="mt-1 tracking-wider"
-                color={isCSSpecificityCalculatorPage ? "primary" : undefined}
-              >
+                className='mt-1 tracking-wider'
+                color={isCSSpecificityCalculatorPage ? 'primary' : undefined}>
                 Css Specificity Calculator
               </ZIonText>
 
-              <ZIonIcon slot="end" icon={chevronForwardOutline} />
+              <ZIonIcon
+                slot='end'
+                icon={chevronForwardOutline}
+              />
             </ZIonItem>
           </ZIonList>
         </ZIonGrid>

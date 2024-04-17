@@ -1,23 +1,23 @@
-import { zAxiosApiRequest, emptyVoidReturnFunction } from "@/utils/helpers";
+import { zAxiosApiRequest, emptyVoidReturnFunction } from '@/utils/helpers';
 // Core Imports
 
 // Packages Imports
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
 // Custom Imports
-import { useZIonErrorAlert, useZIonLoading } from "@/ZaionsHooks/zionic-hooks";
+import { useZIonErrorAlert, useZIonLoading } from '@/ZaionsHooks/zionic-hooks';
 
 // Global constants
-import { reportCustomError } from "@/utils/customErrorType";
-import { API_URL_ENUM } from "@/utils/enums";
-import MESSAGES from "@/utils/messages";
-import { ZRQGetRequestExtractEnum } from "@/types/ZReactQuery/index.type";
-import { zAxiosApiRequestContentType } from "@/types/CustomHooks/zapi-hooks.type";
-import { AxiosError } from "axios";
-import { errorCodes } from "@/utils/constants/apiConstants";
-import { clearAuthDataFromLocalStorageAndRecoil } from "@/utils/helpers/apiHelpers";
-import { useResetRecoilState } from "recoil";
-import { ZaionsUserAccountRStateAtom } from "@/ZaionsStore/UserAccount/index.recoil";
+import { reportCustomError } from '@/utils/customErrorType';
+import { API_URL_ENUM } from '@/utils/enums';
+import MESSAGES from '@/utils/messages';
+import { ZRQGetRequestExtractEnum } from '@/types/ZReactQuery/index.type';
+import { zAxiosApiRequestContentType } from '@/types/CustomHooks/zapi-hooks.type';
+import { AxiosError } from 'axios';
+import { errorCodes } from '@/utils/constants/apiConstants';
+import { clearAuthDataFromLocalStorageAndRecoil } from '@/utils/helpers/apiHelpers';
+import { useResetRecoilState } from 'recoil';
+import { ZaionsUserAccountRStateAtom } from '@/ZaionsStore/UserAccount/index.recoil';
 
 /**
  * The custom hook for getting data from an API using useQuery hook from react-query package.
@@ -37,9 +37,9 @@ export const useZRQGetRequest = <T>({
   _staleTime = 10 * 60000,
   _queryOptions = {
     refetchOnWindowFocus: false,
-    networkMode: "offlineFirst",
-    retry: 2,
-  },
+    networkMode: 'offlineFirst',
+    retry: 2
+  }
 }: {
   _url: API_URL_ENUM;
   _key: string[];
@@ -52,7 +52,7 @@ export const useZRQGetRequest = <T>({
   _staleTime?: number | typeof Infinity;
   _queryOptions?: {
     refetchOnWindowFocus?: boolean;
-    networkMode?: "always" | "offlineFirst" | "online";
+    networkMode?: 'always' | 'offlineFirst' | 'online';
     retry?: number;
   };
 }) => {
@@ -84,42 +84,42 @@ export const useZRQGetRequest = <T>({
          */
         return await zAxiosApiRequest<T>({
           _url: _url,
-          _method: "get",
+          _method: 'get',
           _isAuthenticatedRequest: _authenticated,
           _data: undefined,
           _itemIds: _itemsIds,
-          _urlDynamicParts: _urlDynamicParts,
+          _urlDynamicParts: _urlDynamicParts
         });
       }
     },
-    onSuccess: (_data: unknown) => {
-      // onSucceed dismissing loader...
-      void dismissZIonLoader();
-      // zConsoleLog({
-      // 	message:
-      // 		'From ZaionsHook -> useZRQCreateRequest -> useQuery -> onSuccess',
-      // 	data: _data,
-      // });
-    },
-    onError: async (_error: unknown) => {
-      // need to dismiss the loader first, then showing error just so, user will not get redirected to login without knowing that there was a authenticated error
-      // OnError dismissing loader...
-      void dismissZIonLoader();
+    // onSuccess: (_data: unknown) => {
+    //   // onSucceed dismissing loader...
+    //   void dismissZIonLoader();
+    //   // zConsoleLog({
+    //   // 	message:
+    //   // 		'From ZaionsHook -> useZRQCreateRequest -> useQuery -> onSuccess',
+    //   // 	data: _data,
+    //   // });
+    // },
+    // onError: async (_error: unknown) => {
+    //   // need to dismiss the loader first, then showing error just so, user will not get redirected to login without knowing that there was a authenticated error
+    //   // OnError dismissing loader...
+    //   void dismissZIonLoader();
 
-      // showing error alert...
-      void presentZIonErrorAlert();
+    //   // showing error alert...
+    //   void presentZIonErrorAlert();
 
-      // throw the request_failed error
-      reportCustomError(_error);
+    //   // throw the request_failed error
+    //   reportCustomError(_error);
 
-      // check if it's unauthenticated error
-      const errorCode = (_error as AxiosError)?.response?.status;
-      if (errorCode && errorCode === errorCodes.unauthenticated) {
-        // clear localstorage
-        await clearAuthDataFromLocalStorageAndRecoil(resetUserAccountState);
-      }
-    },
-    select: (data) => {
+    //   // check if it's unauthenticated error
+    //   const errorCode = (_error as AxiosError)?.response?.status;
+    //   if (errorCode && errorCode === errorCodes.unauthenticated) {
+    //     // clear localstorage
+    //     await clearAuthDataFromLocalStorageAndRecoil(resetUserAccountState);
+    //   }
+    // },
+    select: data => {
       if (_shouldExtractData) {
         switch (_extractType) {
           case ZRQGetRequestExtractEnum.extractItems:
@@ -136,7 +136,7 @@ export const useZRQGetRequest = <T>({
     refetchOnWindowFocus: _queryOptions.refetchOnWindowFocus,
     networkMode: _queryOptions.networkMode,
     retry: _queryOptions.retry,
-    staleTime: _staleTime,
+    staleTime: _staleTime
   });
 };
 
@@ -153,7 +153,7 @@ export const useZRQCreateRequest = <T>({
   authenticated,
   _itemsIds,
   _urlDynamicParts,
-  _contentType = zAxiosApiRequestContentType.Json,
+  _contentType = zAxiosApiRequestContentType.Json
 }: {
   _url: API_URL_ENUM;
   _queriesKeysToInvalidate?: string[];
@@ -184,27 +184,27 @@ export const useZRQCreateRequest = <T>({
        */
       return await zAxiosApiRequest<T>({
         _url: _url,
-        _method: "post",
+        _method: 'post',
         _isAuthenticatedRequest: authenticated,
         _data: _requestData,
         _itemIds: _itemsIds,
         _urlDynamicParts: _urlDynamicParts,
-        _contentType: _contentType,
+        _contentType: _contentType
       });
     },
     onMutate: async () => {
-      await queryClient.cancelQueries(_queriesKeysToInvalidate);
+      // await queryClient.cancelQueries(_queriesKeysToInvalidate);
     },
-    onSuccess: async (_data) => {
+    onSuccess: async _data => {
       // onSucceed dismissing loader...
       await dismissZIonLoader();
       if (_queriesKeysToInvalidate?.length) {
         await queryClient.invalidateQueries({
-          queryKey: _queriesKeysToInvalidate,
+          queryKey: _queriesKeysToInvalidate
         });
       }
     },
-    onError: async (_error) => {
+    onError: async _error => {
       // OnError dismissing loader...
       void dismissZIonLoader();
 
@@ -222,7 +222,7 @@ export const useZRQCreateRequest = <T>({
       }
     },
 
-    networkMode: "offlineFirst", //will remove later
+    networkMode: 'offlineFirst' //will remove later
   });
 };
 
@@ -237,7 +237,7 @@ export const useZRQUpdateRequest = <T>({
   _url,
   _queriesKeysToInvalidate,
   authenticated,
-  _contentType = zAxiosApiRequestContentType.Json,
+  _contentType = zAxiosApiRequestContentType.Json
 }: {
   _url: API_URL_ENUM;
   _queriesKeysToInvalidate?: string[];
@@ -264,7 +264,7 @@ export const useZRQUpdateRequest = <T>({
        */
       itemIds, // this will be array of ids which we need to replace in url with the "urlDynamicParts"
       urlDynamicParts, // this will be array of strings defining the "dynamic/id" parts in url, which will get replaced with the itemIds passed above.
-      requestData,
+      requestData
     }: {
       itemIds: string[];
       urlDynamicParts: string[];
@@ -282,27 +282,27 @@ export const useZRQUpdateRequest = <T>({
       // const generateEditURl =
       return await zAxiosApiRequest({
         _url: _url,
-        _method: "put",
+        _method: 'put',
         _isAuthenticatedRequest: authenticated,
         _data: requestData,
         _itemIds: itemIds,
         _urlDynamicParts: urlDynamicParts,
-        _contentType: _contentType,
+        _contentType: _contentType
       });
     },
     onMutate: () => {
-      void queryClient.cancelQueries(_queriesKeysToInvalidate);
+      // void queryClient.cancelQueries(_queriesKeysToInvalidate);
     },
-    onSuccess: (_data) => {
+    onSuccess: _data => {
       // onSucceed dismissing loader...
       void dismissZIonLoader();
       if (_queriesKeysToInvalidate?.length) {
         void queryClient.invalidateQueries({
-          queryKey: _queriesKeysToInvalidate,
+          queryKey: _queriesKeysToInvalidate
         });
       }
     },
-    onError: async (_error) => {
+    onError: async _error => {
       // OnError dismissing loader...
       void dismissZIonLoader();
 
@@ -321,7 +321,7 @@ export const useZRQUpdateRequest = <T>({
       }
     },
 
-    networkMode: "offlineFirst", //will remove later
+    networkMode: 'offlineFirst' //will remove later
   });
 };
 
@@ -347,7 +347,7 @@ export const useZRQDeleteRequest = <T>(
   return useMutation({
     mutationFn: async ({
       itemIds,
-      urlDynamicParts,
+      urlDynamicParts
     }: {
       itemIds: string[];
       urlDynamicParts: string[];
@@ -365,26 +365,26 @@ export const useZRQDeleteRequest = <T>(
       // const generateEditURl =
       return await zAxiosApiRequest({
         _url: _url,
-        _method: "delete",
+        _method: 'delete',
         _isAuthenticatedRequest: authenticated,
         _data: undefined,
         _itemIds: itemIds,
-        _urlDynamicParts: urlDynamicParts,
+        _urlDynamicParts: urlDynamicParts
       });
     },
     onMutate: () => {
-      void queryClient.cancelQueries(_queriesKeysToInvalidate);
+      // void queryClient.cancelQueries(_queriesKeysToInvalidate);
     },
-    onSuccess: (_data) => {
+    onSuccess: _data => {
       // onSucceed dismissing loader...
       void dismissZIonLoader();
       if (_queriesKeysToInvalidate?.length) {
         void queryClient.invalidateQueries({
-          queryKey: _queriesKeysToInvalidate,
+          queryKey: _queriesKeysToInvalidate
         });
       }
     },
-    onError: async (_error) => {
+    onError: async _error => {
       // OnError dismissing loader...
       void dismissZIonLoader();
 
@@ -401,7 +401,7 @@ export const useZRQDeleteRequest = <T>(
         // clear localstorage
         await clearAuthDataFromLocalStorageAndRecoil(resetUserAccountState);
       }
-    },
+    }
   });
 };
 
@@ -412,7 +412,7 @@ export const useZInvalidateReactQueries = () => {
       _queriesKeysToInvalidate?: string[]
     ) => {
       await queryClient.invalidateQueries({
-        queryKey: _queriesKeysToInvalidate,
+        queryKey: _queriesKeysToInvalidate
       });
     };
 
@@ -431,7 +431,7 @@ export const useUpdateRQCacheData = () => {
       key,
       data,
       id,
-      updateHoleData = false,
+      updateHoleData = false
     }: {
       key: string | string[];
       id: string;
@@ -445,12 +445,12 @@ export const useUpdateRQCacheData = () => {
           if (oldData) {
             if (Array.isArray(oldData)) {
               const updatedData = [...oldData];
-              const index = updatedData.findIndex((el) => el.id === id);
+              const index = updatedData.findIndex(el => el.id === id);
               if (index != -1) {
                 updatedData[index] = data;
               }
               return updatedData;
-            } else if (typeof oldData === "object") {
+            } else if (typeof oldData === 'object') {
               const updatedData = structuredClone(oldData);
               const actualDataItems = (
                 updatedData as { data: { items: unknown[] } }
@@ -462,7 +462,7 @@ export const useUpdateRQCacheData = () => {
               ) {
                 const updatedDataItems = [...actualDataItems];
                 const index = updatedDataItems.findIndex(
-                  (el) => (el as { id: string })?.id === id
+                  el => (el as { id: string })?.id === id
                 );
                 if (index != -1) {
                   updatedDataItems[index] = data;
