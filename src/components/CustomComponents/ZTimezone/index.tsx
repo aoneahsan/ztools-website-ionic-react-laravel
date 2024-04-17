@@ -51,32 +51,32 @@ import { ZIonPlacementType } from '@/types/zaionsAppSettings.type';
  * ? Like if you have a type for props it should be please Down
  * */
 interface ZTimezoneInputInterface {
-	className?: string;
-	placeholder?: string;
-	name?: string;
-	// options?: readonly ZaionsRSelectOptions[];
-	value?: PropsValue<ZaionsRSelectOptions>;
-	defaultValue?: PropsValue<ZaionsRSelectOptions>;
-	onChange?: (
-		newValue: MultiValue<ZaionsRSelectOptions>,
-		actionMeta: ActionMeta<ZaionsRSelectOptions>
-	) => void;
-	onBlur?: React.FocusEventHandler<HTMLInputElement>;
+  className?: string;
+  placeholder?: string;
+  name?: string;
+  // options?: readonly ZaionsRSelectOptions[];
+  value?: PropsValue<ZaionsRSelectOptions>;
+  defaultValue?: PropsValue<ZaionsRSelectOptions>;
+  onChange?: (
+    newValue: MultiValue<ZaionsRSelectOptions>,
+    actionMeta: ActionMeta<ZaionsRSelectOptions>
+  ) => void;
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
 }
 
 interface ZTimezoneSelectorInterface {
-	className?: string;
-	placeholder?: string;
-	name?: string;
-	value?: string | number | readonly string[];
-	defaultValue?: string | number | readonly string[];
-	multiple?: boolean;
-	label?: string;
-	labelPlacement?: ZIonPlacementType;
-	onIonChange?: (
-		event: IonSelectCustomEvent<SelectChangeEventDetail<unknown>>
-	) => void;
-	onIonBlur?: (event: IonSelectCustomEvent<void>) => void;
+  className?: string;
+  placeholder?: string;
+  name?: string;
+  value?: string | number | readonly string[];
+  defaultValue?: string | number | readonly string[];
+  multiple?: boolean;
+  label?: string;
+  labelPlacement?: ZIonPlacementType;
+  onIonChange?: (
+    event: IonSelectCustomEvent<SelectChangeEventDetail<unknown>>
+  ) => void;
+  onIonBlur?: (event: IonSelectCustomEvent<void>) => void;
 }
 
 /**
@@ -85,34 +85,40 @@ interface ZTimezoneSelectorInterface {
  * @type {*}
  * */
 
-const ZTimezoneInput: React.FC<ZTimezoneInputInterface> = (props) => {
-	return (
-		<ZaionsRSelect
-			{...props}
-			placeholder='timezone'
-			options={
-				TIMEZONES.map((el) => {
-					return { ...el };
-				}) as unknown as ZaionsRSelectOptions[]
-			}
-		/>
-	);
+const ZTimezoneInput: React.FC<ZTimezoneInputInterface> = props => {
+  return (
+    <ZaionsRSelect
+      {...props}
+      placeholder='timezone'
+      options={
+        TIMEZONES.map(el => {
+          return { ...el };
+        }) as unknown as ZaionsRSelectOptions[]
+      }
+      onChange={() => {}}
+    />
+  );
 };
 
-export const ZTimezoneSelector: React.FC<ZTimezoneSelectorInterface> = (
-	props
-) => {
-	return (
-		<ZIonSelect {...props} fill='outline' interface='popover'>
-			{TIMEZONES.map((el, index) => {
-				return (
-					<ZIonSelectOption value={el.label} key={index}>
-						{el.value}
-					</ZIonSelectOption>
-				);
-			})}
-		</ZIonSelect>
-	);
+export const ZTimezoneSelector: React.FC<
+  ZTimezoneSelectorInterface
+> = props => {
+  return (
+    <ZIonSelect
+      {...props}
+      fill='outline'
+      interface='popover'>
+      {TIMEZONES.map((el, index) => {
+        return (
+          <ZIonSelectOption
+            value={el.label}
+            key={index}>
+            {el.value}
+          </ZIonSelectOption>
+        );
+      })}
+    </ZIonSelect>
+  );
 };
 
 export default ZTimezoneInput;

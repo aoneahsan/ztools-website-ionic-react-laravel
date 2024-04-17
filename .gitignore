@@ -39,3 +39,5 @@ package-lock.json
 
 cypress/screenshots/**/*
 cypress/videos/**/*
+
+android/app/release

@@ -30,7 +30,13 @@
     "test.e2e": "cypress run",
     "test.unit": "vitest",
     "lint": "eslint",
-    "preinstall": "node -e \"if (require('path').basename(process.env.npm_execpath) === 'npm-cli.js') throw new Error('Please use Yarn for installation: yarn install')\""
+    "preinstall": "node -e \"if (require('path').basename(process.env.npm_execpath) === 'npm-cli.js') throw new Error('Please use Yarn for installation: yarn install')\"",
+    "sync:apps-config": "trapeze run apps-config.yaml",
+    "cap:gen:assets-android": "capacitor-assets generate --android",
+    "cap:add-android": "capacitor add android",
+    "cap:update-android": "capacitor update android",
+    "cap:copy-android": "capacitor copy android",
+    "cap:open-android": "capacitor open android"
   },
   "dependencies": {
     "@capacitor/android": "6.0.0",
@@ -68,6 +74,7 @@
     "swiper": "^11.1.1"
   },
   "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
     "@capacitor/cli": "6.0.0",
     "@trapezedev/configure": "^7.0.10",
     "@types/crypto-js": "^4.2.2",
