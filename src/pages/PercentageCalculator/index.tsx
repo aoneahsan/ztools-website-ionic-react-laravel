@@ -405,22 +405,8 @@ const ZPercentageCalculator: React.FC = () => {
                 </ZIonTitle>
 
                 <ZIonAccordionGroup>
-                  <ZIonAccordion value="first">
-                    <ZIonItem slot="header" color="light">
-                      <ZIonLabel className="">What is a percentage?</ZIonLabel>
-                    </ZIonItem>
-                    <div className="ion-padding" slot="content">
-                      <ZIonText>
-                        In mathematical terms, a percentage is a dimensionless
-                        number or ratio that represents a part of 100. Whether
-                        denoted by the "%" symbol, "percent," or "pct,"
-                        percentages are a universally recognized way to compare
-                        sizes, quantities, or even entire datasets. For
-                        instance, 40% can be expressed as 0.4 in decimal or 2/5
-                        in fractions.
-                      </ZIonText>
-                    </div>
-                  </ZIonAccordion>
+                  
+                  
 
                   <ZIonAccordion value="second">
                     <ZIonItem slot="header" color="light">

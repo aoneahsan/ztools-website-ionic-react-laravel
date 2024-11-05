@@ -1,10 +1,10 @@
-import { CapacitorConfig } from '@capacitor/cli'
+import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-	appId: 'com.zaions.ztools',
-	appName: 'ztools',
-	webDir: 'dist',
-	bundledWebRuntime: false,
-}
+  appId: 'com.zaions.ztools',
+  appName: 'ZTools',
+  webDir: 'dist',
+  bundledWebRuntime: false
+};
 
-export default config
+export default config;

@@ -58,9 +58,7 @@ interface ZTimezoneInputInterface {
   value?: PropsValue<ZaionsRSelectOptions>;
   defaultValue?: PropsValue<ZaionsRSelectOptions>;
   onChange?: (
-    newValue:
-      | MultiValue<ZaionsRSelectOptions>
-      | SingleValue<ZaionsRSelectOptions>,
+    newValue: MultiValue<ZaionsRSelectOptions>,
     actionMeta: ActionMeta<ZaionsRSelectOptions>
   ) => void;
   onBlur?: React.FocusEventHandler<HTMLInputElement>;
@@ -87,20 +85,22 @@ interface ZTimezoneSelectorInterface {
  * @type {*}
  * */
 
-const ZTimezoneInput: React.FC<ZTimezoneInputInterface> = (props) => {
+const ZTimezoneInput: React.FC<ZTimezoneInputInterface> = props => {
   return (
     <ZaionsRSelect
       {...props}
-      placeholder="timezone"
+      placeholder='timezone'
       options={
-        TIMEZONES.map((el) => {
+        TIMEZONES.map(el => {
           return { ...el };
         }) as unknown as ZaionsRSelectOptions[]
       }
+      onChange={() => {}}
     />
   );
 };
 
+<<<<<<< HEAD
 export const ZTimezoneSelector: React.FC<ZTimezoneSelectorInterface> = (
   props
 ) => {
@@ -109,6 +109,11 @@ export const ZTimezoneSelector: React.FC<ZTimezoneSelectorInterface> = (
       {TIMEZONES.map((el, index) => {
         return (
           <ZIonSelectOption value={el.label} key={index}>
+=======
+export const ZTimezoneSelector: React.FC<
+  ZTimezoneSelectorInterface
+> = props => {
+>>>>>>> b8ed2072b495b43babbf277e7dffd8f2276af4c4
             {el.value}
           </ZIonSelectOption>
         );
