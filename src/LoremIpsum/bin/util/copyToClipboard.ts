@@ -27,10 +27,10 @@ const copyToClipboard = (text: string): Promise<string> => {
 
           return resolve(text);
         });
-      } catch (error) {
-        return reject(error);
+      } catch (error: unknown | Error) {
+        return reject(error as Error);
       }
-    },
+    }
   );
 };
 
