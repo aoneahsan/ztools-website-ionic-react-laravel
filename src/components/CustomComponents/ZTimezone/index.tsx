@@ -2,14 +2,14 @@
  * Core Imports go down
  * ? Like Import of React is a Core Import
  * */
-import React from "react";
-import { ActionMeta, MultiValue, PropsValue, SingleValue } from "react-select";
-import { ZaionsRSelectOptions } from "@/types/components/CustomComponents/index.type";
-import { TIMEZONES } from "@/utils/constants";
-import ZaionsRSelect from "../ZaionsRSelect";
-import { ZIonSelect, ZIonSelectOption } from "@/components/ZIonComponents";
-import { IonSelectCustomEvent, SelectChangeEventDetail } from "@ionic/core";
-import { ZIonPlacementType } from "@/types/zaionsAppSettings.type";
+import React from 'react';
+import { ActionMeta, MultiValue, PropsValue, SingleValue } from 'react-select';
+import { ZaionsRSelectOptions } from '@/types/components/CustomComponents/index.type';
+import { TIMEZONES } from '@/utils/constants';
+import ZaionsRSelect from '../ZaionsRSelect';
+import { ZIonSelect, ZIonSelectOption } from '@/components/ZIonComponents';
+import { IonSelectCustomEvent, SelectChangeEventDetail } from '@ionic/core';
+import { ZIonPlacementType } from '@/types/zaionsAppSettings.type';
 
 /**
  * Packages Imports go down
@@ -100,20 +100,19 @@ const ZTimezoneInput: React.FC<ZTimezoneInputInterface> = props => {
   );
 };
 
-<<<<<<< HEAD
-export const ZTimezoneSelector: React.FC<ZTimezoneSelectorInterface> = (
-  props
-) => {
-  return (
-    <ZIonSelect {...props} fill="outline" interface="popover">
-      {TIMEZONES.map((el, index) => {
-        return (
-          <ZIonSelectOption value={el.label} key={index}>
-=======
 export const ZTimezoneSelector: React.FC<
   ZTimezoneSelectorInterface
 > = props => {
->>>>>>> b8ed2072b495b43babbf277e7dffd8f2276af4c4
+  return (
+    <ZIonSelect
+      {...props}
+      fill='outline'
+      interface='popover'>
+      {TIMEZONES.map((el, index) => {
+        return (
+          <ZIonSelectOption
+            value={el.label}
+            key={index}>
             {el.value}
           </ZIonSelectOption>
         );
