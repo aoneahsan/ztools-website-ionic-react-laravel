@@ -1,8 +1,8 @@
 {
   "css.format.enable": true,
-  "editor.formatOnSave": true,
-  "files.autoSave": "onFocusChange",
   "prettier.enable": true,
+  "editor.formatOnSave": true,
+  "files.autoSave": "onWindowChange",
   "cSpell.words": [
     "chatbubble",
     "Collabes",
@@ -19,5 +19,9 @@
     "Swiper",
     "videocam"
   ],
-  "svg.preview.background": "editor"
+  "svg.preview.background": "editor",
+  "editor.codeActionsOnSave": {
+    "source.removeUnusedImports": "explicit",
+    "source.addMissingImports.ts": "explicit"
+  }
 }

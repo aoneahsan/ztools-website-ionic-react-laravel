@@ -2,9 +2,8 @@
 import React from 'react';
 
 // Packages Imports
-import { IonRouterOutlet } from '@ionic/react';
+import { IonRouterOutlet, IonRoute } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { Route } from 'react-router-dom';
 
 // Custom Imports
 import Home from '@/pages/Home';
@@ -24,39 +23,39 @@ const ProductionAppRoutes: React.FC = () => {
     <IonReactRouter>
       <IonRouterOutlet>
         {/* Generic Routes */}
-        <Route
+        <IonRoute
           exact
           path={ZaionsRoutes.HomeRoute}
-          component={Home}
+          render={() => <Home />}
         />
 
-        <Route
+        <IonRoute
           exact
           path={ZaionsRoutes.LoginRoute}
-          component={Login}
+          render={() => <Login />}
         />
-        <Route
+        <IonRoute
           exact
           path={ZaionsRoutes.SignUpRoute}
-          component={SignUp}
+          render={() => <SignUp />}
         />
-        <Route
+        <IonRoute
           exact
           path={ZaionsRoutes.PasswordResetEmailForm}
-          component={ZaionsPasswordResetConfirm}
+          render={() => <ZaionsPasswordResetConfirm />}
         />
 
         {/* Admin Panel Pages */}
         {ENVS.isProduction && (
           <>
-            <Route
+            <IonRoute
               path={ZaionsRoutes.AdminPanel.ZaionsDashboard.ZLinks}
-              component={ZLinks}
+              render={() => <ZLinks />}
             />
 
-            <Route
+            <IonRoute
               path={ZaionsRoutes.AdminPanel.ZaionsDashboard.ZProfile}
-              component={ZProfile}
+              render={() => <ZProfile />}
             />
           </>
         )}

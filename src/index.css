@@ -3,9 +3,9 @@ body {
 	font-family: 'Proxima Nova', Georgia, sans-serif !important;
 } */
 /* Importing Tailwind CSS */
-@import url("theme/tailwind.css");
+@import url('theme/tailwind.css');
 
-@import url("theme/variables.css");
+@import url('theme/variables.css');
 a {
   text-decoration: none;
 }
@@ -59,15 +59,15 @@ ion-app.ios ion-title {
 
 /* Fonts */
 .lato {
-  font-family: "Lato", sans-serif !important;
+  font-family: 'Lato', sans-serif !important;
 }
 
 .roboto {
-  font-family: "Roboto", sans-serif !important;
+  font-family: 'Roboto', sans-serif !important;
 }
 
 .B612 {
-  font-family: "B612", sans-serif !important;
+  font-family: 'B612', sans-serif !important;
 }
 
 .san-serif {
@@ -79,39 +79,39 @@ ion-app.ios ion-title {
 }
 
 .Alegreya {
-  font-family: "Alegreya", sans-serif !important;
+  font-family: 'Alegreya', sans-serif !important;
 }
 
 .titillium-web {
-  font-family: "Titillium Web", sans-serif !important;
+  font-family: 'Titillium Web', sans-serif !important;
 }
 
 .vollkorn {
-  font-family: "Vollkorn", sans-serif !important;
+  font-family: 'Vollkorn', sans-serif !important;
 }
 
 .IBM-plex-serif {
-  font-family: "IBM Plex Serif", sans-serif !important;
+  font-family: 'IBM Plex Serif', sans-serif !important;
 }
 
 .source-serif-pro {
-  font-family: "Source Serif Pro", sans-serif !important;
+  font-family: 'Source Serif Pro', sans-serif !important;
 }
 
 .roboto-slab {
-  font-family: "Roboto Slab", sans-serif !important;
+  font-family: 'Roboto Slab', sans-serif !important;
 }
 
 .roboto-condensed {
-  font-family: "Roboto Condensed", sans-serif !important;
+  font-family: 'Roboto Condensed', sans-serif !important;
 }
 
 .poppins {
-  font-family: "Poppins", sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .source-serif-4 {
-  font-family: "Source Serif 4", sans-serif !important;
+  font-family: 'Source Serif 4', sans-serif !important;
 }
 
 .apple-system {
@@ -513,7 +513,7 @@ span.new {
 .zaions__nav_item::after {
   display: block;
   position: absolute;
-  content: "";
+  content: '';
   top: 1.7rem;
   bottom: 0rem;
   left: 50%;
@@ -521,7 +521,9 @@ span.new {
   width: 0;
   background: #2a5bd7;
   border: 0;
-  transition: width 150ms ease-out, left 150ms ease-out;
+  transition:
+    width 150ms ease-out,
+    left 150ms ease-out;
   transform: translate(-50%, 0);
 }
 
@@ -554,8 +556,8 @@ span.new {
 
 .zaions__new_tag {
   line-height: 16px;
-  font-family: "ProximaNova Medium", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
+  font-family:
+    'ProximaNova Medium', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background-color: #60aa69;
   border-radius: 3px 3px 3px 3px;
   /* display: inline-block; */
@@ -671,7 +673,7 @@ ion-modal.zaions__modal_w100 {
   top: 1px;
   border-radius: 50% 50%;
   background-color: #fff;
-  content: " ";
+  content: ' ';
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
   transform: scale(1);
@@ -746,7 +748,7 @@ ion-modal.zaions__modal_w100 {
 }
 
 .zaions__dotted_list ion-item::before {
-  content: "•";
+  content: '•';
   font-size: 1.3rem;
 }
 
@@ -1046,7 +1048,7 @@ ion-modal.zaions__modal_w100 {
 }
 .zaions_comment_box::before {
   background: inherit;
-  content: "";
+  content: '';
   height: 10px;
   left: -5px;
   position: absolute;
@@ -1063,7 +1065,7 @@ ion-modal.zaions__modal_w100 {
   -o-transform: scale(0.9);
 }
 .z-rainbow-btn::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: -0.4rem;
   z-index: 1;
@@ -1079,7 +1081,7 @@ ion-modal.zaions__modal_w100 {
   animation-play-state: paused;
 }
 .z-rainbow-btn::after {
-  content: "";
+  content: '';
   position: absolute;
   border-radius: 0.3rem;
   inset: 0rem;
@@ -1103,4 +1105,23 @@ ion-modal.zaions__modal_w100 {
 
 .z-csc-item:hover .z-rainbow-btn::before {
   animation-play-state: running;
+}
+
+.css-env-safe-area-view {
+  /* Base padding for all devices */
+  padding: 16px;
+
+  /* iOS safe areas */
+  @supports (padding: env(safe-area-inset-top)) {
+    padding-top: env(safe-area-inset-top);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+  }
+
+  /* Android-specific adjustments */
+  @media screen and (display-mode: standalone) {
+    padding-top: max(16px, env(safe-area-inset-top, 5vh));
+    padding-bottom: max(16px, env(safe-area-inset-bottom, 5vh));
+  }
 }

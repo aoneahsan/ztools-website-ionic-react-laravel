@@ -17,7 +17,11 @@ import './theme/animations.css'; // All animations
 // (Amplify as { configure: (config: unknown) => void }).configure(AWS_APP_CONFIG);
 
 const AppEntryPoint: React.FC = () => {
-  return <AppHOCWrapper />;
+  return (
+    <div className='css-env-safe-area-view'>
+      <AppHOCWrapper />
+    </div>
+  );
 };
 
 export default AppEntryPoint;

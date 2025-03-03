@@ -22,6 +22,10 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -45,5 +49,20 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>camera to get live picture of users to show in a profile, it can be from gallery</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Getting location to check from which location actually users are doing clocking and
+			clockout.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Using location to get users current location to utilise on which country you are
+			using app</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Get current location of user to use for checking.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>$(PRODUCT_NAME) needs photo library add usage permission to allow user to take photo
+			using device camera.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Photo Library Access Warning, so you can use photo from gallery</string>
 </dict>
 </plist>

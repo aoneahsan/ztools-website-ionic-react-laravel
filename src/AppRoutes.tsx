@@ -2,34 +2,33 @@
 import React from 'react';
 
 // Packages Imports
-import { IonRouterOutlet } from '@ionic/react';
+import { IonRoute, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { Route } from 'react-router-dom';
 
 // Commented Routes
 import ZLinks from '@/pages/AdminPanel/ZLinks';
 import ZProfile from '@/pages/AdminPanel/ZProfile';
 
 // Routes
-import Home from "@/pages/Home";
-import Login from "@/pages/Login";
-import ZaionsRoutes from "./utils/constants/RoutesConstants";
-import SignUp from "@/pages/SignUp";
-import ZaionsPasswordResetConfirm from "@/pages/ResetPassword/PasswordResetConfirmForm";
-import PublicRoute from "./components/PublicRoute";
-import PrivateRoute from "./components/PrivateRoute";
-import ZWorkspaceListPage from "./pages/AdminPanel/Workspaces";
-import ZWorkspaceForm from "./pages/AdminPanel/Workspaces/Form";
-import ViewSingleWorkspace from "./pages/AdminPanel/Workspaces/ViewSingle";
-import ZAppStartupPage from "./pages/AdminPanel/StartUpPage";
-import ZPercentageCalculator from "./pages/PercentageCalculator";
-import ZWordCounter from "./pages/WordCounter";
-import ZCssSpecificityCalculator from "./pages/CssSpecificityCaculator";
-import ZPrivacyPolicy from "./pages/PrivacyPolicy";
-import ZTermsAndConditions from "./pages/TermsAndConditions";
-import ZAboutProduct from "./pages/About/aboutProduct";
-import ZAboutCompany from "./pages/About/aboutCompany";
-import ZLPGenerator from "./pages/LPGenerator";
+import Home from '@/pages/Home';
+import Login from '@/pages/Login';
+import ZaionsRoutes from './utils/constants/RoutesConstants';
+import SignUp from '@/pages/SignUp';
+import ZaionsPasswordResetConfirm from '@/pages/ResetPassword/PasswordResetConfirmForm';
+import PublicRoute from './components/PublicRoute';
+import PrivateRoute from './components/PrivateRoute';
+import ZWorkspaceListPage from './pages/AdminPanel/Workspaces';
+import ZWorkspaceForm from './pages/AdminPanel/Workspaces/Form';
+import ViewSingleWorkspace from './pages/AdminPanel/Workspaces/ViewSingle';
+import ZAppStartupPage from './pages/AdminPanel/StartUpPage';
+import ZPercentageCalculator from './pages/PercentageCalculator';
+import ZWordCounter from './pages/WordCounter';
+import ZCssSpecificityCalculator from './pages/CssSpecificityCaculator';
+import ZPrivacyPolicy from './pages/PrivacyPolicy';
+import ZTermsAndConditions from './pages/TermsAndConditions';
+import ZAboutProduct from './pages/About/aboutProduct';
+import ZAboutCompany from './pages/About/aboutCompany';
+import ZLPGenerator from './pages/LPGenerator';
 
 // Functional Component
 const AppRoutes: React.FC = () => {
@@ -37,60 +36,60 @@ const AppRoutes: React.FC = () => {
     <IonReactRouter>
       <IonRouterOutlet>
         {/* Generic Routes */}
-        {/* <Route exact path={ZaionsRoutes.HomeRoute} component={Home} /> */}
+        {/* <IonRoute exact path={ZaionsRoutes.HomeRoute} render={() => <Home />} /> */}
 
-        <Route
+        <IonRoute
           exact
           path={ZaionsRoutes.HomeRoute}
-          component={Home}
+          render={() => <Home />}
         />
 
-        <Route
+        <IonRoute
           exact
           path={ZaionsRoutes.wordCounter}
-          component={ZWordCounter}
+          render={() => <ZWordCounter />}
         />
 
-        <Route
+        <IonRoute
           exact
           path={ZaionsRoutes.percentageCalculator}
-          component={ZPercentageCalculator}
+          render={() => <ZPercentageCalculator />}
         />
 
-        <Route
+        <IonRoute
           exact
           path={ZaionsRoutes.cssSpecificityCalculator}
-          component={ZCssSpecificityCalculator}
+          render={() => <ZCssSpecificityCalculator />}
         />
 
-        <Route
+        <IonRoute
           exact
           path={ZaionsRoutes.loremIpsumGenerator}
-          component={ZLPGenerator}
+          render={() => <ZLPGenerator />}
         />
 
-        <Route
+        <IonRoute
           exact
           path={ZaionsRoutes.privacyPolicy}
-          component={ZPrivacyPolicy}
+          render={() => <ZPrivacyPolicy />}
         />
 
-        <Route
+        <IonRoute
           exact
           path={ZaionsRoutes.termAndConditions}
-          component={ZTermsAndConditions}
+          render={() => <ZTermsAndConditions />}
         />
 
-        <Route
+        <IonRoute
           exact
           path={ZaionsRoutes.about}
-          component={ZAboutProduct}
+          render={() => <ZAboutProduct />}
         />
 
-        <Route
+        <IonRoute
           exact
           path={ZaionsRoutes.Company.about}
-          component={ZAboutCompany}
+          render={() => <ZAboutCompany />}
         />
 
         {/* Public Routes */}
