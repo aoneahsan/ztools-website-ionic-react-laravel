@@ -2,21 +2,21 @@
  * Core Imports go down
  * ? Like Import of React is a Core Import
  * */
-import React from "react";
+import React from 'react';
 
 /**
  * Packages Imports go down
  * ? Like import of ionic components is a packages import
  * */
-import classNames from "classnames";
+import classNames from 'classnames';
 
 /**
  * Custom Imports go down
  * ? Like import of custom components is a custom import
  * */
-import ZIonPage from "@/components/ZIonPage";
-import ZAppSideMenu from "@/navigation/AppSideMenu";
-import Header from "@/components/Header";
+import ZIonPage from '@/components/ZIonPage';
+import ZAppSideMenu from '@/navigation/AppSideMenu';
+import Header from '@/components/Header';
 import {
   ZIonCol,
   ZIonContent,
@@ -25,32 +25,22 @@ import {
   ZIonRouterLink,
   ZIonRow,
   ZIonText,
-  ZIonTitle,
-} from "@/components/ZIonComponents";
+  ZIonTitle
+} from '@/components/ZIonComponents';
 
 /**
  * Custom Hooks Imports go down
  * ? Like import of custom Hook is a custom import
  * */
-import { useZMediaQueryScale } from "@/ZaionsHooks/ZGenericHooks";
+import { useZMediaQueryScale } from '@/ZaionsHooks/ZGenericHooks';
 
 /**
  * Global Constants Imports go down
  * ? Like import of Constant is a global constants import
  * */
-import CONSTANTS, { PRODUCT_NAME } from "@/utils/constants";
-import { ProductLogoPng } from "@/assets/images";
-import Footer from "@/components/Footer";
-
-/**
- * Type Imports go down
- * ? Like import of type or type of some recoil state or any external type import is a Type import
- * */
-
-/**
- * Recoil State Imports go down
- * ? Import of recoil states is a Recoil State import
- * */
+import CONSTANTS, { PRODUCT_NAME } from '@/utils/constants';
+import { ProductLogoPng } from '@/assets/images';
+import Footer from '@/components/Footer';
 
 /**
  * Style files Imports go down
@@ -85,41 +75,38 @@ const ZPrivacyPolicy: React.FC = () => {
       <ZAppSideMenu pageId={CONSTANTS.PAGE_IDS.PRIVACY_POLICY_PAGE_ID} />
       <ZIonPage
         pageTitle={`${PRODUCT_NAME} - Privacy Policy page`}
-        id={CONSTANTS.PAGE_IDS.PRIVACY_POLICY_PAGE_ID}
-      >
+        id={CONSTANTS.PAGE_IDS.PRIVACY_POLICY_PAGE_ID}>
         {/* Header  */}
         <Header title={`${PRODUCT_NAME} Privacy Policy`} />
 
         {/* Constants */}
         <ZIonContent>
-          <ZIonGrid className="lg:w-[80%] md:w-[95%] sm:w-[98%] xs:w-[100%] xl:w-[60%] mx-auto my-2 pt-5">
+          <ZIonGrid className='lg:w-[80%] md:w-[95%] sm:w-[98%] xs:w-[100%] xl:w-[60%] mx-auto my-2 pt-5'>
             <ZIonRow>
               <ZIonCol
-                size="12"
+                size='12'
                 className={classNames({
-                  "mb-3 flex ion-justify-content-center flex-col ion-text-center":
+                  'mb-3 flex ion-justify-content-center flex-col ion-text-center':
                     true,
-                  "ion-align-items-center": isMdScale,
-                })}
-              >
+                  'ion-align-items-center': isMdScale
+                })}>
                 <ZIonImg
                   src={ProductLogoPng}
-                  className="w-[12rem] h-[10rem] mx-auto"
+                  className='w-[12rem] h-[10rem] mx-auto'
                 />
                 {isMdScale && (
                   <ZIonText
                     className={classNames({
-                      "mb-3 ion-no-padding font-semibold": true,
-                      "text-2xl": (isXlScale && !isLgScale) || isAboveXlScale,
-                      "text-xl": isLgScale,
-                    })}
-                  >
+                      'mb-3 ion-no-padding font-semibold': true,
+                      'text-2xl': (isXlScale && !isLgScale) || isAboveXlScale,
+                      'text-xl': isLgScale
+                    })}>
                     {PRODUCT_NAME} Privacy Policy
                   </ZIonText>
                 )}
               </ZIonCol>
               <ZIonCol>
-                <ZIonText className="mb-2 blok">
+                <ZIonText className='mb-2 blok'>
                   Last updated: October 18, 2023
                 </ZIonText>
                 <ZIonText>
@@ -133,10 +120,10 @@ const ZPrivacyPolicy: React.FC = () => {
                   By using the Service, You agree to the collection and use of
                   information in accordance with this Privacy Policy.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Interpretation and Definitions
                 </ZIonTitle>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Interpretation
                 </ZIonTitle>
                 <ZIonText>
@@ -145,7 +132,7 @@ const ZPrivacyPolicy: React.FC = () => {
                   definitions shall have the same meaning regardless of whether
                   they appear in singular or in plural.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Definitions
                 </ZIonTitle>
                 <ZIonText>For the purposes of this Privacy Policy:</ZIonText>
@@ -240,12 +227,11 @@ const ZPrivacyPolicy: React.FC = () => {
                   <li>
                     <ZIonText>
                       <strong>Website</strong> refers to {PRODUCT_NAME},
-                      accessible from{" "}
+                      accessible from{' '}
                       <ZIonRouterLink
                         href={CONSTANTS.PRODUCT_DETAILS.URL}
-                        rel="external nofollow noopener"
-                        target="_blank"
-                      >
+                        rel='external nofollow noopener'
+                        target='_blank'>
                         {CONSTANTS.PRODUCT_DETAILS.URL}
                       </ZIonRouterLink>
                     </ZIonText>
@@ -259,10 +245,10 @@ const ZPrivacyPolicy: React.FC = () => {
                     </ZIonText>
                   </li>
                 </ul>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Collecting and Using Your Personal Data
                 </ZIonTitle>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Types of Data Collected
                 </ZIonTitle>
                 <h4>Personal Data</h4>
@@ -459,7 +445,7 @@ const ZPrivacyPolicy: React.FC = () => {
                   regarding cookies, please visit our Cookies Policy or the
                   Cookies section of our Privacy Policy.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Use of Your Personal Data
                 </ZIonTitle>
                 <ZIonText>
@@ -586,7 +572,7 @@ const ZPrivacyPolicy: React.FC = () => {
                     consent.
                   </li>
                 </ul>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Retention of Your Personal Data
                 </ZIonTitle>
                 <ZIonText>
@@ -606,7 +592,7 @@ const ZPrivacyPolicy: React.FC = () => {
                   or We are legally obligated to retain this data for longer
                   time periods.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Transfer of Your Personal Data
                 </ZIonTitle>
                 <ZIonText>
@@ -631,7 +617,7 @@ const ZPrivacyPolicy: React.FC = () => {
                   adequate controls in place including the security of Your data
                   and other personal information.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Delete Your Personal Data
                 </ZIonTitle>
                 <ZIonText>
@@ -655,7 +641,7 @@ const ZPrivacyPolicy: React.FC = () => {
                   information when we have a legal obligation or lawful basis to
                   do so.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Disclosure of Your Personal Data
                 </ZIonTitle>
                 <h4>Business Transactions</h4>
@@ -692,7 +678,7 @@ const ZPrivacyPolicy: React.FC = () => {
                   </li>
                   <li>Protect against legal liability</li>
                 </ul>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Security of Your Personal Data
                 </ZIonTitle>
                 <ZIonText>
@@ -702,7 +688,7 @@ const ZPrivacyPolicy: React.FC = () => {
                   to use commercially acceptable means to protect Your Personal
                   Data, We cannot guarantee its absolute security.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Detailed Information on the Processing of Your Personal Data
                 </ZIonTitle>
                 <ZIonText>
@@ -711,7 +697,7 @@ const ZPrivacyPolicy: React.FC = () => {
                   and transfer information about Your activity on Our Service in
                   accordance with their Privacy Policies.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Usage, Performance and Miscellaneous
                 </ZIonTitle>
                 <ZIonText>
@@ -734,12 +720,11 @@ const ZPrivacyPolicy: React.FC = () => {
                     </ZIonText>
                     <ZIonText>
                       The information gathered by Mouseflow is held in
-                      accordance with its Privacy Policy:{" "}
+                      accordance with its Privacy Policy:{' '}
                       <a
-                        href="https://mouseflow.com/privacy/"
-                        rel="external nofollow noopener"
-                        target="_blank"
-                      >
+                        href='https://mouseflow.com/privacy/'
+                        rel='external nofollow noopener'
+                        target='_blank'>
                         https://mouseflow.com/privacy/
                       </a>
                     </ZIonText>
@@ -758,12 +743,11 @@ const ZPrivacyPolicy: React.FC = () => {
                     </ZIonText>
                     <ZIonText>
                       The information gathered by FreshDesk is held in
-                      accordance with its Privacy Policy:{" "}
+                      accordance with its Privacy Policy:{' '}
                       <a
-                        href="https://www.freshworks.com/privacy/"
-                        rel="external nofollow noopener"
-                        target="_blank"
-                      >
+                        href='https://www.freshworks.com/privacy/'
+                        rel='external nofollow noopener'
+                        target='_blank'>
                         https://www.freshworks.com/privacy/
                       </a>
                     </ZIonText>
@@ -782,18 +766,17 @@ const ZPrivacyPolicy: React.FC = () => {
                     </ZIonText>
                     <ZIonText>
                       The information gathered by Google Places is held in
-                      accordance with the Privacy Policy of Google:{" "}
+                      accordance with the Privacy Policy of Google:{' '}
                       <a
-                        href="https://www.google.com/intl/en/policies/privacy/"
-                        rel="external nofollow noopener"
-                        target="_blank"
-                      >
+                        href='https://www.google.com/intl/en/policies/privacy/'
+                        rel='external nofollow noopener'
+                        target='_blank'>
                         https://www.google.com/intl/en/policies/privacy/
                       </a>
                     </ZIonText>
                   </li>
                 </ul>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Children's Privacy
                 </ZIonTitle>
                 <ZIonText>
@@ -812,7 +795,7 @@ const ZPrivacyPolicy: React.FC = () => {
                   parent, We may require Your parent's consent before We collect
                   and use that information.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Links to Other Websites
                 </ZIonTitle>
                 <ZIonText>
@@ -826,7 +809,7 @@ const ZPrivacyPolicy: React.FC = () => {
                   content, privacy policies or practices of any third party
                   sites or services.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Changes to this Privacy Policy
                 </ZIonTitle>
                 <ZIonText>
@@ -844,7 +827,7 @@ const ZPrivacyPolicy: React.FC = () => {
                   any changes. Changes to this Privacy Policy are effective when
                   they are posted on this page.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Contact Us
                 </ZIonTitle>
                 <ZIonText>
@@ -854,24 +837,22 @@ const ZPrivacyPolicy: React.FC = () => {
                 <ul>
                   <li>
                     <ZIonText>
-                      By email:{" "}
+                      By email:{' '}
                       <ZIonRouterLink
                         href={`mailto:${CONSTANTS.COMPANY_DETAILS.ADDRESS_LINK}`}
-                        rel="external nofollow noopener"
-                        target="_blank"
-                      >
+                        rel='external nofollow noopener'
+                        target='_blank'>
                         {CONSTANTS.COMPANY_DETAILS.EMAIL}
                       </ZIonRouterLink>
                     </ZIonText>
                   </li>
                   <li>
                     <ZIonText>
-                      By visiting this page on our website:{" "}
+                      By visiting this page on our website:{' '}
                       <ZIonRouterLink
                         href={CONSTANTS.COMPANY_DETAILS.CONTACT_LINK}
-                        rel="external nofollow noopener"
-                        target="_blank"
-                      >
+                        rel='external nofollow noopener'
+                        target='_blank'>
                         {CONSTANTS.COMPANY_DETAILS.CONTACT_LINK}
                       </ZIonRouterLink>
                     </ZIonText>
@@ -883,12 +864,11 @@ const ZPrivacyPolicy: React.FC = () => {
                   </li>
                   <li>
                     <ZIonText>
-                      By mail:{" "}
+                      By mail:{' '}
                       <ZIonRouterLink
                         href={CONSTANTS.COMPANY_DETAILS.ADDRESS_LINK}
-                        rel="external nofollow noopener"
-                        target="_blank"
-                      >
+                        rel='external nofollow noopener'
+                        target='_blank'>
                         {CONSTANTS.COMPANY_DETAILS.ADDRESS_LINK}
                       </ZIonRouterLink>
                     </ZIonText>

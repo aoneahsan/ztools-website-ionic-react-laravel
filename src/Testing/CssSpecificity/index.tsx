@@ -8,12 +8,12 @@ import {
   ZIonGrid,
   ZIonInput,
   ZIonRow,
-  ZIonText,
-} from "@/components/ZIonComponents";
-import ZIonPage from "@/components/ZIonPage";
-import { Formik } from "formik";
-import React from "react";
-import { calculate } from "specificity";
+  ZIonText
+} from '@/components/ZIonComponents';
+import ZIonPage from '@/components/ZIonPage';
+import { Formik } from 'formik';
+import React from 'react';
+import { calculate } from 'specificity';
 
 /**
  * Packages Imports go down
@@ -33,16 +33,6 @@ import { calculate } from "specificity";
 /**
  * Global Constants Imports go down
  * ? Like import of Constant is a global constants import
- * */
-
-/**
- * Type Imports go down
- * ? Like import of type or type of some recoil state or any external type import is a Type import
- * */
-
-/**
- * Recoil State Imports go down
- * ? Import of recoil states is a Recoil State import
  * */
 
 /**
@@ -68,23 +58,25 @@ import { calculate } from "specificity";
 
 const ZTestingCssSpecificity: React.FC = () => {
   return (
-    <ZIonPage pageTitle="testing css specificity">
+    <ZIonPage pageTitle='testing css specificity'>
       <ZIonContent>
         <ZIonGrid>
           <ZIonRow>
             <ZIonCol>
-              <Formik initialValues={{ check: "" }} onSubmit={() => {}}>
+              <Formik
+                initialValues={{ check: '' }}
+                onSubmit={() => {}}>
                 {({ values, setFieldValue, handleChange, handleBlur }) => {
                   return (
                     <>
                       <ZIonInput
-                        fill="outline"
-                        label="check"
-                        labelPlacement="floating"
-                        name="check"
+                        fill='outline'
+                        label='check'
+                        labelPlacement='floating'
+                        name='check'
                         onIonChange={({ target }) => {
                           setFieldValue(
-                            "check",
+                            'check',
                             calculate(String(target?.value)),
                             false
                           );

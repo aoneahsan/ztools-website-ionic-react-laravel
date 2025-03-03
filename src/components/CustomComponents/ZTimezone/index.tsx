@@ -27,16 +27,6 @@ import { ZIonPlacementType } from '@/types/zaionsAppSettings.type';
  * */
 
 /**
- * Type Imports go down
- * ? Like import of type or type of some recoil state or any external type import is a Type import
- * */
-
-/**
- * Recoil State Imports go down
- * ? Import of recoil states is a Recoil State import
- * */
-
-/**
  * Style files Imports go down
  * ? Import of style sheet is a style import
  * */

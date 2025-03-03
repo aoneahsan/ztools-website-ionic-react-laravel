@@ -27,16 +27,6 @@ import ZWorkspaceSettingPlaceholderComp from '@/components/InPageComponents/Zaio
  * */
 
 /**
- * Type Imports go down
- * ? Like import of type or type of some recoil state or any external type import is a Type import
- * */
-
-/**
- * Recoil State Imports go down
- * ? Import of recoil states is a Recoil State import
- * */
-
-/**
  * Style files Imports go down
  * ? Import of style sheet is a style import
  * */
@@ -58,20 +48,20 @@ import ZWorkspaceSettingPlaceholderComp from '@/components/InPageComponents/Zaio
  * */
 
 const ZLabelsTab: React.FC = () => {
-	return (
-		<>
-			<ZWorkspaceSettingPlaceholderComp
-				buttonText='Create label'
-				image={WorkspaceSettingsLabelPlaceholder}
-				title={
-					<span>
-						Create labels to categorize posts and <br /> organize your campaigns
-						better
-					</span>
-				}
-			/>
-		</>
-	);
+  return (
+    <>
+      <ZWorkspaceSettingPlaceholderComp
+        buttonText='Create label'
+        image={WorkspaceSettingsLabelPlaceholder}
+        title={
+          <span>
+            Create labels to categorize posts and <br /> organize your campaigns
+            better
+          </span>
+        }
+      />
+    </>
+  );
 };
 
 export default ZLabelsTab;

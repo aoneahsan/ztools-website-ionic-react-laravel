@@ -26,16 +26,6 @@ import { ZIonItem, ZIonLabel, ZIonList } from '@/components/ZIonComponents';
  * */
 
 /**
- * Type Imports go down
- * ? Like import of type or type of some recoil state or any external type import is a Type import
- * */
-
-/**
- * Recoil State Imports go down
- * ? Import of recoil states is a Recoil State import
- * */
-
-/**
  * Style files Imports go down
  * ? Import of style sheet is a style import
  * */
@@ -57,38 +47,34 @@ import { ZIonItem, ZIonLabel, ZIonList } from '@/components/ZIonComponents';
  * */
 
 const ZWorkspaceMemberActionPopover: React.FC = () => {
-	return (
-		<ZIonList lines='none'>
-			<ZIonItem
-				className='ion-activatable ion-focusable zaions__cursor_pointer'
-				minHeight='32px'
-			>
-				<ZIonLabel>Set as workspace owner...</ZIonLabel>
-			</ZIonItem>
+  return (
+    <ZIonList lines='none'>
+      <ZIonItem
+        className='ion-activatable ion-focusable zaions__cursor_pointer'
+        minHeight='32px'>
+        <ZIonLabel>Set as workspace owner...</ZIonLabel>
+      </ZIonItem>
 
-			<ZIonItem
-				className='ion-activatable ion-focusable zaions__cursor_pointer'
-				minHeight='32px'
-			>
-				<ZIonLabel>Change permission...</ZIonLabel>
-			</ZIonItem>
+      <ZIonItem
+        className='ion-activatable ion-focusable zaions__cursor_pointer'
+        minHeight='32px'>
+        <ZIonLabel>Change permission...</ZIonLabel>
+      </ZIonItem>
 
-			<ZIonItem
-				className='ion-activatable ion-focusable zaions__cursor_pointer'
-				minHeight='32px'
-				lines='full'
-			>
-				<ZIonLabel>Convert to client member</ZIonLabel>
-			</ZIonItem>
+      <ZIonItem
+        className='ion-activatable ion-focusable zaions__cursor_pointer'
+        minHeight='32px'
+        lines='full'>
+        <ZIonLabel>Convert to client member</ZIonLabel>
+      </ZIonItem>
 
-			<ZIonItem
-				className='ion-activatable ion-focusable zaions__cursor_pointer'
-				minHeight='32px'
-			>
-				<ZIonLabel color='danger'>Remove from workspace</ZIonLabel>
-			</ZIonItem>
-		</ZIonList>
-	);
+      <ZIonItem
+        className='ion-activatable ion-focusable zaions__cursor_pointer'
+        minHeight='32px'>
+        <ZIonLabel color='danger'>Remove from workspace</ZIonLabel>
+      </ZIonItem>
+    </ZIonList>
+  );
 };
 
 export default ZWorkspaceMemberActionPopover;

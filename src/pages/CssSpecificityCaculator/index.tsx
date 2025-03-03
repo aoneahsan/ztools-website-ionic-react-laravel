@@ -2,28 +2,28 @@
  * Core Imports go down
  * ? Like Import of React is a Core Import
  * */
-import React from "react";
+import React from 'react';
 
 /**
  * Packages Imports go down
  * ? Like import of ionic components is a packages import
  * */
-import classNames from "classnames";
-import { calculate } from "specificity";
-import { FieldArray, Formik } from "formik";
+import classNames from 'classnames';
+import { calculate } from 'specificity';
+import { FieldArray, Formik } from 'formik';
 import {
   addCircleOutline,
   addOutline,
   duplicateOutline,
   informationCircleOutline,
-  trashBinOutline,
-} from "ionicons/icons";
+  trashBinOutline
+} from 'ionicons/icons';
 
 /**
  * Custom Imports go down
  * ? Like import of custom components is a custom import
  * */
-import Header from "@/components/Header";
+import Header from '@/components/Header';
 import {
   ZIonButton,
   ZIonCol,
@@ -32,36 +32,26 @@ import {
   ZIonIcon,
   ZIonInput,
   ZIonRow,
-  ZIonText,
-} from "@/components/ZIonComponents";
-import ZIonPage from "@/components/ZIonPage";
-import ZRTooltip from "@/components/CustomComponents/ZRTooltip";
-import ZAppSideMenu from "@/navigation/AppSideMenu";
-import Footer from "@/components/Footer";
+  ZIonText
+} from '@/components/ZIonComponents';
+import ZIonPage from '@/components/ZIonPage';
+import ZRTooltip from '@/components/CustomComponents/ZRTooltip';
+import ZAppSideMenu from '@/navigation/AppSideMenu';
+import Footer from '@/components/Footer';
 
 /**
  * Custom Hooks Imports go down
  * ? Like import of custom Hook is a custom import
  * */
-import { useZMediaQueryScale } from "@/ZaionsHooks/ZGenericHooks";
+import { useZMediaQueryScale } from '@/ZaionsHooks/ZGenericHooks';
 
 /**
  * Global Constants Imports go down
  * ? Like import of Constant is a global constants import
  * */
-import { getRandomKey } from "@/utils/helpers";
-import { reportCustomError } from "@/utils/customErrorType";
-import CONSTANTS, { PRODUCT_NAME } from "@/utils/constants";
-
-/**
- * Type Imports go down
- * ? Like import of type or type of some recoil state or any external type import is a Type import
- * */
-
-/**
- * Recoil State Imports go down
- * ? Import of recoil states is a Recoil State import
- * */
+import { getRandomKey } from '@/utils/helpers';
+import { reportCustomError } from '@/utils/customErrorType';
+import CONSTANTS, { PRODUCT_NAME } from '@/utils/constants';
 
 /**
  * Style files Imports go down
@@ -96,82 +86,76 @@ const ZCssSpecificityCalculator: React.FC = () => {
 
       <ZIonPage
         pageTitle={`${PRODUCT_NAME} - CSS Specificity Calculator`}
-        id={CONSTANTS.PAGE_IDS.CSS_SPECIFICITY_CALCULATOR_PAGE_ID}
-      >
+        id={CONSTANTS.PAGE_IDS.CSS_SPECIFICITY_CALCULATOR_PAGE_ID}>
         {/* Header  */}
-        <Header title="CSS Specificity Calculator" />
+        <Header title='CSS Specificity Calculator' />
 
         {/* Content */}
-        <ZIonContent color="light">
-          <ZIonGrid className="lg:w-[80%] md:w-[95%] sm:w-[98%] xs:w-[100%] xl:w-[60%] mx-auto my-2 pt-5">
+        <ZIonContent color='light'>
+          <ZIonGrid className='lg:w-[80%] md:w-[95%] sm:w-[98%] xs:w-[100%] xl:w-[60%] mx-auto my-2 pt-5'>
             <Formik
               initialValues={{
                 items: [
                   {
                     id: 1,
-                    value: "nav > a:hover::before",
+                    value: 'nav > a:hover::before',
                     result: {
-                      A: "0",
-                      B: "1",
-                      C: "3",
-                    },
-                  },
-                ],
+                      A: '0',
+                      B: '1',
+                      C: '3'
+                    }
+                  }
+                ]
               }}
-              onSubmit={() => {}}
-            >
+              onSubmit={() => {}}>
               {({ values, setFieldValue, handleChange }) => {
                 return (
                   <>
-                    <FieldArray name="items">
+                    <FieldArray name='items'>
                       {({ remove, push }) => {
                         return (
                           <>
                             <ZIonRow>
                               <ZIonCol
-                                sizeXl="7"
-                                sizeLg="7"
-                                sizeMd="7"
-                                sizeSm="12"
-                                sizeXs="12"
+                                sizeXl='7'
+                                sizeLg='7'
+                                sizeMd='7'
+                                sizeSm='12'
+                                sizeXs='12'
                                 className={classNames({
-                                  "flex ion-justify-content-center flex-col":
+                                  'flex ion-justify-content-center flex-col':
                                     true,
-                                  "ion-text-center ion-align-items-center":
-                                    isMdScale,
-                                })}
-                              >
+                                  'ion-text-center ion-align-items-center':
+                                    isMdScale
+                                })}>
                                 {isMdScale && (
                                   <ZIonText
                                     className={classNames({
-                                      "mb-3 ion-no-padding font-semibold": true,
-                                      "text-2xl":
+                                      'mb-3 ion-no-padding font-semibold': true,
+                                      'text-2xl':
                                         (isXlScale && !isLgScale) ||
                                         isAboveXlScale,
-                                      "text-xl": isLgScale,
-                                    })}
-                                  >
+                                      'text-xl': isLgScale
+                                    })}>
                                     CSS Specificity Calculator
                                   </ZIonText>
                                 )}
 
                                 <ZIonText
                                   className={classNames({
-                                    "text-lg block":
+                                    'text-lg block':
                                       (isXlScale && !isLgScale) ||
                                       isAboveXlScale,
-                                    "text-md": isLgScale && !isMdScale,
-                                  })}
-                                >
+                                    'text-md': isLgScale && !isMdScale
+                                  })}>
                                   CSS Specificity Calculator is a free online
                                   tool to calculate CSS Specificity.
                                 </ZIonText>
                               </ZIonCol>
                               <ZIonCol
                                 className={classNames({
-                                  "ion-text-end": !isMdScale,
-                                })}
-                              >
+                                  'ion-text-end': !isMdScale
+                                })}>
                                 {/* <ZIonButton
                                 className={classNames({
                                   "ion-no-margin": true,
@@ -198,42 +182,39 @@ const ZCssSpecificityCalculator: React.FC = () => {
                                 Sort by specificity
                               </ZIonButton> */}
                                 <ZIonButton
-                                  color="tertiary"
-                                  expand={isMdScale ? "block" : undefined}
-                                  id="css-specificity-calculator-warning"
+                                  color='tertiary'
+                                  expand={isMdScale ? 'block' : undefined}
+                                  id='css-specificity-calculator-warning'
                                   className={classNames({
-                                    "ion-no-margin ion-no-padding ion-padding-horizontal px-0":
+                                    'ion-no-margin ion-no-padding ion-padding-horizontal px-0':
                                       true,
-                                    "mt-2": isMdScale,
-                                  })}
-                                >
+                                    'mt-2': isMdScale
+                                  })}>
                                   <ZIonIcon
-                                    color="light"
+                                    color='light'
                                     icon={informationCircleOutline}
-                                    className="w-7 h-7 me-1"
+                                    className='w-7 h-7 me-1'
                                   />
                                   Info
                                 </ZIonButton>
                                 <ZRTooltip
-                                  anchorSelect="#css-specificity-calculator-warning"
-                                  className="z-50 border shadow-lg opacity-100 ion-text-start"
-                                  variant="light"
-                                >
+                                  anchorSelect='#css-specificity-calculator-warning'
+                                  className='z-50 border shadow-lg opacity-100 ion-text-start'
+                                  variant='light'>
                                   <div
                                     className={classNames({
-                                      "w-[40rem]": !isMdScale,
-                                      "w-[20rem]": isMdScale,
-                                      "w-[8rem]": isSmScale,
-                                    })}
-                                  >
-                                    <p className="pt-2 tracking-wider text-black first-letter:text-2xl text-md">
+                                      'w-[40rem]': !isMdScale,
+                                      'w-[20rem]': isMdScale,
+                                      'w-[8rem]': isSmScale
+                                    })}>
+                                    <p className='pt-2 tracking-wider text-black first-letter:text-2xl text-md'>
                                       We want to inform you that “Combinator
                                       Selectors” are currently not included in
                                       the final “Weight Count.” This feature is
                                       on our roadmap and will be integrated in
                                       an upcoming update.
                                     </p>
-                                    <p className="pt-2 tracking-wider text-black first-letter:text-2xl text-md">
+                                    <p className='pt-2 tracking-wider text-black first-letter:text-2xl text-md'>
                                       Our development team is focused on
                                       introducing new functionalities to enhance
                                       your experience with {PRODUCT_NAME}.
@@ -241,14 +222,14 @@ const ZCssSpecificityCalculator: React.FC = () => {
                                       as we work diligently to implement this
                                       and other features.
                                     </p>
-                                    <p className="pt-2 first-letter:text-2xl">
+                                    <p className='pt-2 first-letter:text-2xl'>
                                       We value your patronage and hope you have
                                       found our suite of tools beneficial.
                                       Suppose you have any specific tool
                                       requests or feature suggestions or
                                       encounter any issues.
                                     </p>
-                                    <p className="py-2 tracking-wider text-black first-letter:text-2xl text-md">
+                                    <p className='py-2 tracking-wider text-black first-letter:text-2xl text-md'>
                                       we encourage you to utilize our feedback
                                       system, accessible via the button at the
                                       bottom-right corner of our platform.
@@ -264,26 +245,25 @@ const ZCssSpecificityCalculator: React.FC = () => {
 
                                 <ZIonButton
                                   className={classNames({
-                                    "ion-no-margin": true,
-                                    "mt-2": isMdScale,
-                                    "ms-2": !isMdScale,
+                                    'ion-no-margin': true,
+                                    'mt-2': isMdScale,
+                                    'ms-2': !isMdScale
                                   })}
-                                  expand={isMdScale ? "block" : undefined}
+                                  expand={isMdScale ? 'block' : undefined}
                                   onClick={() => {
                                     push({
                                       id: getRandomKey(),
-                                      value: "",
+                                      value: '',
                                       result: {
-                                        A: "0",
-                                        B: "0",
-                                        C: "0",
-                                      },
+                                        A: '0',
+                                        B: '0',
+                                        C: '0'
+                                      }
                                     });
-                                  }}
-                                >
+                                  }}>
                                   <ZIonIcon
                                     icon={addOutline}
-                                    className="me-1"
+                                    className='me-1'
                                   />
                                   Add new Item
                                 </ZIonButton>
@@ -293,25 +273,24 @@ const ZCssSpecificityCalculator: React.FC = () => {
                             {values?.items?.length === 0 && (
                               <ZIonRow>
                                 <ZIonCol
-                                  className="flex flex-col mt-3 rounded-lg shadow-md cursor-pointer ion-align-items-center ion-justify-content-center ion-padding zaions__bg_white"
+                                  className='flex flex-col mt-3 rounded-lg shadow-md cursor-pointer ion-align-items-center ion-justify-content-center ion-padding zaions__bg_white'
                                   onClick={() => {
                                     push({
                                       id: getRandomKey(),
-                                      value: "",
+                                      value: '',
                                       result: {
-                                        A: "0",
-                                        B: "0",
-                                        C: "0",
-                                      },
+                                        A: '0',
+                                        B: '0',
+                                        C: '0'
+                                      }
                                     });
-                                  }}
-                                >
+                                  }}>
                                   <ZIonIcon
                                     icon={addCircleOutline}
-                                    className="w-10 h-10"
-                                    color="primary"
+                                    className='w-10 h-10'
+                                    color='primary'
                                   />
-                                  <ZIonText className="block mt-2">
+                                  <ZIonText className='block mt-2'>
                                     Add a new Item
                                   </ZIonText>
                                 </ZIonCol>
@@ -322,22 +301,20 @@ const ZCssSpecificityCalculator: React.FC = () => {
                               return (
                                 <ZIonRow
                                   key={_index}
-                                  className="mt-3 transition-all z-csc-item hover:shadow-lg"
-                                >
+                                  className='mt-3 transition-all z-csc-item hover:shadow-lg'>
                                   <ZIonCol
-                                    className="flex flex-col gap-4 mt-2 rounded-lg shadow-md ion-padding zaions__bg_white md:ion-align-items-center md:gap-0 ion-justify-content-between"
-                                    size="12"
-                                  >
+                                    className='flex flex-col gap-4 mt-2 rounded-lg shadow-md ion-padding zaions__bg_white md:ion-align-items-center md:gap-0 ion-justify-content-between'
+                                    size='12'>
                                     {/* Input */}
-                                    <div className="w-full">
+                                    <div className='w-full'>
                                       <ZIonInput
                                         name={`items.${_index}.value`}
                                         minHeight={
-                                          isLgScale ? "40px" : undefined
+                                          isLgScale ? '40px' : undefined
                                         }
-                                        aria-label="check input"
+                                        aria-label='check input'
                                         value={values.items[_index].value}
-                                        onIonChange={(e) => {
+                                        onIonChange={e => {
                                           try {
                                             handleChange(e);
 
@@ -354,9 +331,9 @@ const ZCssSpecificityCalculator: React.FC = () => {
                                               setFieldValue(
                                                 `items.${_index}.result`,
                                                 {
-                                                  A: "0",
-                                                  B: "0",
-                                                  C: "0",
+                                                  A: '0',
+                                                  B: '0',
+                                                  C: '0'
                                                 },
                                                 false
                                               );
@@ -376,9 +353,9 @@ const ZCssSpecificityCalculator: React.FC = () => {
                                                 setFieldValue(
                                                   `items.${_index}.result`,
                                                   {
-                                                    A: "0",
-                                                    B: "0",
-                                                    C: "0",
+                                                    A: '0',
+                                                    B: '0',
+                                                    C: '0'
                                                   },
                                                   false
                                                 );
@@ -393,93 +370,83 @@ const ZCssSpecificityCalculator: React.FC = () => {
 
                                     <ZIonRow>
                                       <ZIonCol
-                                        size="12"
+                                        size='12'
                                         className={classNames({
-                                          "flex flex-wrap ion-justify-content-between":
-                                            !isMdScale,
-                                        })}
-                                      >
+                                          'flex flex-wrap ion-justify-content-between':
+                                            !isMdScale
+                                        })}>
                                         {/* ID's */}
-                                        <div className="flex w-auto mt-3 me-3 ion-align-items-center">
-                                          <div className="flex w-10 h-10 rounded-full zaions__primary_bg ion-align-items-center ion-justify-content-center">
+                                        <div className='flex w-auto mt-3 me-3 ion-align-items-center'>
+                                          <div className='flex w-10 h-10 rounded-full zaions__primary_bg ion-align-items-center ion-justify-content-center'>
                                             <ZIonText
-                                              className="text-xl"
-                                              color="light"
-                                            >
+                                              className='text-xl'
+                                              color='light'>
                                               {values.items[_index]?.result
                                                 ?.A || 0}
                                             </ZIonText>
                                           </div>
                                           <ZIonText
                                             className={classNames({
-                                              "ms-3": true,
-                                              "text-xl": isAboveXlScale,
-                                              "text-lg":
+                                              'ms-3': true,
+                                              'text-xl': isAboveXlScale,
+                                              'text-lg':
                                                 !isAboveXlScale &&
                                                 isXlScale &&
                                                 !isLgScale,
-                                              "text-md":
-                                                isLgScale && !isMdScale,
+                                              'text-md': isLgScale && !isMdScale
                                               // "text-sm": !isMdScale && isSmScale,
-                                            })}
-                                          >
+                                            })}>
                                             ID's
                                           </ZIonText>
                                         </div>
 
                                         {/* Classes, attributes and pseudo-classes */}
-                                        <div className="flex w-auto mt-3 me-3 ion-align-items-center">
-                                          <div className="flex w-10 h-10 rounded-full zaions__secondary_bg ion-align-items-center ion-justify-content-center">
+                                        <div className='flex w-auto mt-3 me-3 ion-align-items-center'>
+                                          <div className='flex w-10 h-10 rounded-full zaions__secondary_bg ion-align-items-center ion-justify-content-center'>
                                             <ZIonText
-                                              className="text-xl"
-                                              color="light"
-                                            >
+                                              className='text-xl'
+                                              color='light'>
                                               {values.items[_index]?.result
                                                 ?.B || 0}
                                             </ZIonText>
                                           </div>
                                           <ZIonText
                                             className={classNames({
-                                              "ms-3": true,
-                                              "text-xl": isAboveXlScale,
-                                              "text-lg":
+                                              'ms-3': true,
+                                              'text-xl': isAboveXlScale,
+                                              'text-lg':
                                                 !isAboveXlScale &&
                                                 isXlScale &&
                                                 !isLgScale,
-                                              "text-md":
-                                                isLgScale && !isMdScale,
+                                              'text-md': isLgScale && !isMdScale
                                               // "text-sm": !isMdScale && isSmScale,
-                                            })}
-                                          >
+                                            })}>
                                             Classes, attributes and
                                             pseudo-classes
                                           </ZIonText>
                                         </div>
 
                                         {/* Elements and pseudo-elements */}
-                                        <div className="flex w-auto mt-3 me-3 ion-align-items-center">
-                                          <div className="flex w-10 h-10 rounded-full zaions__tertiary_bg ion-align-items-center ion-justify-content-center">
+                                        <div className='flex w-auto mt-3 me-3 ion-align-items-center'>
+                                          <div className='flex w-10 h-10 rounded-full zaions__tertiary_bg ion-align-items-center ion-justify-content-center'>
                                             <ZIonText
-                                              className="text-xl"
-                                              color="light"
-                                            >
+                                              className='text-xl'
+                                              color='light'>
                                               {values.items[_index]?.result
                                                 ?.C || 0}
                                             </ZIonText>
                                           </div>
                                           <ZIonText
                                             className={classNames({
-                                              "ms-3": true,
-                                              "text-xl": isAboveXlScale,
-                                              "text-lg":
+                                              'ms-3': true,
+                                              'text-xl': isAboveXlScale,
+                                              'text-lg':
                                                 !isAboveXlScale &&
                                                 isXlScale &&
                                                 !isLgScale,
-                                              "text-md":
-                                                isLgScale && !isMdScale,
+                                              'text-md': isLgScale && !isMdScale
                                               // "text-sm": !isMdScale && isSmScale,
-                                            })}
-                                          >
+                                            })}>
                                             Elements and pseudo-elements
                                           </ZIonText>
                                         </div>
@@ -487,19 +454,17 @@ const ZCssSpecificityCalculator: React.FC = () => {
 
                                       <ZIonCol
                                         className={classNames({
-                                          "flex ion-align-items-end ion-justify-content-between":
+                                          'flex ion-align-items-end ion-justify-content-between':
                                             !isMdScale,
-                                          "mt-3": isAboveXlScale,
-                                          "mt-2": isXlScale,
-                                        })}
-                                      >
+                                          'mt-3': isAboveXlScale,
+                                          'mt-2': isXlScale
+                                        })}>
                                         {/* Total Specificity Count */}
-                                        <div className="flex w-auto mt-3 me-3 ion-align-items-center total-specificity-count-box zaions-transition">
-                                          <div className="flex w-[6rem] h-[3rem] border-4 z-bc-ion-primary rounded-lg ion-align-items-center ion-justify-content-center relative zaions-transition z-rainbow-btn">
+                                        <div className='flex w-auto mt-3 me-3 ion-align-items-center total-specificity-count-box zaions-transition'>
+                                          <div className='flex w-[6rem] h-[3rem] border-4 z-bc-ion-primary rounded-lg ion-align-items-center ion-justify-content-center relative zaions-transition z-rainbow-btn'>
                                             <ZIonText
-                                              className="relative z-20 font-sans text-3xl font-semibold "
-                                              color="dark"
-                                            >
+                                              className='relative z-20 font-sans text-3xl font-semibold '
+                                              color='dark'>
                                               {(
                                                 (+values.items[_index]?.result
                                                   ?.A || 0) *
@@ -515,52 +480,49 @@ const ZCssSpecificityCalculator: React.FC = () => {
                                           </div>
                                           <ZIonText
                                             className={classNames({
-                                              "ms-3": true,
-                                              "text-2xl": isAboveXlScale,
-                                              "text-lg":
+                                              'ms-3': true,
+                                              'text-2xl': isAboveXlScale,
+                                              'text-lg':
                                                 isXlScale && !isLgScale,
-                                              "text-md":
-                                                isLgScale && !isMdScale,
+                                              'text-md': isLgScale && !isMdScale
                                               // "text-sm": isMdScale && !isSmScale,
-                                            })}
-                                          >
+                                            })}>
                                             Total Specificity Count
                                           </ZIonText>
                                         </div>
 
-                                        <div className="">
+                                        <div className=''>
                                           <ZIonButton
-                                            color="danger"
+                                            color='danger'
                                             className={classNames({
-                                              "ion-no-margin": true,
-                                              "me-2": !isMdScale,
-                                              "mt-2": isMdScale,
+                                              'ion-no-margin': true,
+                                              'me-2': !isMdScale,
+                                              'mt-2': isMdScale
                                             })}
                                             expand={
-                                              isMdScale ? "block" : undefined
+                                              isMdScale ? 'block' : undefined
                                             }
                                             onClick={() => {
                                               setTimeout(() => {
                                                 remove(_index);
                                               }, 300);
-                                            }}
-                                          >
+                                            }}>
                                             <ZIonIcon
                                               icon={trashBinOutline}
-                                              className="me-1"
+                                              className='me-1'
                                             />
-                                            <ZIonText className="mt-[2px]">
+                                            <ZIonText className='mt-[2px]'>
                                               Delete
                                             </ZIonText>
                                           </ZIonButton>
 
                                           <ZIonButton
                                             className={classNames({
-                                              "ion-no-margin": true,
-                                              "mt-2": isMdScale,
+                                              'ion-no-margin': true,
+                                              'mt-2': isMdScale
                                             })}
                                             expand={
-                                              isMdScale ? "block" : undefined
+                                              isMdScale ? 'block' : undefined
                                             }
                                             onClick={() => {
                                               push({
@@ -568,15 +530,14 @@ const ZCssSpecificityCalculator: React.FC = () => {
                                                 value:
                                                   values.items[_index].value,
                                                 result:
-                                                  values.items[_index].result,
+                                                  values.items[_index].result
                                               });
-                                            }}
-                                          >
+                                            }}>
                                             <ZIonIcon
                                               icon={duplicateOutline}
-                                              className="me-1"
+                                              className='me-1'
                                             />
-                                            <ZIonText className="mt-[2px]">
+                                            <ZIonText className='mt-[2px]'>
                                               Duplicate
                                             </ZIonText>
                                           </ZIonButton>

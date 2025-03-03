@@ -2,21 +2,21 @@
  * Core Imports go down
  * ? Like Import of React is a Core Import
  * */
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 
 /**
  * Packages Imports go down
  * ? Like import of ionic components is a packages import
  * */
-import { useRecoilValue } from "recoil";
-import { addOutline } from "ionicons/icons";
-import classNames from "classnames";
+import { useRecoilValue } from 'recoil';
+import { addOutline } from 'ionicons/icons';
+import classNames from 'classnames';
 
 /**
  * Custom Imports go down
  * ? Like import of custom components is a custom import
  * */
-import ZIonPage from "@/components/ZIonPage";
+import ZIonPage from '@/components/ZIonPage';
 import {
   ZIonButton,
   ZIonButtons,
@@ -27,40 +27,30 @@ import {
   ZIonGrid,
   ZIonIcon,
   ZIonRow,
-  ZIonText,
-} from "@/components/ZIonComponents";
-import ZUserInfoPopover from "@/components/InPageComponents/ZaionsPopovers/UserInfoPopover";
-import ZWorkspacesCard from "@/components/WorkspacesComponents/ListCard";
-import ZAddNewWorkspaceModal from "@/components/InPageComponents/ZaionsModals/Workspace/CreateModal";
+  ZIonText
+} from '@/components/ZIonComponents';
+import ZUserInfoPopover from '@/components/InPageComponents/ZaionsPopovers/UserInfoPopover';
+import ZWorkspacesCard from '@/components/WorkspacesComponents/ListCard';
+import ZAddNewWorkspaceModal from '@/components/InPageComponents/ZaionsModals/Workspace/CreateModal';
 
 /**
  * Custom Hooks Imports go down
  * ? Like import of custom Hook is a custom import
  * */
-import { useZIonModal, useZIonPopover } from "@/ZaionsHooks/zionic-hooks";
-import { useZRQGetRequest } from "@/ZaionsHooks/zreactquery-hooks";
-import { useZNavigate } from "@/ZaionsHooks/zrouter-hooks";
-import ZUserProfileButton from "@/components/AdminPanelComponents/UserProfileButton";
-import ZCan from "@/components/Can";
+import { useZIonModal, useZIonPopover } from '@/ZaionsHooks/zionic-hooks';
+import { useZRQGetRequest } from '@/ZaionsHooks/zreactquery-hooks';
+import { useZNavigate } from '@/ZaionsHooks/zrouter-hooks';
+import ZUserProfileButton from '@/components/AdminPanelComponents/UserProfileButton';
+import ZCan from '@/components/Can';
 
 /**
  * Global Constants Imports go down
  * ? Like import of Constant is a global constants import
  * */
-import ZaionsRoutes from "@/utils/constants/RoutesConstants";
-import { createRedirectRoute } from "@/utils/helpers";
-import { API_URL_ENUM } from "@/utils/enums";
-import CONSTANTS from "@/utils/constants";
-
-/**
- * Type Imports go down
- * ? Like import of type or type of some recoil state or any external type import is a Type import
- * */
-
-/**
- * Recoil State Imports go down
- * ? Import of recoil states is a Recoil State import
- * */
+import ZaionsRoutes from '@/utils/constants/RoutesConstants';
+import { createRedirectRoute } from '@/utils/helpers';
+import { API_URL_ENUM } from '@/utils/enums';
+import CONSTANTS from '@/utils/constants';
 
 /**
  * Style files Imports go down
@@ -68,15 +58,15 @@ import CONSTANTS from "@/utils/constants";
  * */
 import {
   workspaceFormTabEnum,
-  workspaceInterface,
-} from "@/types/AdminPanel/workspace";
-import { permissionsEnum } from "@/utils/enums/RoleAndPermissions";
+  workspaceInterface
+} from '@/types/AdminPanel/workspace';
+import { permissionsEnum } from '@/utils/enums/RoleAndPermissions';
 
 /**
  * Images Imports go down
  * ? Import of images like png,jpg,jpeg,gif,svg etc. is a Images Imports import
  * */
-import { ProductLogo } from "@/assets/images";
+import { ProductLogo } from '@/assets/images';
 
 /**
  * Component props type go down
@@ -111,7 +101,7 @@ const ZWorkspaceListPage: React.FC = () => {
   // Get workspace data from backend.
   const { data: WorkspacesData } = useZRQGetRequest<workspaceInterface[]>({
     _url: API_URL_ENUM.workspace_create_list,
-    _key: [CONSTANTS.REACT_QUERY.QUERIES_KEYS.WORKSPACE.MAIN],
+    _key: [CONSTANTS.REACT_QUERY.QUERIES_KEYS.WORKSPACE.MAIN]
   });
 
   // Using this when save in recoil
@@ -126,13 +116,13 @@ const ZWorkspaceListPage: React.FC = () => {
   // }, [getWorkspaceData]);
 
   return (
-    <ZIonPage pageTitle="Zaions workspaces list page">
+    <ZIonPage pageTitle='Zaions workspaces list page'>
       <ZIonContent>
         <ZCan havePermission={permissionsEnum.viewAny_workspace}>
           {/* Main grid */}
-          <ZIonGrid className="ion-no-padding zaions_h100">
+          <ZIonGrid className='ion-no-padding zaions_h100'>
             {/*  */}
-            <ZIonRow className="zaions_h100">
+            <ZIonRow className='zaions_h100'>
               {/* Expendable Navigation in the left-hand side */}
               {/* <AdminPanelMainSidebarMenu
 							activePage={AdminPanelMainSidebarMenuPageEnum.workspaces}
@@ -140,39 +130,37 @@ const ZWorkspaceListPage: React.FC = () => {
 
               {/* Main Container */}
               <ZIonCol
-                className="zaions-transition"
-                sizeXl="12"
-                sizeLg="12"
-                sizeMd="12"
-                sizeSm="12"
-                sizeXs="12"
-              >
-                <ZIonGrid className="px-4">
+                className='zaions-transition'
+                sizeXl='12'
+                sizeLg='12'
+                sizeMd='12'
+                sizeSm='12'
+                sizeXs='12'>
+                <ZIonGrid className='px-4'>
                   {/* Top workspace menu */}
-                  <ZIonRow className="pt-2">
+                  <ZIonRow className='pt-2'>
                     {/*  invite buttons col */}
                     <ZIonCol>
-                      <ZIonButtons className="gap-3 ion-align-items-center">
+                      <ZIonButtons className='gap-3 ion-align-items-center'>
                         {/* Invite button */}
                         <ZIonButton
-                          fill="solid"
-                          color="primary"
-                          className="ion-no-margin text-transform-initial"
-                        >
+                          fill='solid'
+                          color='primary'
+                          className='ion-no-margin text-transform-initial'>
                           <ZIonIcon icon={addOutline} /> Invite
                         </ZIonButton>
                       </ZIonButtons>
                     </ZIonCol>
 
                     {/* new workspace button col */}
-                    <ZIonCol className="flex gap-8 pe-3 ion-align-items-center ion-justify-content-end">
+                    <ZIonCol className='flex gap-8 pe-3 ion-align-items-center ion-justify-content-end'>
                       <ZCan havePermission={permissionsEnum.create_workspace}>
                         <ZIonButton
-                          className="ion-no-margin text-transform-initial"
-                          color="secondary"
+                          className='ion-no-margin text-transform-initial'
+                          color='secondary'
                           onClick={() => {
                             presentZWorkspaceCreateModal({
-                              _cssClass: "create-workspace-modal-size",
+                              _cssClass: 'create-workspace-modal-size'
                               // _onDidDismiss: (event) => {
                               // 	if (
                               // 		event.detail.data &&
@@ -195,8 +183,7 @@ const ZWorkspaceListPage: React.FC = () => {
                               // 	}
                               // },
                             });
-                          }}
-                        >
+                          }}>
                           <ZIonIcon icon={addOutline} /> New workspace
                         </ZIonButton>
                       </ZCan>
@@ -207,24 +194,23 @@ const ZWorkspaceListPage: React.FC = () => {
                   </ZIonRow>
 
                   {/* cards row */}
-                  <ZIonRow className="mt-5">
+                  <ZIonRow className='mt-5'>
                     {/* single card */}
                     {WorkspacesData &&
-                      WorkspacesData.map((el) => (
+                      WorkspacesData.map(el => (
                         <ZIonCol
-                          sizeXl="4"
-                          sizeLg="6"
-                          sizeMd="6"
-                          sizeSm="6"
-                          sizeXs="12"
-                          key={el.id}
-                        >
+                          sizeXl='4'
+                          sizeLg='6'
+                          sizeMd='6'
+                          sizeSm='6'
+                          sizeXs='12'
+                          key={el.id}>
                           <ZWorkspacesCard
                             workspaceAvatar={ProductLogo}
                             workspaceName={el.workspaceName as string}
-                            workspacePagesCount="0"
+                            workspacePagesCount='0'
                             userAvatar={ProductLogo}
-                            lastActive="22h"
+                            lastActive='22h'
                             id={el.id}
                           />
                         </ZIonCol>
@@ -233,23 +219,22 @@ const ZWorkspaceListPage: React.FC = () => {
                     {/* add a workspace card */}
                     <ZCan havePermission={permissionsEnum.create_workspace}>
                       <ZIonCol
-                        sizeXl="4"
-                        sizeLg="6"
-                        sizeMd="6"
-                        sizeSm="6"
-                        sizeXs="12"
-                      >
+                        sizeXl='4'
+                        sizeLg='6'
+                        sizeMd='6'
+                        sizeSm='6'
+                        sizeXs='12'>
                         <ZIonCard
                           className={classNames({
-                            "h-[13.4rem] zaions__cursor_pointer": true,
+                            'h-[13.4rem] zaions__cursor_pointer': true
                           })}
                           onClick={() => {
                             presentZWorkspaceCreateModal({
-                              _cssClass: "create-workspace-modal-size",
-                              _onDidDismiss: (event) => {
+                              _cssClass: 'create-workspace-modal-size',
+                              _onDidDismiss: event => {
                                 if (
                                   event.detail.data &&
-                                  event.detail.role === "success"
+                                  event.detail.role === 'success'
                                 ) {
                                   // after dismissing redirecting to edit workspace-page
                                   // zNavigatePushRoute(
@@ -280,13 +265,15 @@ const ZWorkspaceListPage: React.FC = () => {
                                   //     })
                                   //   );
                                 }
-                              },
+                              }
                             });
-                          }}
-                        >
-                          <ZIonCardContent className="flex flex-col h-full ion-align-items-center ion-justify-content-center">
-                            <ZIonIcon icon={addOutline} size="large" />
-                            <ZIonText className="text-lg">
+                          }}>
+                          <ZIonCardContent className='flex flex-col h-full ion-align-items-center ion-justify-content-center'>
+                            <ZIonIcon
+                              icon={addOutline}
+                              size='large'
+                            />
+                            <ZIonText className='text-lg'>
                               Create a workspace
                             </ZIonText>
                           </ZIonCardContent>

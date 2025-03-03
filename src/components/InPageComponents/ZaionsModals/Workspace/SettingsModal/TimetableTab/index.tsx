@@ -2,7 +2,7 @@
  * Core Imports go down
  * ? Like Import of React is a Core Import
  * */
-import React from "react";
+import React from 'react';
 
 /**
  * Packages Imports go down
@@ -13,8 +13,8 @@ import React from "react";
  * Custom Imports go down
  * ? Like import of custom components is a custom import
  * */
-import { WorkspaceSettingsTimetablePlaceholder } from "@/assets/images";
-import ZWorkspaceSettingPlaceholderComp from "@/components/InPageComponents/ZaionsModals/Workspace/SettingsModal/PlaceholderComp";
+import { WorkspaceSettingsTimetablePlaceholder } from '@/assets/images';
+import ZWorkspaceSettingPlaceholderComp from '@/components/InPageComponents/ZaionsModals/Workspace/SettingsModal/PlaceholderComp';
 
 /**
  * Custom Hooks Imports go down
@@ -24,16 +24,6 @@ import ZWorkspaceSettingPlaceholderComp from "@/components/InPageComponents/Zaio
 /**
  * Global Constants Imports go down
  * ? Like import of Constant is a global constants import
- * */
-
-/**
- * Type Imports go down
- * ? Like import of type or type of some recoil state or any external type import is a Type import
- * */
-
-/**
- * Recoil State Imports go down
- * ? Import of recoil states is a Recoil State import
  * */
 
 /**
@@ -61,7 +51,7 @@ const ZTimetableTab: React.FC = () => {
   return (
     <>
       <ZWorkspaceSettingPlaceholderComp
-        buttonText="Add a time"
+        buttonText='Add a time'
         image={WorkspaceSettingsTimetablePlaceholder}
         title={
           <span>

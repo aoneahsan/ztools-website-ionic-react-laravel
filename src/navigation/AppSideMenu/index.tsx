@@ -52,16 +52,6 @@ import CONSTANTS from '@/utils/constants';
 import ZaionsRoutes from '@/utils/constants/RoutesConstants';
 
 /**
- * Type Imports go down
- * ? Like import of type or type of some recoil state or any external type import is a Type import
- * */
-
-/**
- * Recoil State Imports go down
- * ? Import of recoil states is a Recoil State import
- * */
-
-/**
  * Style files Imports go down
  * ? Import of style sheet is a style import
  * */
@@ -121,12 +111,12 @@ const ZAppSideMenu: React.FC<{
               '--width': isAboveXlScale
                 ? '25%'
                 : !isAboveXlScale && isXlScale && !isMdScale
-                ? '23rem'
-                : isMdScale && !isSmScale
-                ? '45%'
-                : isSmScale
-                ? '339px'
-                : ''
+                  ? '23rem'
+                  : isMdScale && !isSmScale
+                    ? '45%'
+                    : isSmScale
+                      ? '339px'
+                      : ''
             }
       }>
       <ZIonHeader>
@@ -234,24 +224,25 @@ const ZAppSideMenu: React.FC<{
 
             {/*  Lorem Ipsum Generator  */}
             <ZIonItem
-              className="cursor-pointer ion-activatable"
-              color={isCSSpecificityCalculatorPage ? "light" : undefined}
-              routerLink={ZaionsRoutes.loremIpsumGenerator}
-            >
+              className='cursor-pointer ion-activatable'
+              color={isCSSpecificityCalculatorPage ? 'light' : undefined}
+              routerLink={ZaionsRoutes.loremIpsumGenerator}>
               <ZIonIcon
-                slot="start"
+                slot='start'
                 icon={documentTextOutline}
-                className="me-2"
-                color="primary"
+                className='me-2'
+                color='primary'
               />
               <ZIonText
-                className="mt-1 tracking-wider"
-                color={isCSSpecificityCalculatorPage ? "primary" : undefined}
-              >
+                className='mt-1 tracking-wider'
+                color={isCSSpecificityCalculatorPage ? 'primary' : undefined}>
                 Lorem Ipsum Generator
               </ZIonText>
 
-              <ZIonIcon slot="end" icon={chevronForwardOutline} />
+              <ZIonIcon
+                slot='end'
+                icon={chevronForwardOutline}
+              />
             </ZIonItem>
           </ZIonList>
         </ZIonGrid>

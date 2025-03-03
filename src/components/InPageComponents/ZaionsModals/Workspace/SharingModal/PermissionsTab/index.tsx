@@ -14,24 +14,24 @@ import React from 'react';
  * ? Like import of custom components is a custom import
  * */
 import {
-	ZIonBadge,
-	ZIonButton,
-	ZIonCheckbox,
-	ZIonCol,
-	ZIonIcon,
-	ZIonLabel,
-	ZIonRow,
-	ZIonText,
+  ZIonBadge,
+  ZIonButton,
+  ZIonCheckbox,
+  ZIonCol,
+  ZIonIcon,
+  ZIonLabel,
+  ZIonRow,
+  ZIonText
 } from '@/components/ZIonComponents';
 import ZUserAvatarButton from '@/components/WorkspacesComponents/UserButton';
 import { ProductLogo } from '@/assets/images';
 import {
-	checkmarkOutline,
-	ellipsisHorizontalOutline,
-	eyeOutline,
-	pencilOutline,
-	peopleOutline,
-	sendOutline,
+  checkmarkOutline,
+  ellipsisHorizontalOutline,
+  eyeOutline,
+  pencilOutline,
+  peopleOutline,
+  sendOutline
 } from 'ionicons/icons';
 import { useZMediaQueryScale } from '@/ZaionsHooks/ZGenericHooks';
 import classNames from 'classnames';
@@ -44,16 +44,6 @@ import classNames from 'classnames';
 /**
  * Global Constants Imports go down
  * ? Like import of Constant is a global constants import
- * */
-
-/**
- * Type Imports go down
- * ? Like import of type or type of some recoil state or any external type import is a Type import
- * */
-
-/**
- * Recoil State Imports go down
- * ? Import of recoil states is a Recoil State import
  * */
 
 /**
@@ -78,132 +68,149 @@ import classNames from 'classnames';
  * */
 
 const ZPermissionsTab: React.FC = () => {
-	const { isLgScale, isSmScale } = useZMediaQueryScale();
-	return (
-		<>
-			<ZIonRow
-				className={classNames({
-					'mt-3 ion-align-items-center': true,
-					'ps-3 pe-1': isLgScale,
-					'px-1': !isLgScale,
-				})}
-			>
-				<ZIonCol sizeXl='6' sizeLg='6' sizeMd='5' sizeSm='5' sizeXs='4'>
-					<ZIonLabel>Permissions</ZIonLabel>
-				</ZIonCol>
+  const { isLgScale, isSmScale } = useZMediaQueryScale();
+  return (
+    <>
+      <ZIonRow
+        className={classNames({
+          'mt-3 ion-align-items-center': true,
+          'ps-3 pe-1': isLgScale,
+          'px-1': !isLgScale
+        })}>
+        <ZIonCol
+          sizeXl='6'
+          sizeLg='6'
+          sizeMd='5'
+          sizeSm='5'
+          sizeXs='4'>
+          <ZIonLabel>Permissions</ZIonLabel>
+        </ZIonCol>
 
-				<ZIonCol>
-					<ZIonRow>
-						<ZIonCol>
-							<ZIonIcon icon={eyeOutline} className='block mx-auto' />
-							<ZIonText className='block ion-text-center text-sm'>
-								View
-							</ZIonText>
-						</ZIonCol>
-						<ZIonCol>
-							<ZIonIcon icon={checkmarkOutline} className='block mx-auto' />
-							<ZIonText className='block ion-text-center text-sm'>
-								Approve
-							</ZIonText>
-						</ZIonCol>
-						<ZIonCol>
-							<ZIonIcon icon={pencilOutline} className='block mx-auto' />
-							<ZIonText className='block ion-text-center text-sm'>
-								Edit
-							</ZIonText>
-						</ZIonCol>
-						<ZIonCol>
-							<ZIonIcon icon={sendOutline} className='block mx-auto' />
-							<ZIonText className='block ion-text-center text-sm'>
-								Publish
-							</ZIonText>
-						</ZIonCol>
-						<ZIonCol>
-							<ZIonIcon icon={peopleOutline} className='block mx-auto' />
-							<ZIonText className='block ion-text-center text-sm'>
-								Admin
-							</ZIonText>
-						</ZIonCol>
-					</ZIonRow>
-				</ZIonCol>
-			</ZIonRow>
+        <ZIonCol>
+          <ZIonRow>
+            <ZIonCol>
+              <ZIonIcon
+                icon={eyeOutline}
+                className='block mx-auto'
+              />
+              <ZIonText className='block ion-text-center text-sm'>
+                View
+              </ZIonText>
+            </ZIonCol>
+            <ZIonCol>
+              <ZIonIcon
+                icon={checkmarkOutline}
+                className='block mx-auto'
+              />
+              <ZIonText className='block ion-text-center text-sm'>
+                Approve
+              </ZIonText>
+            </ZIonCol>
+            <ZIonCol>
+              <ZIonIcon
+                icon={pencilOutline}
+                className='block mx-auto'
+              />
+              <ZIonText className='block ion-text-center text-sm'>
+                Edit
+              </ZIonText>
+            </ZIonCol>
+            <ZIonCol>
+              <ZIonIcon
+                icon={sendOutline}
+                className='block mx-auto'
+              />
+              <ZIonText className='block ion-text-center text-sm'>
+                Publish
+              </ZIonText>
+            </ZIonCol>
+            <ZIonCol>
+              <ZIonIcon
+                icon={peopleOutline}
+                className='block mx-auto'
+              />
+              <ZIonText className='block ion-text-center text-sm'>
+                Admin
+              </ZIonText>
+            </ZIonCol>
+          </ZIonRow>
+        </ZIonCol>
+      </ZIonRow>
 
-			{/*  */}
-			<ZIonRow
-				className={classNames({
-					'mt-1 ion-align-items-center': true,
-					'ps-3 pe-1': isLgScale,
-					'px-1': !isLgScale,
-				})}
-			>
-				<ZIonCol
-					sizeXl='6'
-					sizeLg='6'
-					sizeMd='5'
-					sizeSm='5'
-					sizeXs='4'
-					className='flex ion-align-items-center'
-				>
-					{isSmScale && (
-						<ZUserAvatarButton
-							className={classNames({
-								'w-[10px] h-[10px]': true,
-								'me-3': isLgScale,
-								'me-1': !isLgScale,
-							})}
-							userAvatar={ProductLogo}
-							style={{ height: '35px', width: '35px' }}
-						/>
-					)}
+      {/*  */}
+      <ZIonRow
+        className={classNames({
+          'mt-1 ion-align-items-center': true,
+          'ps-3 pe-1': isLgScale,
+          'px-1': !isLgScale
+        })}>
+        <ZIonCol
+          sizeXl='6'
+          sizeLg='6'
+          sizeMd='5'
+          sizeSm='5'
+          sizeXs='4'
+          className='flex ion-align-items-center'>
+          {isSmScale && (
+            <ZUserAvatarButton
+              className={classNames({
+                'w-[10px] h-[10px]': true,
+                'me-3': isLgScale,
+                'me-1': !isLgScale
+              })}
+              userAvatar={ProductLogo}
+              style={{ height: '35px', width: '35px' }}
+            />
+          )}
 
-					<div className=''>
-						<ZIonText
-							className={classNames({
-								flex: true,
-								'ion-align-items-center': isLgScale,
-								'flex-col ion-align-items-start': !isLgScale,
-							})}
-						>
-							<ZIonLabel className='text-sm font-bold'>
-								Muhammad talha Irshad (you)
-							</ZIonLabel>
-							<ZIonBadge
-								className={classNames({
-									'ms-2': isLgScale,
-									'ms-0': !isLgScale,
-								})}
-							>
-								TEAM
-							</ZIonBadge>
-						</ZIonText>
-						<ZIonLabel className='block text-sm' color='medium'>
-							talhaarshaad5@gmail.com
-						</ZIonLabel>
-					</div>
-				</ZIonCol>
+          <div className=''>
+            <ZIonText
+              className={classNames({
+                flex: true,
+                'ion-align-items-center': isLgScale,
+                'flex-col ion-align-items-start': !isLgScale
+              })}>
+              <ZIonLabel className='text-sm font-bold'>
+                Muhammad talha Irshad (you)
+              </ZIonLabel>
+              <ZIonBadge
+                className={classNames({
+                  'ms-2': isLgScale,
+                  'ms-0': !isLgScale
+                })}>
+                TEAM
+              </ZIonBadge>
+            </ZIonText>
+            <ZIonLabel
+              className='block text-sm'
+              color='medium'>
+              talhaarshaad5@gmail.com
+            </ZIonLabel>
+          </div>
+        </ZIonCol>
 
-				<ZIonCol>
-					<ZIonRow>
-						<ZIonCol className='ion-text-center'>
-							<ZIonCheckbox />
-						</ZIonCol>
-						<ZIonCol className='ion-text-center'>
-							<ZIonCheckbox />
-						</ZIonCol>
-						<ZIonCol className='ion-text-center'>
-							<ZIonCheckbox />
-						</ZIonCol>
-						<ZIonCol className='ion-text-center'>
-							<ZIonCheckbox />
-						</ZIonCol>
-						<ZIonCol className='ion-text-center'>
-							<ZIonCheckbox />
-						</ZIonCol>
-					</ZIonRow>
-				</ZIonCol>
-			</ZIonRow>
-		</>
-	);
+        <ZIonCol>
+          <ZIonRow>
+            <ZIonCol className='ion-text-center'>
+              <ZIonCheckbox />
+            </ZIonCol>
+            <ZIonCol className='ion-text-center'>
+              <ZIonCheckbox />
+            </ZIonCol>
+            <ZIonCol className='ion-text-center'>
+              <ZIonCheckbox />
+            </ZIonCol>
+            <ZIonCol className='ion-text-center'>
+              <ZIonCheckbox />
+            </ZIonCol>
+            <ZIonCol className='ion-text-center'>
+              <ZIonCheckbox />
+            </ZIonCol>
+          </ZIonRow>
+        </ZIonCol>
+      </ZIonRow>
+    </>
+  );
 };
 
 export default ZPermissionsTab;

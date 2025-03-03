@@ -2,16 +2,16 @@
  * Core Imports go down
  * ? Like Import of React is a Core Import
  * */
-import React from "react";
+import React from 'react';
 
 /**
  * Packages Imports go down
  * ? Like import of ionic components is a packages import
  * */
-import classNames from "classnames";
-import { Formik } from "formik";
-import { useSetRecoilState } from "recoil";
-import { closeOutline } from "ionicons/icons";
+import classNames from 'classnames';
+import { Formik } from 'formik';
+import { useSetRecoilState } from 'recoil';
+import { closeOutline } from 'ionicons/icons';
 
 /**
  * Custom Imports go down
@@ -23,29 +23,20 @@ import {
   ZIonText,
   ZIonContent,
   ZIonIcon,
-  ZIonFooter,
-} from "@/components/ZIonComponents";
+  ZIonFooter
+} from '@/components/ZIonComponents';
 
 /**
  * Global Constants Imports go down
  * ? Like import of Constant is a global constants import
  * */
-import MESSAGES from "@/utils/messages";
-import { getRandomKey, isValidEmail } from "@/utils/helpers";
+import MESSAGES from '@/utils/messages';
+import { getRandomKey, isValidEmail } from '@/utils/helpers';
 
-/**
- * Type Imports go down
- * ? Like import of type or type of some recoil state or any external type import is a Type import
- * */
-
-/**
- * Recoil State Imports go down
- * ? Import of recoil states is a Recoil State import
- * */
-import { ZaionsUserAccountEmails } from "@/ZaionsStore/UserAccount/index.recoil";
-import { ZIonButton } from "@/components/ZIonComponents";
-import ZIonTitle from "@/components/ZIonComponents/ZIonTitle";
-import ZIonInputField from "@/components/CustomComponents/FormFields/ZIonInputField";
+import { ZaionsUserAccountEmails } from '@/ZaionsStore/UserAccount/index.recoil';
+import { ZIonButton } from '@/components/ZIonComponents';
+import ZIonTitle from '@/components/ZIonComponents/ZIonTitle';
+import ZIonInputField from '@/components/CustomComponents/FormFields/ZIonInputField';
 
 /**
  * Style files Imports go down
@@ -75,8 +66,8 @@ const AddEmailModal: React.FC<{
   return (
     <>
       <Formik
-        initialValues={{ email: "" }}
-        validate={(values) => {
+        initialValues={{ email: '' }}
+        validate={values => {
           const errors: {
             email?: string;
           } = {};
@@ -89,8 +80,8 @@ const AddEmailModal: React.FC<{
 
           return errors;
         }}
-        onSubmit={(values) => {
-          setNewEmailInUserAccount((oldVals) =>
+        onSubmit={values => {
+          setNewEmailInUserAccount(oldVals =>
             oldVals
               ? [
                   ...oldVals,
@@ -98,21 +89,20 @@ const AddEmailModal: React.FC<{
                     id: getRandomKey(),
                     emailAddress: values.email,
                     isPrimary: false,
-                    isVarified: false,
-                  },
+                    isVarified: false
+                  }
                 ]
               : [
                   {
                     id: getRandomKey(),
                     emailAddress: values.email,
                     isPrimary: false,
-                    isVarified: false,
-                  },
+                    isVarified: false
+                  }
                 ]
           );
           dismissZIonModal();
-        }}
-      >
+        }}>
         {({
           values,
           errors,
@@ -120,29 +110,31 @@ const AddEmailModal: React.FC<{
           handleBlur,
           submitForm,
           isValid,
-          touched,
+          touched
         }) => (
           <>
-            <ZIonContent className="ion-padding-vertical ">
-              <ZIonRow className="ion-padding">
-                <ZIonCol className="flex flex-col mt-3 ion-justify-content-end ion-align-items-center">
-                  <ZIonTitle className="mb-3 ion-no-padding">
-                    <h3 className="font-bold">Add a new email address</h3>
+            <ZIonContent className='ion-padding-vertical '>
+              <ZIonRow className='ion-padding'>
+                <ZIonCol className='flex flex-col mt-3 ion-justify-content-end ion-align-items-center'>
+                  <ZIonTitle className='mb-3 ion-no-padding'>
+                    <h3 className='font-bold'>Add a new email address</h3>
                   </ZIonTitle>
-                  <ZIonText className="block">
+                  <ZIonText className='block'>
                     A verification email will be sent to this address after
                     clicking Save. New email addresses cannot be designated as
                     primary until they have been verified.
                   </ZIonText>
                 </ZIonCol>
-                <ZIonCol className="flex ion-justify-content-end ion-align-items-start ion-no-padding">
+                <ZIonCol className='flex ion-justify-content-end ion-align-items-start ion-no-padding'>
                   <ZIonButton
-                    fill="clear"
-                    className="ion-no-padding ion-no-margin me-2"
-                    color="dark"
-                    onClick={() => dismissZIonModal()}
-                  >
-                    <ZIonIcon icon={closeOutline} size="large" />
+                    fill='clear'
+                    className='ion-no-padding ion-no-margin me-2'
+                    color='dark'
+                    onClick={() => dismissZIonModal()}>
+                    <ZIonIcon
+                      icon={closeOutline}
+                      size='large'
+                    />
                   </ZIonButton>
                 </ZIonCol>
               </ZIonRow>
@@ -150,38 +142,36 @@ const AddEmailModal: React.FC<{
               <ZIonInputField
                 inputFieldProps={{
                   className: classNames({
-                    "ion-margin-start ion-margin-end": true,
-                    "ion-touched ion-invalid": touched.email && errors.email,
-                    "ion-touched ion-valid": touched.email && !errors.email,
+                    'ion-margin-start ion-margin-end': true,
+                    'ion-touched ion-invalid': touched.email && errors.email,
+                    'ion-touched ion-valid': touched.email && !errors.email
                   }),
-                  label: "Email address*",
-                  labelPlacement: "floating",
-                  name: "email",
+                  label: 'Email address*',
+                  labelPlacement: 'floating',
+                  name: 'email',
                   onIonChange: handleChange,
                   onIonBlur: handleBlur,
                   value: values.email,
-                  errorText: errors.email,
+                  errorText: errors.email
                 }}
               />
             </ZIonContent>
 
-            <ZIonFooter className="py-2 ion-text-end">
+            <ZIonFooter className='py-2 ion-text-end'>
               <ZIonButton
-                className="me-4"
-                fill="outline"
-                onClick={() => dismissZIonModal()}
-              >
+                className='me-4'
+                fill='outline'
+                onClick={() => dismissZIonModal()}>
                 Cancel
               </ZIonButton>
               <ZIonButton
-                className="me-4"
-                color="tertiary"
+                className='me-4'
+                color='tertiary'
                 onClick={() => {
                   if (isValid) {
                     void submitForm();
                   }
-                }}
-              >
+                }}>
                 Save
               </ZIonButton>
             </ZIonFooter>

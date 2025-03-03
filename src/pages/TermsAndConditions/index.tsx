@@ -2,21 +2,21 @@
  * Core Imports go down
  * ? Like Import of React is a Core Import
  * */
-import React from "react";
+import React from 'react';
 
 /**
  * Packages Imports go down
  * ? Like import of ionic components is a packages import
  * */
-import classNames from "classnames";
+import classNames from 'classnames';
 
 /**
  * Custom Imports go down
  * ? Like import of custom components is a custom import
  * */
-import ZIonPage from "@/components/ZIonPage";
-import ZAppSideMenu from "@/navigation/AppSideMenu";
-import Header from "@/components/Header";
+import ZIonPage from '@/components/ZIonPage';
+import ZAppSideMenu from '@/navigation/AppSideMenu';
+import Header from '@/components/Header';
 import {
   ZIonCol,
   ZIonContent,
@@ -25,31 +25,21 @@ import {
   ZIonRouterLink,
   ZIonRow,
   ZIonText,
-  ZIonTitle,
-} from "@/components/ZIonComponents";
-import Footer from "@/components/Footer";
+  ZIonTitle
+} from '@/components/ZIonComponents';
+import Footer from '@/components/Footer';
 
 /**
  * Custom Hooks Imports go down
  * ? Like import of custom Hook is a custom import
  * */
-import { useZMediaQueryScale } from "@/ZaionsHooks/ZGenericHooks";
+import { useZMediaQueryScale } from '@/ZaionsHooks/ZGenericHooks';
 
 /**
  * Global Constants Imports go down
  * ? Like import of Constant is a global constants import
  * */
-import CONSTANTS, { PRODUCT_NAME } from "@/utils/constants";
-
-/**
- * Type Imports go down
- * ? Like import of type or type of some recoil state or any external type import is a Type import
- * */
-
-/**
- * Recoil State Imports go down
- * ? Import of recoil states is a Recoil State import
- * */
+import CONSTANTS, { PRODUCT_NAME } from '@/utils/constants';
 
 /**
  * Style files Imports go down
@@ -60,7 +50,7 @@ import CONSTANTS, { PRODUCT_NAME } from "@/utils/constants";
  * Images Imports go down
  * ? Import of images like png,jpg,jpeg,gif,svg etc. is a Images Imports import
  * */
-import { ProductLogoPng } from "@/assets/images";
+import { ProductLogoPng } from '@/assets/images';
 
 /**
  * Component props type go down
@@ -85,51 +75,48 @@ const ZTermsAndConditions: React.FC = () => {
       <ZAppSideMenu pageId={CONSTANTS.PAGE_IDS.TERM_AND_CONDITIONS_PAGE_ID} />
       <ZIonPage
         pageTitle={`${PRODUCT_NAME} - Terms and Conditions page`}
-        id={CONSTANTS.PAGE_IDS.TERM_AND_CONDITIONS_PAGE_ID}
-      >
+        id={CONSTANTS.PAGE_IDS.TERM_AND_CONDITIONS_PAGE_ID}>
         {/* Header  */}
         <Header title={`${PRODUCT_NAME} Terms and Conditions`} />
 
         <ZIonContent>
-          <ZIonGrid className="lg:w-[80%] md:w-[95%] sm:w-[98%] xs:w-[100%] xl:w-[60%] mx-auto my-2 pt-5">
+          <ZIonGrid className='lg:w-[80%] md:w-[95%] sm:w-[98%] xs:w-[100%] xl:w-[60%] mx-auto my-2 pt-5'>
             <ZIonRow>
               <ZIonCol
-                size="12"
+                size='12'
                 className={classNames({
-                  "mb-3 flex ion-justify-content-center flex-col ion-text-center":
+                  'mb-3 flex ion-justify-content-center flex-col ion-text-center':
                     true,
-                  "ion-align-items-center": isMdScale,
-                })}
-              >
+                  'ion-align-items-center': isMdScale
+                })}>
                 <ZIonImg
                   src={ProductLogoPng}
-                  className="w-[12rem] h-[10rem] mx-auto"
+                  className='w-[12rem] h-[10rem] mx-auto'
                 />
                 {isMdScale && (
                   <ZIonText
                     className={classNames({
-                      "mb-3 ion-no-padding font-semibold": true,
-                      "text-2xl": (isXlScale && !isLgScale) || isAboveXlScale,
-                      "text-xl": isLgScale,
-                    })}
-                  >
+                      'mb-3 ion-no-padding font-semibold': true,
+                      'text-2xl': (isXlScale && !isLgScale) || isAboveXlScale,
+                      'text-xl': isLgScale
+                    })}>
                     {PRODUCT_NAME} Terms and Conditions
                   </ZIonText>
                 )}
               </ZIonCol>
 
               <ZIonCol>
-                <ZIonText className="block mb-2">
+                <ZIonText className='block mb-2'>
                   Last updated: October 18, 2023
                 </ZIonText>
                 <ZIonText>
                   Please read these terms and conditions carefully before using
                   Our Service.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Interpretation and Definitions
                 </ZIonTitle>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Interpretation
                 </ZIonTitle>
                 <ZIonText>
@@ -138,7 +125,7 @@ const ZTermsAndConditions: React.FC = () => {
                   definitions shall have the same meaning regardless of whether
                   they appear in singular or in plural.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Definitions
                 </ZIonTitle>
                 <ZIonText>
@@ -214,12 +201,11 @@ const ZTermsAndConditions: React.FC = () => {
                   <li>
                     <ZIonText>
                       <strong>Website</strong> refers to {PRODUCT_NAME},
-                      accessible from{" "}
+                      accessible from{' '}
                       <ZIonRouterLink
                         href={CONSTANTS.PRODUCT_DETAILS.URL}
-                        rel="external nofollow noopener"
-                        target="_blank"
-                      >
+                        rel='external nofollow noopener'
+                        target='_blank'>
                         {CONSTANTS.PRODUCT_DETAILS.URL}
                       </ZIonRouterLink>
                     </ZIonText>
@@ -233,7 +219,7 @@ const ZTermsAndConditions: React.FC = () => {
                     </ZIonText>
                   </li>
                 </ul>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Acknowledgment
                 </ZIonTitle>
                 <ZIonText>
@@ -268,7 +254,7 @@ const ZTermsAndConditions: React.FC = () => {
                   law protects You. Please read Our Privacy Policy carefully
                   before using Our Service.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Links to Other Websites
                 </ZIonTitle>
                 <ZIonText>
@@ -290,7 +276,7 @@ const ZTermsAndConditions: React.FC = () => {
                   privacy policies of any third-party web sites or services that
                   You visit.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Termination
                 </ZIonTitle>
                 <ZIonText>
@@ -303,7 +289,7 @@ const ZTermsAndConditions: React.FC = () => {
                   Upon termination, Your right to use the Service will cease
                   immediately.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Limitation of Liability
                 </ZIonTitle>
                 <ZIonText>
@@ -335,7 +321,7 @@ const ZTermsAndConditions: React.FC = () => {
                   not apply. In these states, each party's liability will be
                   limited to the greatest extent permitted by law.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   "AS IS" and "AS AVAILABLE" Disclaimer
                 </ZIonTitle>
                 <ZIonText>
@@ -381,7 +367,7 @@ const ZTermsAndConditions: React.FC = () => {
                   applied to the greatest extent enforceable under applicable
                   law.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Governing Law
                 </ZIonTitle>
                 <ZIonText>
@@ -390,7 +376,7 @@ const ZTermsAndConditions: React.FC = () => {
                   of the Application may also be subject to other local, state,
                   national, or international laws.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Disputes Resolution
                 </ZIonTitle>
                 <ZIonText>
@@ -398,7 +384,7 @@ const ZTermsAndConditions: React.FC = () => {
                   agree to first try to resolve the dispute informally by
                   contacting the Company.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   For European Union (EU) Users
                 </ZIonTitle>
                 <ZIonText>
@@ -406,7 +392,7 @@ const ZTermsAndConditions: React.FC = () => {
                   any mandatory provisions of the law of the country in which
                   you are resident in.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   United States Legal Compliance
                 </ZIonTitle>
                 <ZIonText>
@@ -417,10 +403,10 @@ const ZTermsAndConditions: React.FC = () => {
                   are not listed on any United States government list of
                   prohibited or restricted parties.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Severability and Waiver
                 </ZIonTitle>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Severability
                 </ZIonTitle>
                 <ZIonText>
@@ -430,7 +416,7 @@ const ZTermsAndConditions: React.FC = () => {
                   extent possible under applicable law and the remaining
                   provisions will continue in full force and effect.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">Waiver</ZIonTitle>
+                <ZIonTitle className='mt-4 ion-no-padding'>Waiver</ZIonTitle>
                 <ZIonText>
                   Except as provided herein, the failure to exercise a right or
                   to require performance of an obligation under these Terms
@@ -439,7 +425,7 @@ const ZTermsAndConditions: React.FC = () => {
                   waiver of a breach constitute a waiver of any subsequent
                   breach.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Translation Interpretation
                 </ZIonTitle>
                 <ZIonText>
@@ -447,7 +433,7 @@ const ZTermsAndConditions: React.FC = () => {
                   made them available to You on our Service. You agree that the
                   original English text shall prevail in the case of a dispute.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Changes to These Terms and Conditions
                 </ZIonTitle>
                 <ZIonText>
@@ -463,7 +449,7 @@ const ZTermsAndConditions: React.FC = () => {
                   revised terms. If You do not agree to the new terms, in whole
                   or in part, please stop using the website and the Service.
                 </ZIonText>
-                <ZIonTitle className="mt-4 ion-no-padding">
+                <ZIonTitle className='mt-4 ion-no-padding'>
                   Contact Us
                 </ZIonTitle>
                 <ZIonText>
@@ -473,24 +459,22 @@ const ZTermsAndConditions: React.FC = () => {
                 <ul>
                   <li>
                     <ZIonText>
-                      By email:{" "}
+                      By email:{' '}
                       <ZIonRouterLink
                         href={`mailto:${CONSTANTS.COMPANY_DETAILS.ADDRESS_LINK}`}
-                        rel="external nofollow noopener"
-                        target="_blank"
-                      >
+                        rel='external nofollow noopener'
+                        target='_blank'>
                         {CONSTANTS.COMPANY_DETAILS.EMAIL}
                       </ZIonRouterLink>
                     </ZIonText>
                   </li>
                   <li>
                     <ZIonText>
-                      By visiting this page on our website:{" "}
+                      By visiting this page on our website:{' '}
                       <ZIonRouterLink
                         href={CONSTANTS.COMPANY_DETAILS.CONTACT_LINK}
-                        rel="external nofollow noopener"
-                        target="_blank"
-                      >
+                        rel='external nofollow noopener'
+                        target='_blank'>
                         {CONSTANTS.COMPANY_DETAILS.CONTACT_LINK}
                       </ZIonRouterLink>
                     </ZIonText>
@@ -502,12 +486,11 @@ const ZTermsAndConditions: React.FC = () => {
                   </li>
                   <li>
                     <ZIonText>
-                      By mail:{" "}
+                      By mail:{' '}
                       <ZIonRouterLink
                         href={CONSTANTS.COMPANY_DETAILS.ADDRESS_LINK}
-                        rel="external nofollow noopener"
-                        target="_blank"
-                      >
+                        rel='external nofollow noopener'
+                        target='_blank'>
                         {CONSTANTS.COMPANY_DETAILS.ADDRESS_LINK}
                       </ZIonRouterLink>
                     </ZIonText>

@@ -14,16 +14,16 @@ import React from 'react';
  * ? Like import of custom components is a custom import
  * */
 import {
-	ZIonButton,
-	ZIonCol,
-	ZIonGrid,
-	ZIonIcon,
-	ZIonInput,
-	ZIonRow,
-	ZIonText,
+  ZIonButton,
+  ZIonCol,
+  ZIonGrid,
+  ZIonIcon,
+  ZIonInput,
+  ZIonRow,
+  ZIonText
 } from '@/components/ZIonComponents';
 import ZTimezoneInput, {
-	ZTimezoneSelector,
+  ZTimezoneSelector
 } from '@/components/CustomComponents/ZTimezone';
 import { eyeOffOutline } from 'ionicons/icons';
 import ZRCSwitch from '@/components/CustomComponents/ZRCSwitch';
@@ -36,16 +36,6 @@ import ZRCSwitch from '@/components/CustomComponents/ZRCSwitch';
 /**
  * Global Constants Imports go down
  * ? Like import of Constant is a global constants import
- * */
-
-/**
- * Type Imports go down
- * ? Like import of type or type of some recoil state or any external type import is a Type import
- * */
-
-/**
- * Recoil State Imports go down
- * ? Import of recoil states is a Recoil State import
  * */
 
 /**
@@ -70,64 +60,71 @@ import ZRCSwitch from '@/components/CustomComponents/ZRCSwitch';
  * */
 
 const ZSettingsTab: React.FC = () => {
-	return (
-		<>
-			<ZIonGrid className='mt-4 w-full'>
-				<ZIonRow className='w-4/5. w-80 mx-auto'>
-					<ZIonCol size='12'>
-						<ZIonInput
-							label='Workspace Name'
-							labelPlacement='floating'
-							placeholder='Workspace Name'
-						/>
-					</ZIonCol>
+  return (
+    <>
+      <ZIonGrid className='mt-4 w-full'>
+        <ZIonRow className='w-4/5. w-80 mx-auto'>
+          <ZIonCol size='12'>
+            <ZIonInput
+              label='Workspace Name'
+              labelPlacement='floating'
+              placeholder='Workspace Name'
+            />
+          </ZIonCol>
 
-					<ZIonCol size='12' className='mt-4'>
-						{/* <ZTimezoneInput className='ion-margin-top' /> */}
-						<ZTimezoneSelector
-							className='ion-margin-top'
-							label='Workspace timezone'
-							labelPlacement='floating'
-						/>
-					</ZIonCol>
+          <ZIonCol
+            size='12'
+            className='mt-4'>
+            {/* <ZTimezoneInput className='ion-margin-top' /> */}
+            <ZTimezoneSelector
+              className='ion-margin-top'
+              label='Workspace timezone'
+              labelPlacement='floating'
+            />
+          </ZIonCol>
 
-					<ZIonCol size='12' className='pt-3 mt-4'>
-						<ZIonRow className='ion-align-items-center'>
-							<ZIonCol
-								size='max-content'
-								className='flex ion-align-items-center'
-							>
-								<ZIonIcon icon={eyeOffOutline} className='me-2' />
-								<ZIonText>Create new posts as internal</ZIonText>
-							</ZIonCol>
+          <ZIonCol
+            size='12'
+            className='pt-3 mt-4'>
+            <ZIonRow className='ion-align-items-center'>
+              <ZIonCol
+                size='max-content'
+                className='flex ion-align-items-center'>
+                <ZIonIcon
+                  icon={eyeOffOutline}
+                  className='me-2'
+                />
+                <ZIonText>Create new posts as internal</ZIonText>
+              </ZIonCol>
 
-							<ZIonCol className='ion-text-end'>
-								<ZRCSwitch />
-							</ZIonCol>
-						</ZIonRow>
-					</ZIonCol>
+              <ZIonCol className='ion-text-end'>
+                <ZRCSwitch />
+              </ZIonCol>
+            </ZIonRow>
+          </ZIonCol>
 
-					<ZIonCol size='12' className='mt-4'>
-						<ZIonText className='block zaions__fs_14'>
-							Remove workspace
-						</ZIonText>
-						<ZIonText className='block zaions__fs_14 text-muted'>
-							Remove this workspace and erase all data (posts, comments, pages
-							etc.). This action is irreversible.
-						</ZIonText>
+          <ZIonCol
+            size='12'
+            className='mt-4'>
+            <ZIonText className='block zaions__fs_14'>
+              Remove workspace
+            </ZIonText>
+            <ZIonText className='block zaions__fs_14 text-muted'>
+              Remove this workspace and erase all data (posts, comments, pages
+              etc.). This action is irreversible.
+            </ZIonText>
 
-						<ZIonButton
-							color='danger'
-							fill='clear'
-							className='mt-3 ion-no-padding text-transform-initial'
-						>
-							Remove this workspace
-						</ZIonButton>
-					</ZIonCol>
-				</ZIonRow>
-			</ZIonGrid>
-		</>
-	);
+            <ZIonButton
+              color='danger'
+              fill='clear'
+              className='mt-3 ion-no-padding text-transform-initial'>
+              Remove this workspace
+            </ZIonButton>
+          </ZIonCol>
+        </ZIonRow>
+      </ZIonGrid>
+    </>
+  );
 };
 
 export default ZSettingsTab;

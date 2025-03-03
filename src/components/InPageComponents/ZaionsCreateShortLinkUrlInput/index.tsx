@@ -19,11 +19,11 @@ import { useZNavigate } from '@/ZaionsHooks/zrouter-hooks';
  * */
 
 import {
-	ZIonButton,
-	ZIonIcon,
-	ZIonInput,
-	ZIonItem,
-	ZIonText,
+  ZIonButton,
+  ZIonIcon,
+  ZIonInput,
+  ZIonItem,
+  ZIonText
 } from '@/components/ZIonComponents';
 
 /**
@@ -34,23 +34,14 @@ import { reportCustomError } from '@/utils/customErrorType';
 import CONSTANTS from '@/utils/constants';
 import ZaionsRoutes from '@/utils/constants/RoutesConstants';
 
-/**
- * Type Imports go down
- * ? Like import of type or type of some recoil state or any external type import is a Type import
- * */
-
-/**
- * Recoil State Imports go down
- * ? Import of recoil states is a Recoil State import
- * */
 import { NewShortLinkFormState } from '@/ZaionsStore/UserDashboard/ShortLinks/ShortLinkFormState.recoil';
 import { replaceParams, validateField } from '@/utils/helpers';
 import { VALIDATION_RULE } from '@/utils/enums';
 import { IonNote } from '@ionic/react';
 import { searchOutline } from 'ionicons/icons';
 import {
-	FormMode,
-	messengerPlatformsBlockEnum,
+  FormMode,
+  messengerPlatformsBlockEnum
 } from '@/types/AdminPanel/index.type';
 import ZIonInputField from '@/components/CustomComponents/FormFields/ZIonInputField';
 import { useParams } from 'react-router';
@@ -76,109 +67,109 @@ import { useParams } from 'react-router';
  * @type {*}
  * */
 const ZaionsCreateShortLinkUrlInput: React.FC<{ className?: string }> = ({
-	className,
+  className
 }) => {
-	// getting current workspace id form params.
-	const { workspaceId } = useParams<{
-		workspaceId: string;
-	}>();
+  // getting current workspace id form params.
+  const { workspaceId } = useParams<{
+    workspaceId: string;
+  }>();
 
-	const setNewShortLinkFormState = useSetRecoilState(NewShortLinkFormState);
+  const setNewShortLinkFormState = useSetRecoilState(NewShortLinkFormState);
 
-	const { zNavigatePushRoute } = useZNavigate();
+  const { zNavigatePushRoute } = useZNavigate();
 
-	return (
-		<Formik
-			initialValues={{
-				domain: '',
-			}}
-			validate={(values) => {
-				const errors: { domain?: string } = {};
+  return (
+    <Formik
+      initialValues={{
+        domain: ''
+      }}
+      validate={values => {
+        const errors: { domain?: string } = {};
 
-				validateField('domain', values, errors, VALIDATION_RULE.url);
+        validateField('domain', values, errors, VALIDATION_RULE.url);
 
-				return errors;
-			}}
-			onSubmit={(values, { resetForm }) => {
-				try {
-					if (values.domain) {
-						setNewShortLinkFormState((_) => ({
-							folderId: CONSTANTS.DEFAULT_VALUES.DEFAULT_FOLDER,
-							shortUrl: {
-								domain: CONSTANTS.DEFAULT_VALUES.DEFAULT_CUSTOM_DOMAIN,
-							},
-							target: { url: values.domain },
-							type: messengerPlatformsBlockEnum.link,
-							pixelIds: [],
-							tags: [],
-							formMode: FormMode.ADD,
-						}));
+        return errors;
+      }}
+      onSubmit={(values, { resetForm }) => {
+        try {
+          if (values.domain) {
+            setNewShortLinkFormState(_ => ({
+              folderId: CONSTANTS.DEFAULT_VALUES.DEFAULT_FOLDER,
+              shortUrl: {
+                domain: CONSTANTS.DEFAULT_VALUES.DEFAULT_CUSTOM_DOMAIN
+              },
+              target: { url: values.domain },
+              type: messengerPlatformsBlockEnum.link,
+              pixelIds: [],
+              tags: [],
+              formMode: FormMode.ADD
+            }));
 
-						resetForm();
-					}
-				} catch (error) {
-					reportCustomError(error);
-				}
-			}}
-		>
-			{({ submitForm, handleChange, handleBlur, errors, values, touched }) => {
-				return (
-					<>
-						<ZIonItem
-							className={classNames(className, {
-								'ion-item-start-no-padding': true,
-								'ion-invalid': touched.domain && errors.domain,
-								'ion-valid': touched.domain && !errors.domain,
-							})}
-							style={{ '--inner-padding-end': '0px' }}
-							lines='none'
-						>
-							<ZIonInputField
-								inputFieldProps={{
-									className: classNames({
-										'rounded-none': true,
-										'ion-touched ion-invalid': touched.domain && errors.domain,
-										'ion-touched ion-valid': touched.domain && !errors.domain,
-									}),
-									label: '',
-									name: 'domain',
-									type: 'email',
-									onIonChange: handleChange,
-									onIonBlur: handleBlur,
-									value: values.domain,
-									fill: 'outline',
-									placeholder: 'https://yourlink.com',
-									style: {
-										'--background': '#fff',
-										'--padding-start': '11px',
-										'--border-radius': '0',
-									},
-								}}
-							/>
+            resetForm();
+          }
+        } catch (error) {
+          reportCustomError(error);
+        }
+      }}>
+      {({ submitForm, handleChange, handleBlur, errors, values, touched }) => {
+        return (
+          <>
+            <ZIonItem
+              className={classNames(className, {
+                'ion-item-start-no-padding': true,
+                'ion-invalid': touched.domain && errors.domain,
+                'ion-valid': touched.domain && !errors.domain
+              })}
+              style={{ '--inner-padding-end': '0px' }}
+              lines='none'>
+              <ZIonInputField
+                inputFieldProps={{
+                  className: classNames({
+                    'rounded-none': true,
+                    'ion-touched ion-invalid': touched.domain && errors.domain,
+                    'ion-touched ion-valid': touched.domain && !errors.domain
+                  }),
+                  label: '',
+                  name: 'domain',
+                  type: 'email',
+                  onIonChange: handleChange,
+                  onIonBlur: handleBlur,
+                  value: values.domain,
+                  fill: 'outline',
+                  placeholder: 'https://yourlink.com',
+                  style: {
+                    '--background': '#fff',
+                    '--padding-start': '11px',
+                    '--border-radius': '0'
+                  }
+                }}
+              />
 
-							<ZIonButton
-								onClick={() => void submitForm()}
-								className='ion-no-margin ion-text-capitalize'
-								slot='end'
-								style={{
-									height: '100%',
-									'--border-radius': '0',
-								}}
-							>
-								<ZIonIcon icon={searchOutline} className='me-1' />{' '}
-								<ZIonText className='pt-1 me-1'>Switch it</ZIonText>
-							</ZIonButton>
-						</ZIonItem>
-						{errors.domain && touched.domain && (
-							<div className='ps-1 zaions__fs_14'>
-								<IonNote color='danger'>{errors.domain}</IonNote>
-							</div>
-						)}
-					</>
-				);
-			}}
-		</Formik>
-	);
+              <ZIonButton
+                onClick={() => void submitForm()}
+                className='ion-no-margin ion-text-capitalize'
+                slot='end'
+                style={{
+                  height: '100%',
+                  '--border-radius': '0'
+                }}>
+                <ZIonIcon
+                  icon={searchOutline}
+                  className='me-1'
+                />{' '}
+                <ZIonText className='pt-1 me-1'>Switch it</ZIonText>
+              </ZIonButton>
+            </ZIonItem>
+            {errors.domain && touched.domain && (
+              <div className='ps-1 zaions__fs_14'>
+                <IonNote color='danger'>{errors.domain}</IonNote>
+              </div>
+            )}
+          </>
+        );
+      }}
+    </Formik>
+  );
 };
 
 export default ZaionsCreateShortLinkUrlInput;

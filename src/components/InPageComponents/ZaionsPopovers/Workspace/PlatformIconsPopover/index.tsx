@@ -14,14 +14,14 @@ import React from 'react';
  * ? Like import of custom components is a custom import
  * */
 import {
-	ZIonCol,
-	ZIonIcon,
-	ZIonItem,
-	ZIonRow,
+  ZIonCol,
+  ZIonIcon,
+  ZIonItem,
+  ZIonRow
 } from '@/components/ZIonComponents';
 import {
-	PlatformColorsData,
-	PlatformIconsData,
+  PlatformColorsData,
+  PlatformIconsData
 } from '@/data/UserDashboard/Workspace/MockUpPage/index.data';
 import { checkmarkOutline } from 'ionicons/icons';
 import classNames from 'classnames';
@@ -34,16 +34,6 @@ import classNames from 'classnames';
 /**
  * Global Constants Imports go down
  * ? Like import of Constant is a global constants import
- * */
-
-/**
- * Type Imports go down
- * ? Like import of type or type of some recoil state or any external type import is a Type import
- * */
-
-/**
- * Recoil State Imports go down
- * ? Import of recoil states is a Recoil State import
  * */
 
 /**
@@ -68,60 +58,64 @@ import classNames from 'classnames';
  * */
 
 const ZPlatformIconsPopover: React.FC<{
-	dismissZIonPopover: (data?: string, role?: string | undefined) => void;
-	_colorCode?: string;
-	_icon: string;
+  dismissZIonPopover: (data?: string, role?: string | undefined) => void;
+  _colorCode?: string;
+  _icon: string;
 }> = ({ _colorCode, _icon, dismissZIonPopover }) => {
-	return (
-		<ZIonRow className='ion-padding pt-2'>
-			{PlatformIconsData.defaultIcons.map((el, index) => (
-				<ZIonCol size='3' key={index}>
-					<div
-						className={classNames({
-							'rounded py-1 zaions__cursor_pointer flex ion-align-items-center ion-justify-content-center':
-								true,
-							zaions__dark_set: _icon === el.icon,
-						})}
-						onClick={() => {
-							dismissZIonPopover(el.icon);
-						}}
-						title={el.iconName}
-					>
-						<ZIonIcon
-							icon={el.icon}
-							className='w-6 h-6'
-							style={{ color: _colorCode ? _colorCode : '' }}
-						/>
-					</div>
-				</ZIonCol>
-			))}
+  return (
+    <ZIonRow className='ion-padding pt-2'>
+      {PlatformIconsData.defaultIcons.map((el, index) => (
+        <ZIonCol
+          size='3'
+          key={index}>
+          <div
+            className={classNames({
+              'rounded py-1 zaions__cursor_pointer flex ion-align-items-center ion-justify-content-center':
+                true,
+              zaions__dark_set: _icon === el.icon
+            })}
+            onClick={() => {
+              dismissZIonPopover(el.icon);
+            }}
+            title={el.iconName}>
+            <ZIonIcon
+              icon={el.icon}
+              className='w-6 h-6'
+              style={{ color: _colorCode ? _colorCode : '' }}
+            />
+          </div>
+        </ZIonCol>
+      ))}
 
-			<ZIonCol size='12' className='mb-2'>
-				<ZIonItem className='ion-no-padding text-base'>PLATFORM</ZIonItem>
-			</ZIonCol>
+      <ZIonCol
+        size='12'
+        className='mb-2'>
+        <ZIonItem className='ion-no-padding text-base'>PLATFORM</ZIonItem>
+      </ZIonCol>
 
-			{PlatformIconsData.platformIcons.map((el, index) => (
-				<ZIonCol size='3' key={index}>
-					<div
-						className={classNames({
-							'rounded py-1 zaions__cursor_pointer flex ion-align-items-center ion-justify-content-center':
-								true,
-							zaions__dark_set: _icon === el.icon,
-						})}
-						onClick={() => {
-							dismissZIonPopover(el.icon);
-						}}
-					>
-						<ZIonIcon
-							icon={el.icon}
-							className='w-6 h-6'
-							style={{ color: _colorCode ? _colorCode : '' }}
-						/>
-					</div>
-				</ZIonCol>
-			))}
-		</ZIonRow>
-	);
+      {PlatformIconsData.platformIcons.map((el, index) => (
+        <ZIonCol
+          size='3'
+          key={index}>
+          <div
+            className={classNames({
+              'rounded py-1 zaions__cursor_pointer flex ion-align-items-center ion-justify-content-center':
+                true,
+              zaions__dark_set: _icon === el.icon
+            })}
+            onClick={() => {
+              dismissZIonPopover(el.icon);
+            }}>
+            <ZIonIcon
+              icon={el.icon}
+              className='w-6 h-6'
+              style={{ color: _colorCode ? _colorCode : '' }}
+            />
+          </div>
+        </ZIonCol>
+      ))}
+    </ZIonRow>
+  );
 };
 
 export default ZPlatformIconsPopover;

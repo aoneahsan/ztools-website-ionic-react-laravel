@@ -2,14 +2,14 @@
  * Core Imports go down
  * ? Like Import of React is a Core Import
  * */
-import React from "react";
+import React from 'react';
 
 /**
  * Packages Imports go down
  * ? Like import of ionic components is a packages import
  * */
-import { ZIonCol, ZIonRow } from "@/components/ZIonComponents";
-import { LinkInBioPageAnalyticsDataInterface } from "@/types/InPageComponentTypes/ZaionsTables.type";
+import { ZIonCol, ZIonRow } from '@/components/ZIonComponents';
+import { LinkInBioPageAnalyticsDataInterface } from '@/types/InPageComponentTypes/ZaionsTables.type';
 
 /**
  * Custom Imports go down
@@ -19,16 +19,6 @@ import { LinkInBioPageAnalyticsDataInterface } from "@/types/InPageComponentType
 /**
  * Global Constants Imports go down
  * ? Like import of Constant is a global constants import
- * */
-
-/**
- * Type Imports go down
- * ? Like import of type or type of some recoil state or any external type import is a Type import
- * */
-
-/**
- * Recoil State Imports go down
- * ? Import of recoil states is a Recoil State import
  * */
 
 /**

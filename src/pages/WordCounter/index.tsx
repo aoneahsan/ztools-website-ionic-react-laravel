@@ -2,20 +2,20 @@
  * Core Imports go down
  * ? Like Import of React is a Core Import
  * */
-import React from "react";
+import React from 'react';
 
 /**
  * Packages Imports go down
  * ? Like import of ionic components is a packages import
  * */
-import { Formik } from "formik";
-import classNames from "classnames";
+import { Formik } from 'formik';
+import classNames from 'classnames';
 
 /**
  * Custom Imports go down
  * ? Like import of custom components is a custom import
  * */
-import ZIonPage from "@/components/ZIonPage";
+import ZIonPage from '@/components/ZIonPage';
 import {
   ZIonCol,
   ZIonContent,
@@ -23,17 +23,17 @@ import {
   ZIonRow,
   ZIonText,
   ZIonTextarea,
-  ZIonTitle,
-} from "@/components/ZIonComponents";
-import Header from "@/components/Header";
-import ZAppSideMenu from "@/navigation/AppSideMenu";
-import Footer from "@/components/Footer";
+  ZIonTitle
+} from '@/components/ZIonComponents';
+import Header from '@/components/Header';
+import ZAppSideMenu from '@/navigation/AppSideMenu';
+import Footer from '@/components/Footer';
 
 /**
  * Custom Hooks Imports go down
  * ? Like import of custom Hook is a custom import
  * */
-import { useZMediaQueryScale } from "@/ZaionsHooks/ZGenericHooks";
+import { useZMediaQueryScale } from '@/ZaionsHooks/ZGenericHooks';
 
 /**
  * Global Constants Imports go down
@@ -45,19 +45,9 @@ import {
   zCountParagraphs,
   ZCountSentences,
   ZCountSyllables,
-  zCountWords,
-} from "@/utils/helpers";
-import CONSTANTS, { PRODUCT_NAME } from "@/utils/constants";
-
-/**
- * Type Imports go down
- * ? Like import of type or type of some recoil state or any external type import is a Type import
- * */
-
-/**
- * Recoil State Imports go down
- * ? Import of recoil states is a Recoil State import
- * */
+  zCountWords
+} from '@/utils/helpers';
+import CONSTANTS, { PRODUCT_NAME } from '@/utils/constants';
 
 /**
  * Style files Imports go down
@@ -91,185 +81,175 @@ const ZWordCounter: React.FC = () => {
       {/*  */}
       <ZIonPage
         pageTitle={`${PRODUCT_NAME}- Word Counter`}
-        id={CONSTANTS.PAGE_IDS.WORD_COUNTER_PAGE_ID}
-      >
+        id={CONSTANTS.PAGE_IDS.WORD_COUNTER_PAGE_ID}>
         {/* Header  */}
-        <Header title="Word Counter" />
+        <Header title='Word Counter' />
 
         {/* Content */}
-        <ZIonContent color="light">
-          <ZIonGrid className="lg:w-[90%] md:w-[95%] sm:w-[98%] xs:w-[100%] xl:w-[80%] mx-auto my-2 pt-5">
+        <ZIonContent color='light'>
+          <ZIonGrid className='lg:w-[90%] md:w-[95%] sm:w-[98%] xs:w-[100%] xl:w-[80%] mx-auto my-2 pt-5'>
             <ZIonRow>
               <ZIonCol
-                size="12"
+                size='12'
                 className={classNames({
-                  "flex ion-justify-content-center flex-col": true,
-                  "ion-text-center ion-align-items-center": isMdScale,
-                })}
-              >
+                  'flex ion-justify-content-center flex-col': true,
+                  'ion-text-center ion-align-items-center': isMdScale
+                })}>
                 {isMdScale && (
                   <ZIonText
                     className={classNames({
-                      "mb-3 ion-no-padding font-semibold": true,
-                      "text-2xl": (isXlScale && !isLgScale) || isAboveXlScale,
-                      "text-xl": isLgScale,
-                    })}
-                  >
+                      'mb-3 ion-no-padding font-semibold': true,
+                      'text-2xl': (isXlScale && !isLgScale) || isAboveXlScale,
+                      'text-xl': isLgScale
+                    })}>
                     Word Counter
                   </ZIonText>
                 )}
 
                 <ZIonText
                   className={classNames({
-                    "text-lg block":
+                    'text-lg block':
                       (isXlScale && !isLgScale) || isAboveXlScale,
-                    "text-md": isLgScale && !isMdScale,
-                  })}
-                >
+                    'text-md': isLgScale && !isMdScale
+                  })}>
                   A simple and free word counter and character counter.
                 </ZIonText>
               </ZIonCol>
 
               <ZIonCol
-                className="flex flex-col gap-4 mt-2 md:flex-row md:ion-align-items-center md:gap-0 ion-justify-content-between"
-                size="12"
-              >
-                <Formik initialValues={{ text: "" }} onSubmit={() => {}}>
+                className='flex flex-col gap-4 mt-2 md:flex-row md:ion-align-items-center md:gap-0 ion-justify-content-between'
+                size='12'>
+                <Formik
+                  initialValues={{ text: '' }}
+                  onSubmit={() => {}}>
                   {({ values, handleChange, handleBlur }) => {
                     return (
-                      <ZIonRow className="w-full gap-2">
+                      <ZIonRow className='w-full gap-2'>
                         <ZIonCol
-                          className="p-3 rounded-lg shadow-md ion-no-padding zaions__bg_white"
-                          sizeXl="7.5"
-                          sizeLg="7"
-                          sizeMd="12"
-                          sizeSm="12"
-                          sizeXs="12"
-                        >
+                          className='p-3 rounded-lg shadow-md ion-no-padding zaions__bg_white'
+                          sizeXl='7.5'
+                          sizeLg='7'
+                          sizeMd='12'
+                          sizeSm='12'
+                          sizeXs='12'>
                           <ZIonTextarea
                             rows={isLgScale ? 6 : 9}
-                            name="text"
+                            name='text'
                             value={values.text}
                             onIonChange={handleChange}
                             onIonBlur={handleBlur}
                             // autoGrow={true}
-                            className="p-2 pt-0 border rounded"
-                            placeholder="type or paste your text here..."
+                            className='p-2 pt-0 border rounded'
+                            placeholder='type or paste your text here...'
                           />
                         </ZIonCol>
 
-                        <ZIonCol className="rounded-lg shadow-md ion-no-padding zaions__bg_white">
-                          <ZIonRow className="h-full">
+                        <ZIonCol className='rounded-lg shadow-md ion-no-padding zaions__bg_white'>
+                          <ZIonRow className='h-full'>
                             {/* Total words */}
                             <ZIonCol
-                              sizeXl="4"
-                              sizeLg="4"
-                              sizeMd="4"
-                              sizeSm="4"
-                              sizeXs="12"
-                              className="flex flex-col px-2 border-b ion-align-items-center ion-justify-content-center border-e"
-                            >
-                              <ZIonText className="text-2xl font-normal">
+                              sizeXl='4'
+                              sizeLg='4'
+                              sizeMd='4'
+                              sizeSm='4'
+                              sizeXs='12'
+                              className='flex flex-col px-2 border-b ion-align-items-center ion-justify-content-center border-e'>
+                              <ZIonText className='text-2xl font-normal'>
                                 {zCountWords(values.text) || 0}
                               </ZIonText>
-                              <ZIonText className="font-semibold tracking-wide text-md">
+                              <ZIonText className='font-semibold tracking-wide text-md'>
                                 Words
                               </ZIonText>
                             </ZIonCol>
 
                             {/* Total characters */}
                             <ZIonCol
-                              sizeXl="4"
-                              sizeLg="4"
-                              sizeMd="4"
-                              sizeSm="4"
-                              sizeXs="12"
-                              className="flex flex-col px-2 border-b ion-align-items-center ion-justify-content-center border-e"
-                            >
-                              <ZIonText className="text-2xl font-normal">
+                              sizeXl='4'
+                              sizeLg='4'
+                              sizeMd='4'
+                              sizeSm='4'
+                              sizeXs='12'
+                              className='flex flex-col px-2 border-b ion-align-items-center ion-justify-content-center border-e'>
+                              <ZIonText className='text-2xl font-normal'>
                                 {zCountCharacters(values.text) || 0}
                               </ZIonText>
-                              <ZIonText className="font-semibold tracking-wide text-md">
+                              <ZIonText className='font-semibold tracking-wide text-md'>
                                 Characters
                               </ZIonText>
                             </ZIonCol>
 
                             {/* Total characters without space */}
                             <ZIonCol
-                              sizeXl="4"
-                              sizeLg="4"
-                              sizeMd="4"
-                              sizeSm="4"
-                              sizeXs="12"
-                              className="flex flex-col px-2 border-b ion-align-items-center ion-justify-content-center ion-text-center"
-                            >
-                              <ZIonText className="text-2xl font-normal">
+                              sizeXl='4'
+                              sizeLg='4'
+                              sizeMd='4'
+                              sizeSm='4'
+                              sizeXs='12'
+                              className='flex flex-col px-2 border-b ion-align-items-center ion-justify-content-center ion-text-center'>
+                              <ZIonText className='text-2xl font-normal'>
                                 {zCountCharactersWithoutSpace(values.text) || 0}
                               </ZIonText>
-                              <ZIonText className="font-semibold tracking-wide text-md">
+                              <ZIonText className='font-semibold tracking-wide text-md'>
                                 Characters without space
                               </ZIonText>
                             </ZIonCol>
 
                             {/* Total syllables */}
                             <ZIonCol
-                              sizeXl="4"
-                              sizeLg="4"
-                              sizeMd="4"
-                              sizeSm="4"
-                              sizeXs="12"
+                              sizeXl='4'
+                              sizeLg='4'
+                              sizeMd='4'
+                              sizeSm='4'
+                              sizeXs='12'
                               className={classNames({
-                                "flex flex-col px-2 ion-align-items-center ion-justify-content-center border-e":
+                                'flex flex-col px-2 ion-align-items-center ion-justify-content-center border-e':
                                   true,
-                                "border-b": !isSmScale,
-                              })}
-                            >
-                              <ZIonText className="text-2xl font-normal">
+                                'border-b': !isSmScale
+                              })}>
+                              <ZIonText className='text-2xl font-normal'>
                                 {ZCountSyllables(values.text) || 0}
                               </ZIonText>
-                              <ZIonText className="font-semibold tracking-wide text-md">
+                              <ZIonText className='font-semibold tracking-wide text-md'>
                                 Syllables
                               </ZIonText>
                             </ZIonCol>
 
                             {/* Total sentence */}
                             <ZIonCol
-                              sizeXl="4"
-                              sizeLg="4"
-                              sizeMd="4"
-                              sizeSm="4"
-                              sizeXs="12"
+                              sizeXl='4'
+                              sizeLg='4'
+                              sizeMd='4'
+                              sizeSm='4'
+                              sizeXs='12'
                               className={classNames({
-                                "flex flex-col px-2 ion-align-items-center ion-justify-content-center border-e":
+                                'flex flex-col px-2 ion-align-items-center ion-justify-content-center border-e':
                                   true,
-                                "border-b": !isSmScale,
-                              })}
-                            >
-                              <ZIonText className="text-2xl font-normal">
+                                'border-b': !isSmScale
+                              })}>
+                              <ZIonText className='text-2xl font-normal'>
                                 {ZCountSentences(values.text) || 0}
                               </ZIonText>
-                              <ZIonText className="font-semibold tracking-wide text-md">
+                              <ZIonText className='font-semibold tracking-wide text-md'>
                                 Sentence
                               </ZIonText>
                             </ZIonCol>
 
                             {/* Total paragraph */}
                             <ZIonCol
-                              sizeXl="4"
-                              sizeLg="4"
-                              sizeMd="4"
-                              sizeSm="4"
-                              sizeXs="12"
+                              sizeXl='4'
+                              sizeLg='4'
+                              sizeMd='4'
+                              sizeSm='4'
+                              sizeXs='12'
                               className={classNames({
-                                "flex flex-col px-2 ion-align-items-center ion-justify-content-center border-e":
+                                'flex flex-col px-2 ion-align-items-center ion-justify-content-center border-e':
                                   true,
-                                "border-b": !isSmScale,
-                              })}
-                            >
-                              <ZIonText className="text-2xl font-normal">
+                                'border-b': !isSmScale
+                              })}>
+                              <ZIonText className='text-2xl font-normal'>
                                 {zCountParagraphs(values.text) || 0}
                               </ZIonText>
-                              <ZIonText className="font-semibold tracking-wide text-md">
+                              <ZIonText className='font-semibold tracking-wide text-md'>
                                 Paragraph
                               </ZIonText>
                             </ZIonCol>
@@ -285,20 +265,19 @@ const ZWordCounter: React.FC = () => {
             <ZIonRow>
               {/* About */}
               <ZIonCol
-                className="p-2 mt-5"
-                sizeXl="10"
-                sizeLg="10"
-                sizeMd="11"
-                sizeSm="12"
-                sizeXs="12"
-              >
-                <ZIonTitle className="text-2xl font-semibold tracking-widest ion-no-padding">
+                className='p-2 mt-5'
+                sizeXl='10'
+                sizeLg='10'
+                sizeMd='11'
+                sizeSm='12'
+                sizeXs='12'>
+                <ZIonTitle className='text-2xl font-semibold tracking-widest ion-no-padding'>
                   About
                 </ZIonTitle>
-                <ZIonTitle className="mt-3 font-semibold tracking-widest text-md ion-no-padding">
+                <ZIonTitle className='mt-3 font-semibold tracking-widest text-md ion-no-padding'>
                   Word count:
                 </ZIonTitle>
-                <ZIonText className="block mt-1">
+                <ZIonText className='block mt-1'>
                   Word count is a numerical measurement of the total number of
                   words in a given text or document. It provides a quick way to
                   gauge the length of a piece of writing and is often used in
@@ -308,10 +287,10 @@ const ZWordCounter: React.FC = () => {
                   document meets specified length requirements.
                 </ZIonText>
 
-                <ZIonTitle className="mt-3 font-semibold tracking-widest ion-no-padding">
+                <ZIonTitle className='mt-3 font-semibold tracking-widest ion-no-padding'>
                   Character Count:
                 </ZIonTitle>
-                <ZIonText className="block mt-1">
+                <ZIonText className='block mt-1'>
                   Character count refers to the total number of characters,
                   including letters, numbers, punctuation marks, and spaces, in
                   a piece of text. It's used to assess the length and complexity
@@ -319,10 +298,10 @@ const ZWordCounter: React.FC = () => {
                   limited, such as social media posts or SMS messages.
                 </ZIonText>
 
-                <ZIonTitle className="mt-3 font-semibold tracking-widest ion-no-padding">
+                <ZIonTitle className='mt-3 font-semibold tracking-widest ion-no-padding'>
                   Characters Without Space:
                 </ZIonTitle>
-                <ZIonText className="block mt-1">
+                <ZIonText className='block mt-1'>
                   Characters without spaces, also known as non-space characters,
                   are the total number of characters in a text excluding spaces.
                   This count is useful for understanding the core content of a
@@ -331,10 +310,10 @@ const ZWordCounter: React.FC = () => {
                   complexity.
                 </ZIonText>
 
-                <ZIonTitle className="mt-3 font-semibold tracking-widest ion-no-padding">
+                <ZIonTitle className='mt-3 font-semibold tracking-widest ion-no-padding'>
                   Syllables Count:
                 </ZIonTitle>
-                <ZIonText className="block mt-1">
+                <ZIonText className='block mt-1'>
                   Syllable count measures the number of syllables in a given
                   text. A syllable is a unit of pronunciation typically
                   consisting of a vowel sound and any associated consonant
@@ -344,10 +323,10 @@ const ZWordCounter: React.FC = () => {
                   processing.
                 </ZIonText>
 
-                <ZIonTitle className="mt-3 font-semibold tracking-widest ion-no-padding">
+                <ZIonTitle className='mt-3 font-semibold tracking-widest ion-no-padding'>
                   Sentence Count:
                 </ZIonTitle>
-                <ZIonText className="block mt-1">
+                <ZIonText className='block mt-1'>
                   Sentence count indicates how many sentences are present in a
                   text. It's useful for analyzing the structure of a document,
                   such as in linguistic research, as well as for understanding
@@ -356,10 +335,10 @@ const ZWordCounter: React.FC = () => {
                   are well-structured.
                 </ZIonText>
 
-                <ZIonTitle className="mt-3 font-semibold tracking-widest ion-no-padding">
+                <ZIonTitle className='mt-3 font-semibold tracking-widest ion-no-padding'>
                   Paragraph Count:
                 </ZIonTitle>
-                <ZIonText className="block mt-1">
+                <ZIonText className='block mt-1'>
                   Paragraph count represents the total number of paragraphs in a
                   text or document. It's essential for understanding the
                   organization and layout of a document and is often used in
