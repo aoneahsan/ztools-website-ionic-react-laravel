@@ -28,13 +28,19 @@
     "preview": "vite preview",
     "lint": "eslint",
     "preinstall": "node -e \"if (require('path').basename(process.env.npm_execpath) === 'npm-cli.js') throw new Error('Please use Yarn for installation: yarn install')\"",
+    "cap:sync": "npm run build && cap sync",
     "sync:apps-config": "trapeze run apps-config.yaml",
     "cap:gen:assets-android": "capacitor-assets generate --android",
     "cap:gen:assets-pwa": "capacitor-assets generate --pwa",
+    "cap:gen:assets-ios": "capacitor-assets generate --ios",
     "cap:add-android": "capacitor add android",
     "cap:update-android": "capacitor update android",
     "cap:copy-android": "capacitor copy android",
-    "cap:open-android": "capacitor open android"
+    "cap:open-android": "capacitor open android",
+    "cap:add-ios": "capacitor add ios",
+    "cap:update-ios": "capacitor update ios",
+    "cap:copy-ios": "capacitor copy ios",
+    "cap:open-ios": "capacitor open ios"
   },
   "dependencies": {
     "@capacitor/android": "7.0.1",
@@ -93,7 +99,7 @@
     "lint-staged": "^15.4.3",
     "postcss": "^8.5.3",
     "react-scripts": "^5.0.1",
-    "tailwindcss": "3.3.5",
+    "tailwindcss": "3.4.17",
     "typescript": "^5.8.2",
     "vite": "^6.2.0"
   }
